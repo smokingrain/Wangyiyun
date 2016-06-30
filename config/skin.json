@@ -1,0 +1,17 @@
+{
+	"list":{
+		"default":{
+			"skinName":"default",
+			"pageName": "ListPage-default",
+			"functionListPicSrc": "xx",
+			"functionListBackSrc": "xx"
+		},
+		"using":"default"
+	},
+	"config":{
+		"list":{
+			"listPageWidth":400,
+			"listPageHeight":400
+		}
+	}
+}

@@ -1,0 +1,9 @@
+export const MUSIC = 'MUSIC'
+export const USER = 'USER'
+export const PHOTO = 'PHOTO'
+export const CONFIG = 'CONFIG'
+export const TODO = 'TODO'
+export const DIARY = 'DIARY'
+export const SKIN = 'SKIN'
+export const STATUS = 'STATUS'
+export const VIDEO = "VIDEO"

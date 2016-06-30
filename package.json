@@ -1,0 +1,61 @@
+{
+  "name": "PDDMusic",
+  "version": "0.0.0",
+  "description": "A music player application made with electron, it's great",
+  "main": "./dist/main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "npm run rebuild-sqlite3",
+    "rebuild-sqlite3": "cd node_modules/sqlite3 npm run prepublish  node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/node-v47-darwin-x64  node-gyp rebuild --target=0.36.1 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell --module_name=node_sqlite3 --module_path=../lib/binding/node-v47-darwin-x64"
+  },
+  "keywords": [
+    "Electron",
+    "music",
+    "player"
+  ],
+  "author": "PDDMusic",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.8.0",
+    "npm-check": "^5.2.1",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-notifier": "^1.3.0"
+  },
+  "dependencies": {
+    "PDD-log4js-es5": "0.0.1",
+    "classnames": "^2.2.5",
+    "history": "^1.17.0",
+    "immutable": "^3.8.1",
+    "jquery": "^2.2.4",
+    "lodash": "^4.13.1",
+    "lowdb": "^0.12.5",
+    "moment": "^2.13.0",
+    "nconf": "^0.8.4",
+    "nedb": "^1.8.0",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.5",
+    "react-router": "^1.0.3",
+    "react-thunk": "^1.0.0",
+    "redux": "^3.5.2",
+    "redux-electron-store": "^0.3.10",
+    "redux-thunk": "^1.0.3",
+    "restler": "^3.4.0",
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.2"
+  }
+}
