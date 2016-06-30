@@ -1,0 +1,16 @@
+.header{
+  >div{
+    height:50px;
+  }
+  .left{
+    float:left;
+    width:500px;
+    >div{
+      float:left;
+    }
+  }
+  .right{
+    float:right;
+    width:600px;
+  }
+}
