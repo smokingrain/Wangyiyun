@@ -1,12 +1,67 @@
 .header{
   >div{
-    height:50px;
+    height:100%;
   }
   .left{
     float:left;
     width:500px;
     >div{
       float:left;
+      height:50%;
+    }
+    .logo{
+      width:180px;
+      height:100%;
+      .author{
+        height:100%;
+        width:100%;
+        p{
+          float:left;
+          height:100%;
+          line-height:50px;
+          color:#fff;
+        }
+        p.authorname{
+          font-size:19px;
+          margin-left:30px;
+        }
+        p.boxname{
+          font-size:15px;
+          margin-left:12px;
+        }
+      }
+    }
+    .record{
+      width: 60px;
+      height: 50px;
+      margin-left: 10px;
+      .buttonbox{
+        width:100%;
+        height:30px;
+        margin-top:14px;
+        span{
+          width:30px;
+          height:22px;
+          text-align:center;
+          line-height:21px;
+          color:#fff;
+        }
+        span.glyphicon-menu-left{
+          border:1px solid #ae2a25;
+          border-radius:3px 0 0 3px;
+        }
+        span.glyphicon-menu-right{
+          border:1px solid #ae2a25;
+          border-left-width:0px;
+          border-radius:0 3px 3px 0;
+        }
+        span.disabled{
+          color:#d85d56;
+        }
+      }
+    }
+    .search{
+      width: 220px;
     }
   }
   .right{
