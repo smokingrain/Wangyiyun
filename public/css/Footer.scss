@@ -1,0 +1,170 @@
+.Footer{
+  display:flex;
+  flex-flow:row;
+  border-top:1px solid #e0e0e0;
+  .song-opera{
+    width:210px;
+    div{
+      float:left;
+      height:50px;
+      width:40px;
+      i{
+        border-radius:50%;
+        color:#fff;
+        background-color:#c13a36;
+        text-align:center;
+        display:inline-block;
+      }
+      i.icon-bofang{
+        width:40px;
+        height:40px;
+        line-height:40px;
+        margin-top:5px;
+      }
+      i.icon-bofangqishangyiqu{
+        height:30px;
+        width:30px;
+        line-height:30px;
+        margin-top:10px;
+        font-size:13px;
+        margin-left:5px;
+      }
+      i.icon-bofangqixiayiqu{
+        height:30px;
+        width:30px;
+        line-height:30px;
+        font-size:13px;
+        margin-top:10px;
+        margin-left:5px;
+      }
+      i.icon-zanting1{
+        width:40px;
+        height:40px;
+        line-height:40px;
+        margin-top:5px;
+      }
+    }
+    div.shangyiqu{
+      margin-left:30px;
+    }
+    div.bofang{
+      margin-left:15px;
+    }
+    div.zanting{
+      margin-left:15px;
+    }
+    div.xiayiqu{
+      margin-left:15px;
+    }
+    >div.hide{
+      display:none;
+    }
+  }
+  .nowtime{
+    width:50px;
+    height:100%;
+    span{
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 10px;
+      width: 50px;
+      text-align: center;
+      color:#615056;
+    }
+  }
+  .audio-progress{
+    flex:1;
+    height:100%;
+  }
+  .alltime{
+    width:50px;
+    height:100%;
+    span{
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 10px;
+      width: 50px;
+      text-align: center;
+      color:#615056;
+    }
+  }
+  .voice{
+    width:130px;
+    height:100%;
+    display:flex;
+    flex-flow:row;
+    div.voiceimg{
+      width:32px;
+      float:left;
+      height:50px;
+      width:32px;
+      i{
+        display:inline-block;
+        text-align:center;
+        line-height:50px;
+        color:#676769;
+        width:32px;
+      }
+    }
+    div.progress-box{
+      flex:1;
+      float:left;
+      height:50px;
+      width:32px;
+      .progress{
+
+      }
+    }
+  }
+  .operatools{
+    width:140px;
+    height:100%;
+    div{
+      float:left;
+      height:50px;
+      width:32px;
+      i,p{
+        display:inline-block;
+        text-align:center;
+        line-height:50px;
+      }
+    }
+    div.xunhuan{
+      i{
+        width:32px;
+        color:#676769;
+      }
+    }
+    div.lypric{
+      p{
+        width:32px;
+        height:46px;
+        color:#5c5c5e;
+      }
+    }
+    div.songlist{
+      i{
+        width:32px;
+        position:relative;
+        line-height:45px;
+        span{
+          position: absolute;
+          top: 6px;
+          left: 22px;
+          display: inline-block;
+          text-align: center;
+          width: 26px;
+          height: 15px;
+          line-height: 15px;
+          font-size: 11px;
+          border-radius: 5px 5px 5px 5px;
+          background-color: #c13a36;
+          color: #fff;
+        }
+      }
+
+    }
+  }
+}

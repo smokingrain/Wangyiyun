@@ -1,3 +1,8 @@
+# show
+![img](./public/img/wangyiyun.jpg)
+
+
+
 # Tech
 - [x] view层框架 react
 - [x] app run platform = electron(运行环境electron)
@@ -10,14 +15,15 @@
 
 
 # source from web
-- [x] flexbox布局 http://www.w3cplus.com/css3/css3-flexbox-layout.html
-- [x] 图标素材来源   http://iconfont.cn/
+- [x] flexbox布局 http://www.w3cplus.com/css3/css3-flexbox-layout.html  存在兼容性问题 慎用
+- [x] 图标素材来源   http://iconfont.cn/  牛逼的阿里爸爸
 
 # Features
 - [x] 搭建开发环境 webpack+electron+react+redux+lowdb(主要组成部分)
 - [x] 使用flex布局 纵向内嵌横向  自适应良好
 - [x] header部分ui
 - [x] leftpart部分ui
+- [x] 拆分完成进度条组件  bootstrap and flatui has it,but it's too heavy
 
 
 

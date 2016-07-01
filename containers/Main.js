@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import LeftPart from '../components/LeftPart'
 import MainBox from '../components/MainBox'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 
 export default class Main extends Component {
@@ -15,7 +16,7 @@ export default class Main extends Component {
           <LeftPart></LeftPart>
           <MainBox></MainBox>
         </div>
-        <footer></footer>
+        <Footer></Footer>
       </div>
     )
   }

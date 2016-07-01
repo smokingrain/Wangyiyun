@@ -34,7 +34,7 @@ export default class Header extends Component {
             <i className="iconfont icon-zuidahua"></i>
           </div>
           <div className="opera-hidden small">
-            <i className="iconfont icon-suoxiao"></i>
+            <i className="iconfont icon-zuixiaohua"></i>
           </div>
           <div className="opera-showmini small">
             <i className="iconfont icon-iconkefuzuixiaohua"></i>

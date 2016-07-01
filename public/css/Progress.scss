@@ -1,0 +1,37 @@
+.progress{
+  width:100%;
+  height:100%;
+  .progress-slot{
+    margin-top:22px;
+    width:100%;
+    height:4px;
+    background-color:#c2c2c4;
+    border-radius:3px;
+    position:relative;
+    .progress-bar{
+      border-radius:3px;
+      width:25px;
+      height:4px;
+      background-color:#c13a36;
+    }
+    .progress-ball{
+      position:absolute;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      left:20px;
+      top:-5px;
+      border:1px solid #c1c4c9;
+      background-color:#fbfffb;
+      .progress-dot{
+        width:4px;
+        height:4px;
+        border-radius:2px;
+        background-color:#c13a36;
+        margin-top:4px;
+        margin-left:4px;
+      }
+    }
+  }
+
+}

@@ -4,8 +4,7 @@
     height: 35px;
     line-height: 35px;
     font-family: monospace;
-    padding-left: 10px;
-    color: #535355;  
+    padding-left: 10px; 
   }
   >ul{
     width:100%;
@@ -16,7 +15,6 @@
       cursor:pointer;
       position:relative;
       i{
-        color:#555557;
         display: inline-block;
         font-size: 17px;
         height: 30px;
@@ -28,7 +26,6 @@
         padding-left: 10px;
         line-height: 30px;
         font-family: monospace;
-        color:#555557;
       }
       .choseflag{
         position:absolute;
@@ -36,13 +33,39 @@
         left:0px;
         height:30px;
         width:0px;
+      }
+    }
+    >li.choosed{
+      .choseflag{
+        width:3px;
+      }
+    }
+  }
+}
+
+
+
+
+
+.default .LeftPart{
+  >p{
+    color: #535355;  
+  }
+  >ul{
+    >li{
+      i{
+        color:#555557;
+      }
+      p{
+        color:#555557;
+      }
+      .choseflag{
         background-color:#c13a36;
       }
     }
     >li.choosed{
       background-color:#e6e7eb;
       .choseflag{
-        width:3px;
       }
       i{
         color:#000004;
