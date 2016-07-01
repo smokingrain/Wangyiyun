@@ -17,13 +17,42 @@ export default class Header extends Component {
           </div>
           <div className="record">
             <div className="buttonbox">
-              <span className="glyphicon glyphicon-menu-left"></span>
-              <span className="glyphicon glyphicon-menu-right disabled"></span>
+              <i className="iconfont icon-leftopenmini"></i>
+              <i className="iconfont icon-rightopenmini disabled"></i>
             </div>
           </div>
-          <div classNam="search"></div>
+          <div className="search">
+            <input className="searchInput" type="text"/>
+            <i className="iconfont icon-sousuo1"></i>
+          </div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <div className="opera-close small">
+            <i className="iconfont icon-iconfontcha"></i>
+          </div>
+          <div className="opera-fullscreen small">
+            <i className="iconfont icon-zuidahua"></i>
+          </div>
+          <div className="opera-hidden small">
+            <i className="iconfont icon-suoxiao"></i>
+          </div>
+          <div className="opera-showmini small">
+            <i className="iconfont icon-iconkefuzuixiaohua"></i>
+          </div>
+          <div className="border-right"></div>
+          <div className="opera-setting">
+            <i className="iconfont icon-shezhi"></i>
+          </div>
+          <div className="opera-mail">
+            <i className="iconfont icon-mail"></i>
+          </div>
+          <div className="opera-skin">
+            <i className="iconfont icon-pifu"></i>
+          </div>
+          <div className="opera-login">
+            <i className="iconfont icon-touxiang"></i>
+          </div>
+        </div>
       </div>
     )
   }

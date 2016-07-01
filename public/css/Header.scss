@@ -10,7 +10,7 @@
       height:50%;
     }
     .logo{
-      width:180px;
+      width:170px;
       height:100%;
       .author{
         height:100%;
@@ -19,11 +19,10 @@
           float:left;
           height:100%;
           line-height:50px;
-          color:#fff;
         }
         p.authorname{
           font-size:19px;
-          margin-left:30px;
+          margin-left:15px;
         }
         p.boxname{
           font-size:15px;
@@ -39,33 +38,118 @@
         width:100%;
         height:30px;
         margin-top:14px;
-        span{
-          width:30px;
-          height:22px;
-          text-align:center;
-          line-height:21px;
-          color:#fff;
+        i{
+          width: 30px;
+          height: 22px;
+          text-align: center;
+          line-height: 18px;
+          font-size: 21px;
         }
-        span.glyphicon-menu-left{
-          border:1px solid #ae2a25;
+        i.icon-leftopenmini{
           border-radius:3px 0 0 3px;
         }
-        span.glyphicon-menu-right{
-          border:1px solid #ae2a25;
+        i.icon-rightopenmini{
           border-left-width:0px;
           border-radius:0 3px 3px 0;
-        }
-        span.disabled{
-          color:#d85d56;
         }
       }
     }
     .search{
       width: 220px;
+      margin-left:20px;
+      position:relative;
+      height:100%;
+      .searchInput{
+        width: 215px;
+        border-radius: 15px;
+        margin-top: 14px;
+        padding-left: 10px;
+        height: 23px;
+        line-height: 23px;
+        font-size: 13px;
+      }
+      i{
+        position: absolute;
+        top: 16px;
+        right: 13px;
+      }
     }
   }
   .right{
     float:right;
-    width:600px;
+    width:500px;
+    height:100%;
+    padding-right:10px;
+    >div{
+      float:right;
+      height:100%;
+      line-height:50px;
+      text-align:center;
+      width:35px;
+      cursor:pointer;
+    }
+    >div:hover{
+    }
+    div.small{
+      width:26px;
+    }
+    div.border-right{
+      height:24px;
+      margin-top:13px;
+      width:10px;
+      margin-right:5px;
+    }
+  }
+}
+
+
+.default .header{
+  .left{
+    .logo{
+      .author{
+        p{
+          color:#fff;
+        }
+      }
+    }
+    .record{
+      .buttonbox{
+        i{
+          color: #fff;
+        }
+        i.icon-leftopenmini{
+          border:1px solid #ae2a25;
+        }
+        i.icon-rightopenmini{
+          border:1px solid #ae2a25;
+        }
+        i.disabled{
+          color:#d85d56;
+        }
+      }
+    }
+    .search{
+      .searchInput{
+        background-color: #a4312c;
+        color:#fff;
+      }
+      i{
+        color: #d1736b;
+      }
+    }
+  }
+  .right{
+    >div{
+      color:#ff9188;
+    }
+    >div:hover{
+      color:#fff;
+    }
+    div.small{
+      width:26px;
+    }
+    div.border-right{
+      border-right:1px solid #ad2c26;
+    }
   }
 }

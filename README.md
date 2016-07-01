@@ -11,12 +11,13 @@
 
 # source from web
 - [x] flexbox布局 http://www.w3cplus.com/css3/css3-flexbox-layout.html
-
+- [x] 图标素材来源   http://iconfont.cn/
 
 # Features
 - [x] 搭建开发环境 webpack+electron+react+redux+lowdb(主要组成部分)
 - [x] 使用flex布局 纵向内嵌横向  自适应良好
-
+- [x] header部分ui
+- [x] leftpart部分ui
 
 
 

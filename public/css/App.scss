@@ -72,8 +72,9 @@ ul{
   display:none;
 }
 
-
-
+i.iconfont{
+  display:inline-block;
+}
 
 @import './Main.scss';
 @import './LeftPart.scss';
