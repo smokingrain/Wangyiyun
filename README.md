@@ -12,11 +12,15 @@
 - [x] css 样式骨架布局尝试用flex
 - [x] 开发过程中使用scss,由scss-loader转换成css
 - [x] 数据库使用的是lowdb
+- [x] 音频播放的两种实现方式 html5 audio标签   或者是AudioContext自行截取播放 我试试第二种
 
 
 # source from web
 - [x] flexbox布局 http://www.w3cplus.com/css3/css3-flexbox-layout.html  存在兼容性问题 慎用
 - [x] 图标素材来源   http://iconfont.cn/  牛逼的阿里爸爸
+- [x] 关于h5中 audio标签的详细解析  http://www.w3school.com.cn/jsref/dom_obj_audio.asp
+- [x] AudioContext播放音频  http://www.cnblogs.com/Wayou/p/3543577.html
+
 
 # Features
 - [x] 搭建开发环境 webpack+electron+react+redux+lowdb(主要组成部分)
