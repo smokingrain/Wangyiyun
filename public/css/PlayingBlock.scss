@@ -1,0 +1,76 @@
+.playingblock{
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  height:61px;
+  border-top: 1px solid #e0e0e0;
+  div{
+    float:left;
+    height:100%;
+    i{
+      text-align:center;
+    }
+  }
+  div.musicimg{
+    width:60px;
+    img{
+      width:60px;
+      height:60px;
+    }
+  }
+  div.musicname{
+    width:137px;
+    p.songname{
+      height: 32px;
+      line-height: 40px;
+      font-size: 15px;
+      padding-left: 10px;
+      padding-right: 10px;
+      white-space:nowrap;
+      overflow:hidden;
+      width:100%;
+      text-overflow: ellipsis;
+    }
+    p.songer{
+      height: 30px;
+      line-height: 24px;
+      font-size: 12px;
+      padding: 0px 10px 0px 10px;
+    }
+  }
+  div.musicsonger{
+    width:32px;
+    >div{
+      cursor:pointer;
+    }
+    div.heart{
+      width:32px;
+      height:30px;
+      i{
+        width:32px;
+        line-height:30px;
+        color:#676769;
+      }
+    }
+    div.heart:hover{
+      i{
+        color:#000;
+      }
+    }
+    div.share{
+      width:32px;
+      height:30px;
+      i{
+        width:32px;
+        line-height:30px;
+        color:#676769;
+      }
+    }
+    div.share:hover{
+      i{
+        color:#000;
+      }
+    }
+  }
+}

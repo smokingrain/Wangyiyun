@@ -8,6 +8,7 @@
       float:left;
       height:50px;
       width:40px;
+      cursor:pointer;
       i{
         border-radius:50%;
         color:#fff;
@@ -100,6 +101,7 @@
       float:left;
       height:50px;
       width:32px;
+      cursor:pointer;
       i{
         display:inline-block;
         text-align:center;
@@ -117,6 +119,11 @@
 
       }
     }
+    div.voiceimg:hover{
+      i{
+        color:#000;
+      }
+    }
   }
   .operatools{
     width:140px;
@@ -125,6 +132,7 @@
       float:left;
       height:50px;
       width:32px;
+      cursor:pointer;
       i,p{
         display:inline-block;
         text-align:center;
@@ -137,18 +145,31 @@
         color:#676769;
       }
     }
+    div.xunhuan:hover{
+      i{
+        color:#000;
+      }
+    }
     div.lypric{
-      p{
+      i{
+        display:inline-block;
+        text-align:center;
+        line-height:45px;
+        color:#676769;
         width:32px;
-        height:46px;
-        color:#5c5c5e;
+      }
+    }
+    div.lypric:hover{
+      i{
+        color:#000;
       }
     }
     div.songlist{
       i{
         width:32px;
         position:relative;
-        line-height:45px;
+        line-height:47px;
+        color:#676769;
         span{
           position: absolute;
           top: 6px;
@@ -164,7 +185,11 @@
           color: #fff;
         }
       }
-
+    }
+    div.songlist:hover{
+      i{
+        color:#000;
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ import Progress from './Progress'
 export default class Footer extends Component {
   render(){
     return (
-      <div className="Footer">
+      <div className="Footer nodrag">
         <div className="song-opera">
           <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
           <div className="bofang"><i className="iconfont icon-bofang"></i></div>
@@ -27,7 +27,7 @@ export default class Footer extends Component {
         </div>
         <div className="operatools">
           <div className="xunhuan"><i className="iconfont icon-circulation"></i></div>
-          <div className="lypric"><p className="">词</p></div>
+          <div className="lypric"><i className="iconfont icon-ci"></i></div>
           <div className="songlist">
             <i className="iconfont icon-liebiao"><span className="playnumber">100</span></i>
           </div>

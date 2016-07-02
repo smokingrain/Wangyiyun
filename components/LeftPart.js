@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
-
+import PlayingBlock from './PlayingBlock'
 
 
 export default class LeftPart extends Component {
@@ -56,6 +56,7 @@ export default class LeftPart extends Component {
             <p>PDD</p>
           </li>
         </ul>
+        <PlayingBlock></PlayingBlock>
       </div>
     )
   }

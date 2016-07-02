@@ -9,74 +9,11 @@
 </head>
 <body>
 <div id="root">
-<input  id="input" type="file" />
+<script src="public/js/jquery-1.9.1.js" type="text/javascript"></script>
   <!-- <script type="text/javascript">console.log(process.versions)</script> -->
 </div>
-<!-- <script src="dist/index.js" type="text/javascript"></script> -->
-<script src="public/js/jquery-1.9.1.js" type="text/javascript"></script>
-<script>
-  var audioContext = new window.AudioContext()
-  var Visualizer = function () {
-    this.file = null
-    this.fileName = null
-    this.audioContext = null
-    this.source = null
-  }
-
-  Visualizer.prototype = {
-    _prepareAPI: function () {
-      this.audioContext = new audioContext()
-    },
-    _addEventListenr: function () {
-      var that = this
-      var audioInput = document.getElementById('input')
-      audioInput.onchange = function () {
-        if(audioInput.files.length !== 0){
-          that.file = audioInput.files[0]
-          that.fileName = that.file.name
-          that._start()
-        }
-      }
-    },
-    _start: function () {
-      var that = this
-      var file = this.file
-      var fr = new FileReader()
-      fr.onload = function (e) {
-        var fileResult = e.target.result
-        var audioContext = that.audioContext
-        audioContext.decodeAudioData(fileResult, function (buffer) {
-          that._visualize(audioContext, buffer)
-        }, function (e){
-          console.log('fail')
-        })
-      }
-      fr.readAsArrayBuffer(file) 
-    }
-  }
+<script src="dist/index.js" type="text/javascript"></script>
 
 
-
-
-
-
-
-  loadSound("test.mp3")
-
-
-
-  function loadSound(url){
-    var request = new XMLHttpRequest()
-    request.open('GET', url, true)
-    request.responseType = 'arraybuffer'
-    request.onload = function () {
-      var arraybuffer = request.response
-    }
-    request.send()
-  }
-  $('#input').on('change', function (e) {
-    console.log(e.target.files[0])
-  })
-</script>
 </body>
 </html>

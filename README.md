@@ -12,7 +12,7 @@
 - [x] css 样式骨架布局尝试用flex
 - [x] 开发过程中使用scss,由scss-loader转换成css
 - [x] 数据库使用的是lowdb
-- [x] 音频播放的两种实现方式 html5 audio标签   或者是AudioContext自行截取播放 我试试第二种
+- [x] 音频播放的两种实现方式 html5 audio标签   或者是AudioContext自行截取播放(对音频研究比较深的人适合)
 
 
 # source from web
