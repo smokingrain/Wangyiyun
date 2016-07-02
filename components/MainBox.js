@@ -8,7 +8,7 @@ export default class MainBox extends Component {
   render(){
     return (
       <div className="MainBox">
-        {this.props.children}
+        <div className="content-box content-music"></div>
       </div>
     )
   }

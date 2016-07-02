@@ -1,4 +1,15 @@
-
+.MainBox{
+  overflow-x:hidden;
+  overflow-y:scroll;
+  padding-left:30px;
+  padding-right:30px;
+  .content-box{
+    width: 100%;
+    max-width: 980px;
+    margin:0 auto;
+    height:3000px;
+  }
+}
 
 
 
