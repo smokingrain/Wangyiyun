@@ -29,7 +29,7 @@
 - [x] leftpart部分ui
 - [x] 拆分完成进度条组件  bootstrap and flatui has it,but it's too heavy
 - [x] 主面板值发现音乐模块的ui
-
+- [x] 完成轮播组件
 
 
 # Author

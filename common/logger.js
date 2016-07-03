@@ -36,7 +36,6 @@ initlogger([
 
 
 export const logger = getLogger('yyyyyyyy')
-logger.info('xxxxxx')
-logger.log('getget')
+
 
 //获取到logger

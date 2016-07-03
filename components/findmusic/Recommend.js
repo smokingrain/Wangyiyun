@@ -16,6 +16,11 @@ export default class Recommend extends Component {
   }
   componentDidMount() {
     const outSelf = this
+    $(document).ready(function () {
+        $(window).on('resize', function(){
+            // player.changeIndex()
+        })
+    })
     //轮播图片首张选中的图片序号
     $(document).ready(() => {
         var pic_player = function pic_player(){
@@ -94,7 +99,7 @@ export default class Recommend extends Component {
             },
             changeIndex: function (i) {
                 clearInterval(playPicInterval)
-                this.picIndex = i
+                this.picIndex = i || this.picIndex
                 this.checkPostion()
                 this.play()
             },
@@ -160,7 +165,7 @@ export default class Recommend extends Component {
     const picIndex = this.state.picIndex
     return (
       <div className="nav-box recommend-box nodrag">
-        <div className="recommend-nav">
+        <div className="play-nav">
           <div className="play-pic-box">
             <div className="pic-item">
                 <div className="pic-mask"></div>
@@ -216,6 +221,69 @@ export default class Recommend extends Component {
             }
             </ul>
           </div>
+        </div>
+        <div className="recommend-nav">
+            <div className="title">
+                <p>推荐歌单</p>
+                <a><i className="iconfont icon-right2"></i><span>更多</span></a>
+            </div>
+            <div className="list-box-1">
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <i className="iconfont"></i>
+                            <span></span>
+                        </div>
+                        <p></p>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                    </div>
+                    <p></p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <i className="iconfont"></i>
+                            <span></span>
+                        </div>
+                        <p></p>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                    </div>
+                    <p></p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <i className="iconfont"></i>
+                            <span></span>
+                        </div>
+                        <p></p>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                    </div>
+                    <p></p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <i className="iconfont"></i>
+                            <span></span>
+                        </div>
+                        <p></p>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
         </div>
       </div>
     )
