@@ -30,6 +30,7 @@
 - [x] 拆分完成进度条组件  bootstrap and flatui has it,but it's too heavy
 - [x] 主面板值发现音乐模块的ui
 - [x] 完成轮播组件
+- [x] 完成推荐歌单列表UI 16-7-4
 
 
 # Author

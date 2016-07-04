@@ -17,9 +17,19 @@ export default class Recommend extends Component {
   componentDidMount() {
     const outSelf = this
     $(document).ready(function () {
+        //加载好时纠正长宽比
+        $('.imgbox').each(function () {
+            let width = $(this).width()
+            $(this).height(width)
+        })
         $(window).on('resize', function(){
             // player.changeIndex()
+            $('.imgbox').each(function () {
+                let width = $(this).width()
+                $(this).height(width)
+            })
         })
+
     })
     //轮播图片首张选中的图片序号
     $(document).ready(() => {
@@ -227,12 +237,12 @@ export default class Recommend extends Component {
                 <p>推荐歌单</p>
                 <a><i className="iconfont icon-right2"></i><span>更多</span></a>
             </div>
-            <div className="list-box-1">
+            <div className="list-box list-box-1">
                 <div className="recommend-item">
                     <div className="imgbox">
                         <div className="tip">
                             <span>100万</span>
-                            <i className="iconfont"></i>
+                            <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
                         <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
@@ -242,46 +252,103 @@ export default class Recommend extends Component {
                 <div className="recommend-item">
                     <div className="imgbox">
                         <div className="tip">
-                            <i className="iconfont"></i>
-                            <span></span>
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <p></p>
                         <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
-                    <p></p>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
                     <div className="imgbox">
                         <div className="tip">
-                            <i className="iconfont"></i>
-                            <span></span>
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <p></p>
                         <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
-                    <p></p>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
                     <div className="imgbox">
                         <div className="tip">
-                            <i className="iconfont"></i>
-                            <span></span>
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <p></p>
                         <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
-                    <p></p>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
                     <div className="imgbox">
                         <div className="tip">
-                            <i className="iconfont"></i>
-                            <span></span>
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <p></p>
                         <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
-                    <p></p>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+            </div>
+            <div className="list-box list-box-2">
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
+                </div>
+                <div className="recommend-item">
+                    <div className="imgbox">
+                        <div className="tip">
+                            <span>100万</span>
+                            <i className="iconfont icon-erjiheadphones38"></i>
+                        </div>
+                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <p>编辑推荐，赴约一场冷酷约会</p>
+                    </div>
+                    <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
             </div>
         </div>
