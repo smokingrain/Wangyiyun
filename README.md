@@ -15,6 +15,13 @@
 - [x] 音频播放的两种实现方式 html5 audio标签   或者是AudioContext自行截取播放(对音频研究比较深的人适合)
 
 
+# Point
+- [x] 保证store的唯一性  使用了electron-restore依赖库
+- []  发现他有的是兼顾了透明和显示完全  那应该不是用opacity
+
+
+
+
 # source from web
 - [x] flexbox布局 http://www.w3cplus.com/css3/css3-flexbox-layout.html  存在兼容性问题 慎用
 - [x] 图标素材来源   http://iconfont.cn/  牛逼的阿里爸爸
@@ -30,7 +37,14 @@
 - [x] 拆分完成进度条组件  bootstrap and flatui has it,but it's too heavy
 - [x] 主面板值发现音乐模块的ui
 - [x] 完成轮播组件
-- [x] 完成推荐歌单列表UI 16-7-4
+
+
+# Declaraction 
+- [x] 此项目从UI风格上模仿网易云  并未抄袭  况且抄不到  打包加密混淆估计它都用了  
+- [x] 数据获取网易云进行了加密,获取不到  我是借用酷我音乐的api  酷我万岁
+- [x] 图片素材来自于阿里巴巴  开放且高质量
+
+
 
 
 # Author

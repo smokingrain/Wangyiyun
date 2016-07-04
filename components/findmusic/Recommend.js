@@ -19,14 +19,25 @@ export default class Recommend extends Component {
     $(document).ready(function () {
         //加载好时纠正长宽比
         $('.imgbox').each(function () {
-            let width = $(this).width()
-            $(this).height(width)
+            if($(this).hasClass('recom-flag')){
+                let width = $(this).width()
+                $(this).height(width)
+            }else if($(this).hasClass('dujia-flag') || $(this).hasClass('mv-flag')){
+                let width = $(this).width()
+                $(this).height(width*7/12)
+            }
+
         })
         $(window).on('resize', function(){
             // player.changeIndex()
             $('.imgbox').each(function () {
-                let width = $(this).width()
-                $(this).height(width)
+                if($(this).hasClass('recom-flag')){
+                    let width = $(this).width()
+                    $(this).height(width)
+                }else if($(this).hasClass('dujia-flag') || $(this).hasClass('mv-flag')){
+                    let width = $(this).width()
+                    $(this).height(width*7/12)
+                }
             })
         })
 
@@ -225,21 +236,21 @@ export default class Recommend extends Component {
             {
                 xx.map(function (item, index) {
                      return(
-                        <li className={cx([{"choosed":picIndex == index}])} key={index}><div className="" index={index} onClick={() => {self.changeIndex(index)}}></div></li>
+                        <li className={cx([{"choosed":picIndex == index}])} key={index}><div className="" index={index} onClick={() => {self.changeIndex(index)}} onMouseOver={() => {self.changeIndex(index)}}></div></li>
                     )
                 })
             }
             </ul>
           </div>
         </div>
-        <div className="recommend-nav">
+        <div className="nav-block recommend-nav">
             <div className="title">
                 <p>推荐歌单</p>
                 <a><i className="iconfont icon-right2"></i><span>更多</span></a>
             </div>
             <div className="list-box list-box-1">
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -250,7 +261,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -261,7 +272,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -272,7 +283,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -283,7 +294,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -296,7 +307,7 @@ export default class Recommend extends Component {
             </div>
             <div className="list-box list-box-2">
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -307,7 +318,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -318,7 +329,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -329,7 +340,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -340,7 +351,7 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
                 <div className="recommend-item">
-                    <div className="imgbox">
+                    <div className="imgbox recom-flag">
                         <div className="tip">
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
@@ -351,6 +362,265 @@ export default class Recommend extends Component {
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
                 </div>
             </div>
+        </div>
+        <div className="nav-block dujia-nav">
+            <div className="title">
+                <p>独家放送</p>
+                <a><i className="iconfont icon-right2"></i><span>更多</span></a>
+            </div>
+            <div className="list-box">
+                <div className="list-item">
+                    <div className="imgbox dujia-flag">
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
+                </div>
+                <div className="list-item">
+                    <div className="imgbox dujia-flag">
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
+                </div>
+                <div className="list-item">
+                    <div className="imgbox dujia-flag">
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
+                </div>
+            </div>
+        </div>
+        <div className="nav-block newmusic-nav">
+            <div className="title">
+                <p>最新音乐</p>
+                <a><i className="iconfont icon-right2"></i><span>更多</span></a>
+            </div>
+            <ul className="list-box">
+                <li className="list-item odd">
+                    <p className="number-index">01</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item odd">
+                    <p className="number-index">02</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item even">
+                    <p className="number-index">03</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item even">
+                    <p className="number-index">04</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item odd">
+                    <p className="number-index">05</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item odd">
+                    <p className="number-index">06</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item even">
+                    <p className="number-index">07</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item even">
+                    <p className="number-index">08</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item odd">
+                    <p className="number-index">09</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+                <li className="list-item odd">
+                    <p className="number-index">10</p>
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">BewhY</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div className="nav-block recomMV-nav">
+            <div className="title">
+                <p>推荐MV</p>
+                <a><i className="iconfont icon-right2"></i><span>更多</span></a>
+            </div>
+            <div className="list-box">
+                <div className="list-item">
+                    <div className="imgbox mv-flag">
+                        <div className="tip">
+                            <span>34332</span>
+                            <i className="iconfont icon-shipin"></i>
+                        </div>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">天堂边缘</p>
+                    <span className="songername">胡歌</span>
+                </div>
+                <div className="list-item">
+                    <div className="imgbox mv-flag">
+                        <div className="tip">
+                            <span>34332</span>
+                            <i className="iconfont icon-shipin"></i>
+                        </div>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">天堂边缘</p>
+                    <span className="songername">胡歌</span>
+                </div>
+                <div className="list-item">
+                    <div className="imgbox mv-flag">
+                        <div className="tip">
+                            <span>34332</span>
+                            <i className="iconfont icon-shipin"></i>
+                        </div>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <p className="miaoshu">天堂边缘</p>
+                    <span className="songername">胡歌</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div className="nav-block diantai-nav">
+            <div className="title">
+                <p>主播电台</p>
+                <a><i className="iconfont icon-right2"></i><span>更多</span></a>
+            </div>
+            <div className="list-box">
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+                <li className="list-item">
+                    <div className="pic-box">
+                        <i className="iconfont icon-play"></i>
+                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                    </div>
+                    <div className="detail">
+                        <p className="songname">Forevet (Prod by GRAY)</p>
+                        <p className="authorname">周杰伦</p>
+                    </div>
+                </li>
+            </div>
+        </div>
+        <div className="bottom-nav">
+            <p className="tip">可以根据个人喜好,对上述栏目进行拖拽排序</p>
+            <div><button>调整栏目顺序</button></div>
         </div>
       </div>
     )
