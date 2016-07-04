@@ -564,13 +564,16 @@
 			button{
 				height: 30px;
 				width: 120px;
-				line-height: 30px;
+				line-height: 26px;
 				text-align: center;
-				border: 1px solid #c13a36;
+				border: 2px solid #f33233;
 				background-color: #fff;
-				color: #c13a36;
+				color: #f33233;
 				border-radius: 5px;
 				cursor: pointer;
+			}
+			button:hover{
+				border-color:#d40708;
 			}
 		}
 	}

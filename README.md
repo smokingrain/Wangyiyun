@@ -17,7 +17,7 @@
 
 # Point
 - [x] 保证store的唯一性  使用了electron-restore依赖库
-- []  发现他有的是兼顾了透明和显示完全  那应该不是用opacity
+- [x]  发现他有的是兼顾了透明和显示完全  那应该不是用opacity
 
 
 
@@ -37,7 +37,8 @@
 - [x] 拆分完成进度条组件  bootstrap and flatui has it,but it's too heavy
 - [x] 主面板值发现音乐模块的ui
 - [x] 完成轮播组件
-
+- [ ] 播放列表控制
+- [ ] 前后翻页组件
 
 # Declaraction 
 - [x] 此项目从UI风格上模仿网易云  并未抄袭  况且抄不到  打包加密混淆估计它都用了  
