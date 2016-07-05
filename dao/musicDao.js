@@ -19,18 +19,18 @@ db.gedan = new nedb({
 })
 db.gedan.loadDatabase()
 
-
-const gedanDoc = {
-  hello: 'world'
+const item = {
+  heart:false,
+  download: false,
+  name:'PDD',
+  songer:'周杰伦',
+  cardName:'普苦情',
+  alltime:3602
 }
 
-
-db.gedan.insert(gedanDoc, function (err, newDoc) {
-
+db.gedan.insert(item, function (err, docData) {
+  
 })
 
-db.gedan.find({hello:'world'}, function (err, doc){
-  console.log(doc[0].hello)
-})
-
+export default db
 

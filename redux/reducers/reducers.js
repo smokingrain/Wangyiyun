@@ -21,7 +21,7 @@ let findmusicInit = conv.get()
 
 //music init
 let musicInit = {
-  showModule:'findmusic'
+  showModule:'gedan'
 }
 
 //

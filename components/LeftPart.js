@@ -5,6 +5,10 @@ import PlayingBlock from './PlayingBlock'
 import cs from 'classnames'
 import { dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
+import db from '../dao/musicDao' 
+
+
+
 
 @connect((state) => {
   return {
@@ -14,9 +18,20 @@ import { newMusic } from '../redux/actions/actions'
 export default class LeftPart extends Component {
   constructor(){
     super()
+    this.state = {
+      name:null
+    }
+  }
+  componentDidMount() {
+    const self = this
+    db.gedan.find({name:"PDD"}, function (err,data) {
+      console.log(data)
+      self.setState({name:data[0].songer})
+    })     
   }
   render(){
     const module = this.props.music.showModule
+    const name = this.state.name
     return (
       <div className="LeftPart">
         <p className="block-title">推荐</p>
@@ -67,15 +82,15 @@ export default class LeftPart extends Component {
         </ul>
         <p className="block-title">我的歌单</p>
         <ul className="mylist">
-          <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('lovemusic')}}>
+          <li className={cs(["item",{"choosed":module == 'xxx'}])} onClick={() => {this.showModule('gedan')}}>
             <div className="choseflag"></div>
             <i className="iconfont icon-xin"></i>
             <p>我最最喜欢的音乐</p>
           </li>
-          <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('PDD')}}>
+          <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('gedan')}}>
             <div className="choseflag"></div>
             <i className="iconfont icon-yinle1"></i>
-            <p>PDD</p>
+            <p>{name}</p>
           </li>
         </ul>
         <PlayingBlock></PlayingBlock>

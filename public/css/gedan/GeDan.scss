@@ -1,4 +1,5 @@
 .gedan{
+  padding-top:20px;
   .nav-box{
     width:100%;
     height:100%;
@@ -32,6 +33,129 @@
           border-color:#d40708;
         }
       }
+    }
+  }
+
+
+  
+  .detail-nav{
+    >img{
+      display:block;
+      float:left;
+      width:200px;
+      height:200px;
+      border:2px solid #e4e4e4;
+    }
+    .information{
+      height:200px;
+      width:410px;
+      float:left;
+      margin-left:30px;
+      .first-box{
+        width:100%;
+        height:25px;
+        padding-top:3px;
+        >p,i{
+          height:22px;
+          text-align:center;
+        }
+        p.gedanflag{
+          float:left;
+          width:40px;
+          line-height:22px;
+          color: #fff;
+          font-size: 13px;
+          font-family: -webkit-body;
+          background-color:#c13a36;
+          border-radius:2px;
+        }
+        p.gedanName{
+          float: left;
+          width: 40px;
+          line-height: 22px;
+          font-size: 21px;
+          margin-left: 7px;
+        }
+        i{
+          display: inline-block;
+          float: left;
+          width: 16px;
+          line-height: 25px;
+          margin-left: 11px;
+          color: #a0a0a0;
+          font-size: 15px;
+          cursor:pointer;
+        }
+      }
+
+      .second-box{
+        width:100%;
+        height:30px;
+        margin-top:10px;
+        span{
+          display: inline-block;
+          float: left;
+          font-size: 13px;
+          line-height: 30px;
+          margin-left: 5px;
+          color: #848685;
+          height:30px;
+        }
+        span.date{
+          margin-left: 30px;
+          line-height: 30px;
+          font-size: 13px;
+        }
+        i{
+          height:30px;
+          width:30px;
+          display:inline-block;
+          float:left;
+          text-align: center;
+          line-height: 30px;
+          font-size: 21px;
+          background-color: #cccccc;
+          color:#fff;
+        }
+        p{
+          height: 30px;
+          line-height: 30px;
+          margin-left: 8px;
+          color: #5c5c5c;
+          font-family: -webkit-body;
+          font-size: 15px;
+          width: 121px;
+          float: left;
+        }
+        img{
+          border-radius:2px;
+          display:block;
+          float:left;
+          width:30px;
+          height:30px;
+        }
+      }
+
+
+      .third-box{
+        height:80px;
+        width:100%;
+        padding-top:25px;
+        padding-bottom:25px;
+        >div{
+          height:30px;
+          line-height:30px;
+          float:left;
+        }
+        >div.play{
+          width:140px;
+        }
+      }
+    }
+    .flag-box{
+      width:100px;
+      height:200px;
+      float:right;
     }
   }
 }
