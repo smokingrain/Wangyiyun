@@ -2,7 +2,8 @@
 
 import { 
   MUSIC,
-  FINDMUSIC
+  FINDMUSIC,
+  CONFIG
 } from './actionsTypes'
 
 
@@ -12,9 +13,20 @@ export function newMusic (music) {
     music: music
   }
 }
+
+
+
 export function findmusic (findmusic) {
   return {
     type: FINDMUSIC,
     findmusic: findmusic
+  }
+}
+
+
+export function newconfig (config) {
+  return {
+    type: CONFIG  ,
+    config: config
   }
 }

@@ -1,22 +1,16 @@
 import { 
   MUSIC,
-  FINDMUSIC
+  FINDMUSIC,
+  CONFIG
 } from '../actions/actionsTypes'
-import { skinConv } from '../../common/skin'
 import Immutable from 'immutable'
 import { conv } from '../../common/config' 
 
 
-let musicInit = {xxx:'xxx'}
 
 
-//users
-let userInit = conv.get('users')
-if(!userInit){
-  conv.set('users', {})
-  conv.save()
-  userInit = conv.get('users')
-}
+
+
 
 
 
@@ -25,8 +19,13 @@ let findmusicInit = {}
 
 
 
+//music init
+let musicInit = {
+  showModule:'findmusic'
+}
 
-
+//
+let configInit = {}
 
 
 export function music (state = musicInit, action) {
@@ -54,3 +53,12 @@ export function findmusic (state = findmusicInit, action) {
 
 
 
+export function config (state = configInit, action) {
+  switch (action.type) {
+    case CONFIG:
+      let nextState = Immutable.Map(state).merge(action.config).toJS()
+      return nextState
+    default :
+      return state
+  }
+}

@@ -3,16 +3,20 @@ import { render } from 'react-dom'
 import { connect } from 'react-redux'
 import PlayingBlock from './PlayingBlock'
 import cs from 'classnames'
+import { dispatch } from '../redux/store/renderStore'
+import { newMusic } from '../redux/actions/actions'
 
+@connect((state) => {
+  return {
+    music:state.music
+  }
+})
 export default class LeftPart extends Component {
   constructor(){
     super()
-    this.state = {
-      showModule: 'findmusic'
-    }
   }
   render(){
-    const module = this.state.showModule
+    const module = this.props.music.showModule
     return (
       <div className="LeftPart">
         <p className="block-title">推荐</p>
@@ -79,8 +83,9 @@ export default class LeftPart extends Component {
     )
   }
   showModule (module) {
-    console.log(module)
-    this.setState({showModule: module})
+    const music = this.props.music
+    music.showModule = module
+    dispatch(newMusic(music))
   }
 }
 

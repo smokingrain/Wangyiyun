@@ -19,8 +19,9 @@ export default class FindMusic extends Component {
     }
     render(){
         const showModule = this.state.showModule
+        const module = this.props.module
         return (
-        	<div className="content-box findmusic nodrag">
+        	<div className={cs(['content-box','findmusic','nodrag',{"hide": module!= 'findmusic'}])}>
         		<div className="top-nav">
         			<ul className="top-nav-box">
         				<li className={cs(['top-nav-item',{"choosed": showModule == 'recommend'}])} onClick={() => {this.showModule('recommend')}}>

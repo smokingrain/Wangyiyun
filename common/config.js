@@ -47,9 +47,9 @@ let config = function(){
   //方法到出部分
   const self = this
   _.each(['get','set','clear','save','add'],function(method){
-   self[method] = function(){
-     return nconf[method].apply(nconf,arguments)
-   }
+    self[method] = function(){
+      return nconf[method].apply(nconf,arguments)
+    }
   })
 
 }
