@@ -10,7 +10,7 @@ import Mv from './mv/Mv'
 import MySonger from './mysonger/MySonger'
 import SelfFM from './selfFM/SelfFM'
 import YunPan from './yunpan/YunPan'
-
+import '../dao/musicDao' 
 
 
 @connect((state) => {

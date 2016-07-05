@@ -1,29 +1,36 @@
-import { DB, DBPATH } from '../common/contants'
+import { GEDANDB, GEDANDBPATH } from '../common/contants'
 import path from 'path'
 import nedb from 'nedb'
 import fs from 'fs'
 
 
 
-const dbfile = DBPATH + path.sep + DB 
-if(!fs.existsSync(DBPATH)){
-  fs.mkdirSync(DBPATH)
+
+//歌单数据库
+const gedanFile = GEDANDBPATH + path.sep + GEDANDB
+if(!fs.existsSync(GEDANDBPATH)){
+  fs.mkdirSync(GEDANDBPATH)
 }
 
 
-
-const db = new nedb({
-  filename: dbfile
+let db = {}
+db.gedan = new nedb({
+  filename: gedanFile
 })
-db.loadDatabase(function (err){
-  
-})
+db.gedan.loadDatabase()
 
-let doc = {
-  hello:'hello',
-  n:5,
-  today:new Date()
+
+const gedanDoc = {
+  hello: 'world'
 }
 
+
+db.gedan.insert(gedanDoc, function (err, newDoc) {
+
+})
+
+db.gedan.find({hello:'world'}, function (err, doc){
+  console.log(doc[0].hello)
+})
 
 

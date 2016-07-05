@@ -6,7 +6,9 @@ const ROOT = path.resolve(__dirname, '../')
 const CONFIGPATH = path.resolve(__dirname, '../', 'config')
 const CONFIG = 'config.json'
 const LOGPATH = path.resolve(__dirname, '../', 'logs')
+const GEDANDBPATH = path.resolve(__dirname, '../', 'db')
 const MUSICDBPATH = path.resolve(__dirname, '../', 'db')
+const GEDANDB = 'gedanDB.db'
 const MUSICDB = 'musicDB.db'
 
 export { 
@@ -15,6 +17,8 @@ export {
 	CONFIG, 
 	LOGPATH,
 	MUSICDBPATH,
-	MUSICDB
+	MUSICDB,
+  GEDANDBPATH,
+  GEDANDB
 }
 

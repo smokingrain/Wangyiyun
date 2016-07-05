@@ -15,7 +15,7 @@ import { conv } from '../../common/config'
 
 
 //findmusic module
-let findmusicInit = {}
+let findmusicInit = conv.get()
 
 
 

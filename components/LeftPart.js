@@ -67,12 +67,12 @@ export default class LeftPart extends Component {
         </ul>
         <p className="block-title">我的歌单</p>
         <ul className="mylist">
-          <li className={cs(["item",{"choosed":module == 'lovemusic'}])} onClick={() => {this.showModule('lovemusic')}}>
+          <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('lovemusic')}}>
             <div className="choseflag"></div>
             <i className="iconfont icon-xin"></i>
             <p>我最最喜欢的音乐</p>
           </li>
-          <li className={cs(["item",{"choosed":module == 'PDD'}])} onClick={() => {this.showModule('PDD')}}>
+          <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('PDD')}}>
             <div className="choseflag"></div>
             <i className="iconfont icon-yinle1"></i>
             <p>PDD</p>
