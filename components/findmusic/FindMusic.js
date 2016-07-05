@@ -7,42 +7,43 @@ import SongEr from './SongEr'
 import NewMusic from './NewMusic'
 import DianTai from './DianTai'
 import PaiHang from './PaiHang'
+import cs from 'classnames'
 
 
 export default class FindMusic extends Component {
     constructor () {
         super()
         this.state = {
-            showModule: 'songlist'
+            showModule: 'recommend'
         }
     }
     render(){
         const showModule = this.state.showModule
         return (
-        	<div className="content-box findmusic">
+        	<div className="content-box findmusic nodrag">
         		<div className="top-nav">
         			<ul className="top-nav-box">
-        				<li className="top-nav-item choosed">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'recommend'}])} onClick={() => {this.showModule('recommend')}}>
         					<a className="title">个性推荐</a>
         					<div className="flag"></div>
         				</li>    				
-        				<li className="top-nav-item">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'songlist'}])} onClick={() => {this.showModule('songlist')}}>
         					<a className="title">歌单</a>
         					<div className="flag"></div>
         				</li>    				
-        				<li className="top-nav-item">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'paihang'}])} onClick={() => {this.showModule('paihang')}}>
         					<a className="title">主播电台</a>
         					<div className="flag"></div>
         				</li>    				
-        				<li className="top-nav-item">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'diantai'}])} onClick={() => {this.showModule('diantai')}}>
         					<a className="title">排行榜</a>
         					<div className="flag"></div>
         				</li>    				
-        				<li className="top-nav-item">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'newmusic'}])} onClick={() => {this.showModule('newmusic')}}>
         					<a className="title">歌手</a>
         					<div className="flag"></div>
         				</li>
-        				<li className="top-nav-item">
+        				<li className={cs(['top-nav-item',{"choosed": showModule == 'songer'}])} onClick={() => {this.showModule('songer')}}>
         					<a className="title">最新音乐</a>
         					<div className="flag"></div>
         				</li>
@@ -55,19 +56,23 @@ export default class FindMusic extends Component {
                     showModule == 'songlist' && (<SongList></SongList>)
                 }
                 {
-                    showModule == 'songlist' && (<PaiHang></PaiHang>)
+                    showModule == 'paihang' && (<PaiHang></PaiHang>)
                 }
                 {
-                    showModule == 'DianTai' && (<DianTai></DianTai>)
+                    showModule == 'diantai' && (<DianTai></DianTai>)
                 }
                 {
-                    showModule == 'songlist' && (<NewMusic></NewMusic>)
+                    showModule == 'newmusic' && (<NewMusic></NewMusic>)
                 }
                 {
-                    showModule == 'songlist' && (<SongEr></SongEr>)
+                    showModule == 'songer' && (<SongEr></SongEr>)
                 }
         	</div>
         )
+    }
+    showModule (module) {
+        this.setState({showModule: module})
+        console.log('gei in')
     }
 }
 
