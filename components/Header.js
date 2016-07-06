@@ -23,7 +23,7 @@ export default class Header extends Component {
           </div>
           <div className="search">
             <input className="searchInput" type="text"/>
-            <i className="iconfont icon-sousuo1"></i>
+            <i className="iconfont icon-sousuo"></i>
           </div>
         </div>
         <div className="right">
