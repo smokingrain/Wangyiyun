@@ -391,6 +391,7 @@
         width:180px;
         float:right;
         height:28px;
+        position:relative;
         input{
           width: 170px;
           margin-left: 4px;
@@ -400,12 +401,218 @@
           line-height: 25px;
           height: 25px;
           background-color: #fafafa;
+          padding-right:20px;
+        }
+        i{
+          display:inline-block;
+          position:absolute;
+          width:32px;
+          height:32px;
+          line-height:32px;
+          text-align:center;
+          top:-5px;
+          left:145px;
+          color:#8e8e8e;
         }
       }
       >div.choosed{
         background-color:#c13a36;
         color:#fff;
         border-color:#c13a36;
+      }
+    }
+
+    .list-block{
+      width:100%;
+      dd{
+        font-family:-webkit-body;
+        font-size:13px;
+      }
+      .list{
+        dd{
+          span{
+            font-size:13px;
+            font-family: -webkit-body;
+            color:#666666;
+          }
+        }
+      }
+      .list{
+        dd{
+         color:#666666; 
+        }
+      }
+      .list:hover{
+        dd{
+          span{
+            color:#333333;
+          }
+        }
+      }
+      .list:hover{
+        background-color:#ebeced;
+      }
+      .list{
+        dd.title,dd.songer,dd.zhuanji{
+          span:hover{
+            color:#111111;
+          }
+        }
+      }
+      .list.choosed{
+        dd{
+          span{
+            color:#0c0c0c;
+          }
+        }
+      }
+      .list{
+        dd.title,dd.songer,dd.zhuanji{
+          span{
+            cursor:pointer;
+          }
+        }
+      }
+      .list-top{
+        height:25px;
+        display:flex;
+        flex-flow:row;
+        dd.number{
+          padding-left:5px;
+          width:50px;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          text-align:center;
+          color:#646464;
+        }
+        dd.op{
+          padding-left:5px;
+          width:60px;
+          height:26px;
+          text-align:center;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.title{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.songer{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.zhuanji{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.time{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          color:#646464;
+        }
+      }
+
+
+      .list-item{
+        height:25px;
+        display:flex;
+        flex-flow:row;
+        dd.number{
+          padding-left:5px;
+          width:50px;
+          height:25px;
+          line-height:25px;
+          text-align:center;
+        }
+        dd.op{
+          width:60px;
+          height:25px;
+          line-height:25px;
+          padding-left:6px;
+          i{
+            cursor:pointer;
+            display:inline-block;
+            text-align:center;
+            line-height:25px;
+            width:24px;
+            height:25px;
+            float:left;
+            font-size:13px;
+          }
+          i.icon-iconfontgou{
+            color:#3d9dcf;
+          }
+          i.icon-xin1{
+            color:#b82422;
+          }
+          i.icon-xin1:hover{
+            color:#c13a36;
+          }
+          i.icon-xin:hover{
+            color:#111111;
+          }
+          i.xiazai{
+            line-height:22px;
+          }
+        }
+        dd.title{
+          flex:1;
+          padding-left:5px;
+          height:25px;
+          line-height:25px;
+        }
+        dd.songer{
+          padding-left:5px;
+          flex:1;
+          height:25px;
+          line-height:25px;
+        }
+        dd.zhuanji{
+          padding-left:5px;
+          flex:1;
+          height:25px;
+          line-height:25px;
+        }
+        dd.time{
+          flex:1;
+          padding-left:5px;
+          height:25px;
+          line-height:25px;
+        }
+      }
+      .odd{
+        background-color:#fafafa;
+      }
+      .even{
+        background-color:#f5f5f7;
+      }
+      .choosed{
+        background-color:#e3e3e5;
+        dd{
+          color:#0c0c0c;
+        }
       }
     }
   }

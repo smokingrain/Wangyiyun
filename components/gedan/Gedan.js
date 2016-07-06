@@ -79,12 +79,74 @@ export default class Gedan extends Component {
                     <div className="discuss-li notchoosed li">评论(0)</div>
                     <div className="collect-li notchoosed li">收藏者</div>
                     <div className="search-li">
-                        <input type="text"/>
+                        <i className="iconfont icon-sousuo"></i>
+                        <input type="text" placeholder="搜索歌单音乐"/>
                     </div>
                 </div>
                 <div className="list-block">
-                    <div className="list-top"></div>
-                    <div className="list-item"></div>
+                    <dl className="list-top">
+                        <dd className="number">序号</dd>
+                        <dd className="op">操作</dd>
+                        <dd className="title">音乐标题</dd>
+                        <dd className="songer">歌手</dd>
+                        <dd className="zhuanji">专辑</dd>
+                        <dd className="time">时间</dd>
+                    </dl>
+                    <dl className="list list-item odd">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="op">
+                            <i className="iconfont icon-xin"></i>
+                            <i className="iconfont icon-iconfontgou"></i>
+                        </dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                    </dl>
+                    <dl className="list list-item even">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="op">
+                            <i className="iconfont icon-xin1"></i>
+                            <i className="iconfont icon-xiazai"></i>
+                        </dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                       <dd className="songer"><span>周杰伦</span></dd>
+                       <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                       <dd className="time"><span>00:00</span></dd>
+                    </dl>
+                    <dl className="list list-item odd">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="op">
+                            <i className="iconfont icon-xin"></i>
+                            <i className="iconfont icon-iconfontgou"></i>
+                        </dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                    </dl>
+                    <dl className="list list-item even">
+                       <dd className="number"><span>01</span></dd>
+                       <dd className="op">
+                           <i className="iconfont icon-xin"></i>
+                           <i className="iconfont icon-iconfontgou"></i>
+                       </dd>
+                       <dd className="title"><span>天使的翅膀</span></dd>
+                       <dd className="songer"><span>周杰伦</span></dd>
+                       <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                       <dd className="time"><span>00:00</span></dd>
+                    </dl>
+                    <dl className="list list-item odd choosed">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="op">
+                            <i className="iconfont icon-xin"></i>
+                            <i className="iconfont icon-iconfontgou"></i>
+                        </dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                    </dl>
                 </div>
             </div>
           </div>
