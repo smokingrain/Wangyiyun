@@ -2,7 +2,7 @@ import { yinpin } from './data'
 import path from 'path'
 import _ from 'lodash'
 import async from 'async'
-
+import { insertLocalMusicByClick } from '../dao/api'
 
 
 
@@ -71,6 +71,7 @@ export function uploadFiles(fileArr, infoArr){
     _.each(infoArr, function (item, index) {
       item.fileTime = arr[index]
     })
+    insertLocalMusicByClick(infoArr)
     return infoArr
   })
   // _.each(fileArr, (item) => {

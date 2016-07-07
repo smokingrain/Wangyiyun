@@ -24,9 +24,9 @@ export default class LeftPart extends Component {
   }
   componentDidMount() {
     const self = this
-    db.gedan.find({name:"PDD"}, function (err,data) {
-      self.setState({name:data[0].songer})
-    })     
+    // db.gedan.find({name:"PDD"}, function (err,data) {
+    //   self.setState({name:data[0].songer})
+    // })     
   }
   render(){
     const module = this.props.music.showModule
@@ -89,7 +89,7 @@ export default class LeftPart extends Component {
           <li className={cs(["item",{"choosed":module == 'gedan'}])} onClick={() => {this.showModule('gedan')}}>
             <div className="choseflag"></div>
             <i className="iconfont icon-yinle1"></i>
-            <p>{name}</p>
+            <p></p>
           </li>
         </ul>
         <PlayingBlock></PlayingBlock>

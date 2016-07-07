@@ -18,7 +18,8 @@ import { local } from '../../dao/musicDao'
 
 @connect((state) => {
   return {
-    message:state.message
+    message:state.message,
+    music: state.music
   }
 })
 export default class LocalMusic extends Component {
@@ -27,6 +28,8 @@ export default class LocalMusic extends Component {
     }
     render(){
         const module = this.props.module
+        const localmusic = this.props.music.localmusic
+        console.log(localmusic)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">
@@ -64,6 +67,21 @@ export default class LocalMusic extends Component {
                         <dd className="time">时长</dd>
                         <dd className="size">大小</dd>
                     </dl>
+                    {
+                        localmusic && localmusic.map(function (item,index) {
+
+                            return(
+                                <dl className="list list-item odd">
+                                    <dd className="number"><span>{index+1}</span></dd>
+                                    <dd className="title"><span>{item.fileName}</span></dd>
+                                    <dd className="songer"><span>周杰伦</span></dd>
+                                    <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                                    <dd className="time"><span>{item.fileTime}</span></dd>
+                                    <dd className="size"><span>3.5MB</span></dd>
+                                </dl>
+                            )
+                        })
+                    }
                     <dl className="list list-item odd">
                         <dd className="number"><span>01</span></dd>
                         <dd className="title"><span>天使的翅膀</span></dd>
