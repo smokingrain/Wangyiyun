@@ -22,7 +22,23 @@ export default class LocalMusic extends Component {
             </div>
             <div className="nav-box local-music-list nodrag">
                 <div className="musiclist-nav">
-                    <div className=""></div>
+                    <div className="opera">
+                        <div className="play">
+                            <div className="">
+                                <i className="iconfont icon-bofang"></i>
+                                <p>播放全部</p>
+                            </div>
+                            <i className="iconfont icon-jia"></i>
+                        </div>
+                        <div className="add">
+                            <label>
+                                <i className="iconfont icon-yinle"></i>
+                                <p>添加音乐</p>
+                                <input type="file" hidden onChange={(e) => {this.upLoadLocalMusic(e)}}/>
+                            </label>
+                        </div>
+                        <div className="search"></div>
+                    </div>
                     <dl className="list-top">
                         <dd className="number">序号</dd>
                         <dd className="title">音乐标题</dd>
@@ -89,6 +105,10 @@ export default class LocalMusic extends Component {
             </div>
           </div>
         )
+    }
+    upLoadLocalMusic(e){
+        const files = e.target.file
+        console.log(files.length)
     }
 }
 

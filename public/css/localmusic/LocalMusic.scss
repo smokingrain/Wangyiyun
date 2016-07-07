@@ -39,6 +39,105 @@
     width:100%;
     height:100%;
     .musiclist-nav{
+      .opera{
+        height:70px;
+        width:100%;
+        padding-top:20px;
+        padding-bottom:20px;
+        >div{
+          height:30px;
+          line-height:30px;
+          float:left;
+          border:1px solid #e0e0e0;
+          border-radius:5px;
+          color:#323232;
+        }
+        >div.search{
+          float:right;
+        }
+        >div{
+          height:30px;
+          line-height:30px;
+          float:left;
+          border:1px solid #e0e0e0;
+          border-radius:5px;
+          color:#323232;
+        }
+        >div.play{
+          width:120px;
+          >div{
+            cursor:pointer;
+            width:86px;
+            border-right:1px solid #e0e0e0;
+            float:left;
+            i{
+              width: 26px;
+              height: 30px;
+              text-align: center;
+              line-height: 27px;
+              color: #c13a36;
+              float: left;
+            }
+            p{
+              width:53px;
+              height:30px;
+              text-align:center;
+              line-height:30px;
+              font-size:13px;
+              color:#323232;
+              float:left;
+              font-family: -webkit-body;
+            }
+          }
+          >div:hover{
+            background-color:#f4f5f7;
+          }
+          >i{
+            cursor:pointer;
+            display:inline-block;
+            float:left;
+            text-align:center;
+            line-height:29px;
+            color:#323232;
+          }
+          >i{
+            width:32px;
+            line-height:26px;
+            height:30px;
+          }
+          >i.icon-jia{
+            float:left;
+          }
+          >i.icon-jia:hover{
+            background-color:#f4f5f7;
+          }
+        }
+        div.add{
+          width:100px;
+          margin-left:10px;
+          cursor:pointer;
+          cursor:pointer;
+          i{
+            display:inline-block;
+            text-align:center;
+            line-height:27px;
+            float:left;
+            color:#323232;
+            width:30px;
+          }
+          p{
+            width:65px;
+            height:30px;
+            line-height:30px;
+            font-size:13px;
+            font-family: -webkit-body;
+            float:left;
+          }
+        }
+        div.add:hover{
+          background-color:#f4f5f7;
+        }
+      }
       .list-top{
         height:25px;
         display:flex;
@@ -53,6 +152,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           border-right:1px solid #e0e0e0;
+          border-top:1px solid #e0e0e0;
           text-align:center;
           color:#646464;
         }
@@ -63,6 +163,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           border-right:1px solid #e0e0e0;
+          border-top:1px solid #e0e0e0;
           color:#646464;
         }
         dd.songer{
@@ -72,6 +173,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           border-right:1px solid #e0e0e0;
+          border-top:1px solid #e0e0e0;
           color:#646464;
         }
         dd.zhuanji{
@@ -81,6 +183,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           border-right:1px solid #e0e0e0;
+          border-top:1px solid #e0e0e0;
           color:#646464;
         }
         dd.time{
@@ -90,6 +193,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           border-right:1px solid #e0e0e0;
+          border-top:1px solid #e0e0e0;
           color:#646464;
         }
         dd.size{
@@ -100,6 +204,7 @@
           line-height:25px;
           border-bottom:1px solid #e0e0e0;
           color:#646464;
+          border-top:1px solid #e0e0e0;
         }
       }
 
