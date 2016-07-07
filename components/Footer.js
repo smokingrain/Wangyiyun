@@ -10,7 +10,7 @@ export default class Footer extends Component {
       <div className="Footer nodrag">
         <div className="song-opera">
           <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
-          <div className="bofang"><i className="iconfont icon-bofang"></i></div>
+          <div className="bofang"><i className="iconfont icon-bofang1"></i></div>
           <div className="zanting hide"><i className="iconfont icon-zanting1"></i></div>
           <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
         </div>

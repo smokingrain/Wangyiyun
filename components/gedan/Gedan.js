@@ -96,7 +96,7 @@ export default class Gedan extends Component {
                         <dd className="number"><span>01</span></dd>
                         <dd className="op">
                             <i className="iconfont icon-xin"></i>
-                            <i className="iconfont icon-iconfontgou"></i>
+                            <i className="iconfont icon-gou"></i>
                         </dd>
                         <dd className="title"><span>天使的翅膀</span></dd>
                         <dd className="songer"><span>周杰伦</span></dd>
@@ -118,7 +118,7 @@ export default class Gedan extends Component {
                         <dd className="number"><span>01</span></dd>
                         <dd className="op">
                             <i className="iconfont icon-xin"></i>
-                            <i className="iconfont icon-iconfontgou"></i>
+                            <i className="iconfont icon-gou"></i>
                         </dd>
                         <dd className="title"><span>天使的翅膀</span></dd>
                         <dd className="songer"><span>周杰伦</span></dd>
@@ -129,7 +129,7 @@ export default class Gedan extends Component {
                        <dd className="number"><span>01</span></dd>
                        <dd className="op">
                            <i className="iconfont icon-xin"></i>
-                           <i className="iconfont icon-iconfontgou"></i>
+                           <i className="iconfont icon-gou"></i>
                        </dd>
                        <dd className="title"><span>天使的翅膀</span></dd>
                        <dd className="songer"><span>周杰伦</span></dd>
@@ -140,7 +140,7 @@ export default class Gedan extends Component {
                         <dd className="number"><span>01</span></dd>
                         <dd className="op">
                             <i className="iconfont icon-xin"></i>
-                            <i className="iconfont icon-iconfontgou"></i>
+                            <i className="iconfont icon-gou"></i>
                         </dd>
                         <dd className="title"><span>天使的翅膀</span></dd>
                         <dd className="songer"><span>周杰伦</span></dd>

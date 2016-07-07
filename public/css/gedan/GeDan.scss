@@ -402,6 +402,8 @@
           height: 25px;
           background-color: #fafafa;
           padding-right:20px;
+          font-size:13px;
+          font-family:-webkit-body;
         }
         i{
           display:inline-block;
@@ -478,7 +480,6 @@
         display:flex;
         flex-flow:row;
         dd.number{
-          padding-left:5px;
           width:50px;
           height:26px;
           line-height:25px;
@@ -561,7 +562,7 @@
             float:left;
             font-size:13px;
           }
-          i.icon-iconfontgou{
+          i.icon-gou{
             color:#3d9dcf;
           }
           i.icon-xin1{
@@ -575,6 +576,9 @@
           }
           i.xiazai{
             line-height:22px;
+          }
+          i.xin:hover{
+            color:#000;
           }
         }
         dd.title{

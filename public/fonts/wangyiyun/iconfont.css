@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1467817568'); /* IE9*/
-  src: url('iconfont.eot?t=1467817568#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1467817568') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1467817568') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1467817568#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1467855591'); /* IE9*/
+  src: url('iconfont.eot?t=1467855591#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1467855591') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1467855591') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1467855591#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -16,6 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-bofang:before { content: "\e60d"; }
+.icon-bofang1:before { content: "\e614"; }
 .icon-play:before { content: "\e606"; }
 .icon-right:before { content: "\e604"; }
 .icon-xin:before { content: "\e610"; }

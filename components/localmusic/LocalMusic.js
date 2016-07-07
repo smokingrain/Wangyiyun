@@ -12,7 +12,76 @@ export default class LocalMusic extends Component {
         const module = this.props.module
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
-            <div className="nav-box nodrag">
+            <div className="top-nav">
+                <div className="left">
+                    <p className="local">本地音乐</p>
+                    <p className="number">11首音乐</p>
+                    <a className="choosedir">选择目录</a>
+                </div>
+                <div className="right"></div>
+            </div>
+            <div className="nav-box local-music-list nodrag">
+                <div className="musiclist-nav">
+                    <div className=""></div>
+                    <dl className="list-top">
+                        <dd className="number">序号</dd>
+                        <dd className="title">音乐标题</dd>
+                        <dd className="songer">歌手</dd>
+                        <dd className="zhuanji">专辑</dd>
+                        <dd className="time">时长</dd>
+                        <dd className="size">大小</dd>
+                    </dl>
+                    <dl className="list list-item odd">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                    <dl className="list list-item even">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                    <dl className="list list-item odd">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                    <dl className="list list-item even">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                    <dl className="list list-item odd">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                    <dl className="list list-item even choosed">
+                        <dd className="number"><span>01</span></dd>
+                        <dd className="title"><span>天使的翅膀</span></dd>
+                        <dd className="songer"><span>周杰伦</span></dd>
+                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
+                        <dd className="time"><span>00:00</span></dd>
+                        <dd className="size"><span>3.5MB</span></dd>
+                    </dl>
+                </div>                
+
+
                 <div className="bottom-nav">
                     <p className="tip">正在完善所有功能,敬请期待</p>
                     <div><button>localmusic</button></div>

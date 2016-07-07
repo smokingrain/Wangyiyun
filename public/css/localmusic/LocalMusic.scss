@@ -1,7 +1,208 @@
 .localmusic{
+  padding-top:30px;
+  .top-nav{
+    width:100%;
+    height:30px;
+    border-bottom:1px solid #e0e0e0;
+    .left{
+      float:left;
+      width:220px;
+      height:100%;
+      p{
+        display:inline-block;
+        text-align:center;
+        line-height:30px;
+        font-family:-webkit-body;
+      }
+      p.number{
+        font-size:13px;
+        margin-left:8px;
+      }
+      a{
+        font-family: -webkit-body;
+        margin-left:8px;
+        font-size:13px;
+        line-height:30px;
+        text-align:center;
+        display:inline-block;
+        color:#0c73c2;
+        cursor:pointer;
+      }
+    }
+    .right{
+      width:100px;
+      height:30px;
+      float:right;
+    }
+  }
   .nav-box{
     width:100%;
     height:100%;
+    .musiclist-nav{
+      .list-top{
+        height:25px;
+        display:flex;
+        flex-flow:row;
+        dd{
+          font-size:13px;
+          font-family: -webkit-body;
+        }
+        dd.number{
+          width:50px;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          text-align:center;
+          color:#646464;
+        }
+        dd.title{
+          padding-left:5px;
+          flex:2;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.songer{
+          padding-left:5px;
+          flex:2;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.zhuanji{
+          padding-left:5px;
+          flex:2;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.time{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          border-right:1px solid #e0e0e0;
+          color:#646464;
+        }
+        dd.size{
+          padding-left:5px;
+          flex:1;
+          height:26px;
+          text-align:center;
+          line-height:25px;
+          border-bottom:1px solid #e0e0e0;
+          color:#646464;
+        }
+      }
+
+      .list{
+        dd{
+          span{
+            font-size:13px;
+            font-family: -webkit-body;
+            color:#666666;
+          }
+        }
+      }
+      .list{
+        dd{
+         color:#666666; 
+        }
+      }
+      .list:hover{
+        dd{
+          span{
+            color:#333333;
+          }
+        }
+      }
+      .list:hover{
+        background-color:#ebeced;
+      }
+      .list{
+        dd.title,dd.songer,dd.zhuanji{
+          span:hover{
+            color:#111111;
+          }
+        }
+      }
+      .list.choosed{
+        dd{
+          span{
+            color:#0c0c0c;
+          }
+        }
+      }
+      .list{
+        dd.title,dd.songer,dd.zhuanji{
+          span{
+            cursor:pointer;
+          }
+        }
+      }
+      .list-item{
+        height:25px;
+        display:flex;
+        flex-flow:row;
+        dd.number{
+          padding-left:5px;
+          width:50px;
+          height:25px;
+          line-height:25px;
+          text-align:center;
+        }
+        dd.title{
+          flex:2;
+          padding-left:5px;
+          height:25px;
+          line-height:25px;
+        }
+        dd.songer{
+          padding-left:5px;
+          flex:2;
+          height:25px;
+          line-height:25px;
+        }
+        dd.zhuanji{
+          padding-left:5px;
+          flex:2;
+          height:25px;
+          line-height:25px;
+        }
+        dd.time{
+          flex:1;
+          padding-left:5px;
+          height:25px;
+          line-height:25px;
+        }
+        dd.size{
+          flex:1;
+          height:25px;
+          line-height:25px;
+          padding-left:6px;
+        }
+      }
+      .odd{
+        background-color:#fafafa;
+      }
+      .even{
+        background-color:#f5f5f7;
+      }
+      .choosed{
+        background-color:#e3e3e5;
+        dd{
+          color:#0c0c0c;
+        }
+      }
+    }
     .bottom-nav{
       width:100%;
       margin-top:20px;
