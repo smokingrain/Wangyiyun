@@ -1,4 +1,4 @@
-import { GEDANDB, GEDANDBPATH } from '../common/contants'
+import { GEDANDB, DBPATH, LOCALMUSICDB } from '../common/contants'
 import path from 'path'
 import nedb from 'nedb'
 import fs from 'fs'
@@ -7,9 +7,10 @@ import fs from 'fs'
 
 
 //歌单数据库
-const gedanFile = GEDANDBPATH + path.sep + GEDANDB
-if(!fs.existsSync(GEDANDBPATH)){
-  fs.mkdirSync(GEDANDBPATH)
+const gedanFile = DBPATH + path.sep + GEDANDB
+const localfile = DBPATH + path.sep + LOCALMUSICDB
+if(!fs.existsSync(DBPATH)){
+  fs.mkdirSync(DBPATH)
 }
 
 
@@ -27,10 +28,14 @@ const item = {
   cardName:'普苦情',
   alltime:3602
 }
-
-db.gedan.insert(item, function (err, docData) {
-  
+db.local = new nedb({
+  filename: localfile
 })
+
+db.local.loadDatabase()
+// db.gedan.insert(item, function (err, docData) {
+  
+// })
 
 export default db
 

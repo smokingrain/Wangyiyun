@@ -2,8 +2,25 @@ import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
 import cs from 'classnames'
+import _ from 'lodash'
+import path from 'path'
+import fs from 'fs'
+import $ from 'jquery'
+import ep from 'eventproxy'
+import { dispatch } from '../../redux/store/renderStore'
+import { newMessage } from '../../redux/actions/actions'
+import { isMP3, fileDetail, uploadFiles } from '../../common/util'
+import { local } from '../../dao/musicDao'
 
 
+
+
+
+@connect((state) => {
+  return {
+    message:state.message
+  }
+})
 export default class LocalMusic extends Component {
     constructor () {
         super()
@@ -34,7 +51,7 @@ export default class LocalMusic extends Component {
                             <label>
                                 <i className="iconfont icon-yinle"></i>
                                 <p>添加音乐</p>
-                                <input type="file" hidden onChange={(e) => {this.upLoadLocalMusic(e)}}/>
+                                <input type="file" multiple hidden onChange={(e) => {this.upLoadLocalMusic(e)}}/>
                             </label>
                         </div>
                         <div className="search"></div>
@@ -107,8 +124,50 @@ export default class LocalMusic extends Component {
         )
     }
     upLoadLocalMusic(e){
-        const files = e.target.file
-        console.log(files.length)
+        const message = this.props.message
+        const notify = message.notify
+        let tip = {}
+        // let tip = {
+        //     type: 'jinggao',
+        //     message: "您上传的文件不是音乐文件"
+        // }
+        // message.showMask = true
+        // notify.tip = tip
+        // dispatch(newMessage(message))
+        const files = e.target.files
+        let error = false
+        let successArr = []
+        _.each(files, (item) => {
+            if(!isMP3(path.extname(item.name).substring(1))){
+                error = true
+                return
+            }else{
+                successArr.push(item)
+            }
+
+        })
+        if(error && files.length == 1){
+            tip.type="jinggao"
+            tip.message = "您加载的本地文件不是音频文件"
+        }else if(error && files.length>1){
+            tip.type = "jinggao"
+            tip.message = "您加载的本地文件中存在非音频文件"
+        }
+        if(error && tip){
+            message.notify.tip = tip
+            message.showMask = true
+            dispatch(newMessage(message))
+        }
+        console.log(successArr)
+        if(successArr.length<=1){
+            uploadFiles(successArr)    
+        }
+        // let fileInfo = fileDetail(item)
+        // $('#audioBack').on('load', function () {
+        //     console.log('get in')
+        // })
+        // $('#audioBack').attr('src',item.path)
+
     }
 }
 

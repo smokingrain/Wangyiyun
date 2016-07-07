@@ -2,13 +2,15 @@ import { combineReducers } from 'redux'
 import { 
   music,
   findmusic,
-  config
+  config,
+  message
  } from './reducers'
 
 const rootReducer = combineReducers({
   music,
   findmusic,
-  config
+  config,
+  message
 })
 
 export default rootReducer

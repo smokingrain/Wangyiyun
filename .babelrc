@@ -1,5 +1,5 @@
 {
-  "presets": ["es2015", "react"],
+  "presets": ["es2015", "react", 'async-to-bluebird'],
   "plugins": [
     "transform-decorators-legacy"
   ]

@@ -19,6 +19,7 @@
 - [x] 保证store的唯一性  使用了electron-restore依赖库
 - [x] 发现他有的是兼顾了透明和显示完全  那应该不是用opacity
 - [x] 数据库用的nedb  查询结果为对象数组  在编码方便需要转换..
+- [x] 加载本地mp3时 audio.src = path  之后audio监听事件 loadedmetadata 此时可以通过audio.duration获取时间长度
 
 
 

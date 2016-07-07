@@ -2,7 +2,7 @@ export const main = {
   width:1050,
   height: 700,
   frame: false,
-  show: true,
+  show: false,
   minHeight:700, 
   minWidth:1050
 }

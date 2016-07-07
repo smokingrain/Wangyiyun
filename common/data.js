@@ -1,0 +1,1 @@
+export const yinpin = ['mp3', 'wma', 'rm', 'wav', 'midi']

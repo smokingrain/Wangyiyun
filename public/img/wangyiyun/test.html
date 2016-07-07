@@ -2,3 +2,12 @@
 
 <p style="color:red;">xxxx</p>
 
+<audio id="audio"></audio>
+<script type="text/javascript">
+  var audio = document.getElementById('audio')
+  audio.src = 'E:\\github\\Wangyiyun\\public\\music\\test.mp3'
+audio.addEventListener('loadedmetadata',function (e) {
+  console.log(e)
+  console.log(audio.duration)
+})
+</script>

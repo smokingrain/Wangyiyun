@@ -116,7 +116,6 @@
           width:100px;
           margin-left:10px;
           cursor:pointer;
-          cursor:pointer;
           i{
             display:inline-block;
             text-align:center;
@@ -124,8 +123,10 @@
             float:left;
             color:#323232;
             width:30px;
+            cursor:pointer;
           }
           p{
+            cursor:pointer;
             width:65px;
             height:30px;
             line-height:30px;

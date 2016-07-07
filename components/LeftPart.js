@@ -25,7 +25,6 @@ export default class LeftPart extends Component {
   componentDidMount() {
     const self = this
     db.gedan.find({name:"PDD"}, function (err,data) {
-      console.log(data)
       self.setState({name:data[0].songer})
     })     
   }

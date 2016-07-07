@@ -1,24 +1,23 @@
 import path from 'path'
 
 
-const sep = path.sep
 const ROOT = path.resolve(__dirname, '../')
 const CONFIGPATH = path.resolve(__dirname, '../', 'config')
 const CONFIG = 'config.json'
 const LOGPATH = path.resolve(__dirname, '../', 'logs')
-const GEDANDBPATH = path.resolve(__dirname, '../', 'db')
-const MUSICDBPATH = path.resolve(__dirname, '../', 'db')
+const DBPATH = path.resolve(__dirname, '../', 'db')
 const GEDANDB = 'gedanDB.db'
 const MUSICDB = 'musicDB.db'
+const LOCALMUSICDB = 'localmusicDB.db'
 
 export { 
 	ROOT, 
 	CONFIGPATH, 
 	CONFIG, 
 	LOGPATH,
-	MUSICDBPATH,
+  DBPATH,
 	MUSICDB,
-  GEDANDBPATH,
-  GEDANDB
+  GEDANDB,
+  LOCALMUSICDB
 }
 

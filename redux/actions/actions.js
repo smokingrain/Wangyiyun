@@ -3,7 +3,8 @@
 import { 
   MUSIC,
   FINDMUSIC,
-  CONFIG
+  CONFIG,
+  MESSAGE
 } from './actionsTypes'
 
 
@@ -24,9 +25,21 @@ export function findmusic (findmusic) {
 }
 
 
-export function newconfig (config) {
+export function newConfig (config) {
   return {
     type: CONFIG  ,
     config: config
   }
 }
+
+
+export function newMessage (message) {
+  return {
+    type: MESSAGE  ,
+    message: message
+  }
+}
+
+
+
+

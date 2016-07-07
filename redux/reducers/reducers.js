@@ -1,7 +1,8 @@
 import { 
   MUSIC,
   FINDMUSIC,
-  CONFIG
+  CONFIG,
+  MESSAGE
 } from '../actions/actionsTypes'
 import Immutable from 'immutable'
 import { conv } from '../../common/config' 
@@ -21,9 +22,15 @@ let findmusicInit = conv.get()
 
 //music init
 let musicInit = {
-  showModule:'gedan'
+  showModule:'localmusic',
 }
 
+let messageInit = {
+  notify:{
+    tip:null
+  },
+  showMask:false
+}
 //
 let configInit = {}
 
@@ -57,6 +64,17 @@ export function config (state = configInit, action) {
   switch (action.type) {
     case CONFIG:
       let nextState = Immutable.Map(state).merge(action.config).toJS()
+      return nextState
+    default :
+      return state
+  }
+}
+
+
+export function message (state = messageInit, action) {
+  switch (action.type) {
+    case MESSAGE:
+      let nextState = Immutable.Map(state).merge(action.message).toJS()
       return nextState
     default :
       return state
