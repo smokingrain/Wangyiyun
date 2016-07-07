@@ -158,16 +158,13 @@ export default class LocalMusic extends Component {
             message.showMask = true
             dispatch(newMessage(message))
         }
-        console.log(successArr)
-        if(successArr.length<=1){
-            uploadFiles(successArr)    
-        }
+        let infoArr = fileDetail(successArr)
+        uploadFiles(successArr, infoArr)    
         // let fileInfo = fileDetail(item)
         // $('#audioBack').on('load', function () {
         //     console.log('get in')
         // })
         // $('#audioBack').attr('src',item.path)
-
     }
 }
 
