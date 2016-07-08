@@ -32,6 +32,9 @@
 - [x] 图标素材来源   http://iconfont.cn/  牛逼的阿里爸爸
 - [x] 关于h5中 audio标签的详细解析  http://www.w3school.com.cn/jsref/dom_obj_audio.asp
 - [x] AudioContext播放音频  http://www.cnblogs.com/Wayou/p/3543577.html
+- [x] 关于解析歌词   http://blog.csdn.net/yorhomwang/article/details/42300743
+- [x] ID3 400star https://github.com/aadsm/JavaScript-ID3-Reader
+- [x] id3js 280star https://github.com/43081j/id3
 
 
 # Features
@@ -45,6 +48,8 @@
 - [ ] 播放列表控制
 - [ ] 前后翻页组件
 - [ ] 获取mp3文件的附带信息  比如专辑  歌手 歌词
+- [ ] 同时加载本地多个音乐文件,  过滤  1.是否为音乐文件  2.音乐文件的详细信息 长度 时间 作者 图片  3.存储进本地音乐库 4.更新store  更新视图
+- [ ] 
 
 # Declaraction 
 - [x] 此项目从UI风格上模仿网易云  并未抄袭  况且抄不到  打包加密混淆估计它都用了  
@@ -62,6 +67,7 @@
 
 # mood
 - [x] 最痛苦的事情就是写样式   so terrible
+- [x] 有点心烦 今天代码就少了点
 
 # License
   MIT 

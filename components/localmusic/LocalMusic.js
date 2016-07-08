@@ -11,7 +11,7 @@ import { dispatch } from '../../redux/store/renderStore'
 import { newMessage } from '../../redux/actions/actions'
 import { isMP3, fileDetail, uploadFiles } from '../../common/util'
 import { local } from '../../dao/musicDao'
-
+import async from 'async'
 
 
 
@@ -53,7 +53,7 @@ export default class LocalMusic extends Component {
                             <label>
                                 <i className="iconfont icon-yinle"></i>
                                 <p>添加音乐</p>
-                                <input type="file" multiple hidden onChange={(e) => {this.upLoadLocalMusic(e)}}/>
+                                <input type="file" multiple id="load-local-music" hidden onChange={(e) => {this.upLoadLocalMusic(e)}}/>
                             </label>
                         </div>
                         <div className="search"></div>
@@ -69,7 +69,7 @@ export default class LocalMusic extends Component {
                     {
                         localmusic && localmusic.map((item, index) => {
                             return(
-                                <dl className="list list-item odd">
+                                <dl className="list list-item odd" key={index}>
                                     <dd className="number"><span>{index+1}</span></dd>
                                     <dd className="title"><span>{item.fileName}</span></dd>
                                     <dd className="songer"><span>周杰伦</span></dd>
@@ -174,8 +174,18 @@ export default class LocalMusic extends Component {
             message.showMask = true
             dispatch(newMessage(message))
         }
-        let infoArr = fileDetail(successArr)
-        uploadFiles(successArr, infoArr)    
+        successArr = fileDetail(successArr)
+        
+        //现在获取到的successARR就是成功的有效的文件数组
+        //开始流水式处理异步
+
+
+        //第一层  获取filename  extname filesize filepath
+
+
+
+        document.getElementById('load-local-music').value = null
+        uploadFiles(successArr)    
         // let fileInfo = fileDetail(item)
         // $('#audioBack').on('load', function () {
         //     console.log('get in')

@@ -5,23 +5,13 @@ import { getState, dispatch } from '../redux/store/mainStore'
 import { newMusic } from '../redux/actions/actions'
 
 export function insertLocalMusicByClick(data){
+  data.fileType = 'localmusic'
   const { local } = db
-  _.each(data, function (item) {
-    const obj = {
-
-      extName: item.extName,
-      fileName: item.fileName,
-      fileSize: item.fileSize,
-      filePath: item.filePath,
-      fileTime: item.fileTime,
-      fileId: uuid()
+  local.insert(data, function (err, newdoc) {
+    if(!err){
+      console.log('insert success')  
     }
-    local.insert(data, function (err, newdoc) {
-      if(!err){
-        console.log('insert success')  
-      }
-    }) 
-  })
+  }) 
 }
 
 
@@ -33,7 +23,6 @@ export async function initLocalMusic(){
   let localmusic = await getLocalMusicAll()
   let music = getState().music
   music.localmusic = localmusic
-  console.log(music)
   dispatch(newMusic(music))
 }
 

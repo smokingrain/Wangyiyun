@@ -18,7 +18,8 @@ import { conv } from '../../common/config'
 let findmusicInit = conv.get()
 //music init
 let musicInit = {
-  showModule: 'localmusic'
+  showModule: 'localmusic',
+  tempUploadFile:null
 }
 
 let messageInit = {
