@@ -18,12 +18,16 @@ import {
 } from './mainProcess/listenEvent'
 import { main } from './renderProcess/winOptions'
 // import { logger } from './modules/logger'
-import { logger } from './common/logger'
+// import { logger } from './common/logger'
+import { initLocalMusic } from './dao/api'
 let dataGlobal = {}
 dataGlobal.win = []
+initLocalMusic()
+
+
 
 app.on('ready', () => {
-  logger.info('app is ready')
+  // logger.info('app is ready')
   let newWin = openWindow(BrowserWindow, 'main', main)
   dataGlobal.win['main'] = newWin
 })

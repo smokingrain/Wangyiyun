@@ -29,7 +29,6 @@ export default class LocalMusic extends Component {
     render(){
         const module = this.props.module
         const localmusic = this.props.music.localmusic
-        console.log(localmusic)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">
@@ -68,8 +67,7 @@ export default class LocalMusic extends Component {
                         <dd className="size">大小</dd>
                     </dl>
                     {
-                        localmusic && localmusic.map(function (item,index) {
-
+                        localmusic && localmusic.map((item, index) => {
                             return(
                                 <dl className="list list-item odd">
                                     <dd className="number"><span>{index+1}</span></dd>

@@ -1,7 +1,8 @@
 import db from './musicDao'
 import _ from 'lodash'
 import uuid from 'uuid'
-
+import { getState, dispatch } from '../redux/store/mainStore'
+import { newMusic } from '../redux/actions/actions'
 
 export function insertLocalMusicByClick(data){
   const { local } = db
@@ -24,12 +25,29 @@ export function insertLocalMusicByClick(data){
 }
 
 
+
+
+
+
+export async function initLocalMusic(){
+  let localmusic = await getLocalMusicAll()
+  let music = getState().music
+  music.localmusic = localmusic
+  console.log(music)
+  dispatch(newMusic(music))
+}
+
+
+
+
 export function getLocalMusicAll(){
   const { local } = db
-  let localmusic = null
-  local.find({},function (err, data) {
-    localmusic = data
+  return new Promise((resolve, reject) => {
+    local.find({}, (err, data) => {
+      resolve(data)
+    })
   })
-  return localmusic
 }
+
+
 

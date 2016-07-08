@@ -6,7 +6,6 @@ import {
 } from '../actions/actionsTypes'
 import Immutable from 'immutable'
 import { conv } from '../../common/config' 
-import { getLocalMusicAll } from '../../dao/api'
 
 
 
@@ -17,15 +16,11 @@ import { getLocalMusicAll } from '../../dao/api'
 
 //findmusic module
 let findmusicInit = conv.get()
-
-
-
 //music init
 let musicInit = {
-  showModule: 'localmusic',
-  localmusic: getLocalMusicAll()
+  showModule: 'localmusic'
 }
-console.log(getLocalMusicAll())
+
 let messageInit = {
   notify:{
     tip:null

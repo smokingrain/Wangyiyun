@@ -15,4 +15,7 @@ let enhancer = compose(
   applyMiddleware(...middleware),
   electronEnhancer()
 )
-export let store = createStore(rootReducer, initialState, enhancer)
+let store = createStore(rootReducer, initialState, enhancer)
+let getState = store.getState
+let dispatch = store.dispatch
+export { getState, dispatch, store } 
