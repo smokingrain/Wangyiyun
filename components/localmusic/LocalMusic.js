@@ -9,7 +9,7 @@ import $ from 'jquery'
 import ep from 'eventproxy'
 import { dispatch } from '../../redux/store/renderStore'
 import { newMessage } from '../../redux/actions/actions'
-import { isMP3, fileDetail, uploadFiles } from '../../common/util'
+import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
 import { local } from '../../dao/musicDao'
 import async from 'async'
 
@@ -72,10 +72,10 @@ export default class LocalMusic extends Component {
                                 <dl className="list list-item odd" key={index}>
                                     <dd className="number"><span>{index+1}</span></dd>
                                     <dd className="title"><span>{item.fileName}</span></dd>
-                                    <dd className="songer"><span>周杰伦</span></dd>
-                                    <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                                    <dd className="time"><span>{item.fileTime}</span></dd>
-                                    <dd className="size"><span>3.5MB</span></dd>
+                                    <dd className="songer"><span>{item.fileArtist || '未知'}</span></dd>
+                                    <dd className="zhuanji"><span>{item.fileAlbum || '未知'}</span></dd>
+                                    <dd className="time"><span>{changeTime(item.fileTime)}</span></dd>
+                                    <dd className="size"><span>{item.fileSize}</span></dd>
                                 </dl>
                             )
                         })

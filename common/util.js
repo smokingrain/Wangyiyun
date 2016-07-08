@@ -131,3 +131,23 @@ export function uploadFiles(fileArr){
 
 
 
+export function changeTime(time){
+  let total = time
+  let second_1 = 0
+  let second_2 = 0
+  let min_1 = 0
+  let min_2 = 0
+  let second = total % 60
+  second_2 = second%10
+  second_1 = Math.floor(second/10)
+
+  let min = (total -second)/60
+  min_2 = min%60
+  min_1 = Math.floor(min/10)
+  min_1.toString()
+  min_2.toString()
+  second_1.toString()
+  second_2.toString()
+  let timeNow = min_1+min_2+':'+second_1+second_2
+  return timeNow
+}
