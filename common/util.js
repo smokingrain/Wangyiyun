@@ -5,7 +5,8 @@ import async from 'async'
 import { insertLocalMusicByClick } from '../dao/api'
 import id3 from 'id3js'
 import eventproxy from 'eventproxy'
-
+import { dispatch, getState } from '../redux/store/renderStore'
+import { newMusic } from '../redux/actions/actions'
 
 
 
@@ -68,7 +69,10 @@ export function uploadFiles(fileArr){
         item.fileTrack = tags.v1.track ? tags.v1.track : tags.v2.track
         item.fileYear = tags.v1.year ? tags.v1.year : tags.year
         item.fileImage = tags.v2.image ? tags.v2.image : ''
-        console.log(item)
+        insertLocalMusicByClick(item)
+        let music = getState().music
+        music.localmusic.push(item)
+        dispatch(newMusic(music))
       })
     })
   })
