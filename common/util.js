@@ -28,10 +28,12 @@ export function fileDetail(arr){
   _.each(arr, function (item) {
     let size = getFileSize(item.size)
     let fileSize = size.size.toString().concat(size.ext)
+    let dotIndex = item.name.indexOf('.')
     item.extName = path.extname(item.name.substring(1))
-    item.fileName = path.basename(item.name)
+    item.fileName = path.basename(item.name).substring(0,dotIndex)
     item.fileSize = fileSize
     item.filePath = item.path
+    console.log(item)
   })
   return arr
 }
