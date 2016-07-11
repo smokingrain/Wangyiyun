@@ -2,16 +2,31 @@ import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
 import Progress from './Progress'
+import { play, pause } from '../api/audio'
+import cs from 'classnames'
 
 
+@connect((state) => {
+  return {
+    music: state.music
+  }
+})
 export default class Footer extends Component {
+  constructor(){
+    super()
+    this.state = {
+      playing:false
+    }
+  }
+  componentDidMount() {
+  }
   render(){
+    const { playing } = this.state
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
           <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
-          <div className="bofang"><i className="iconfont icon-bofang1"></i></div>
-          <div className="zanting hide"><i className="iconfont icon-zanting1"></i></div>
+          <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1':!playing,"icon-zanting1":playing}])}></i></div>
           <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
         </div>
         <div className="nowtime">
@@ -34,6 +49,18 @@ export default class Footer extends Component {
         </div>
       </div>
     )
+  }
+  playAudio(){
+    const playing = this.state.playing
+    const { music } = this.props
+    const { path, name } = music.audio
+    if(!playing){
+      play(path, name)
+      this.setState({playing: true})
+    }else{
+      pause()
+      this.setState({playing: false})
+    }
   }
 }
 

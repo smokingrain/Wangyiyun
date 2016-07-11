@@ -3,5 +3,12 @@
     "PDD":{
       "name":"PDD"
     }
+  },
+  "audio":{
+    "last":{
+      "path":"E:\\github\\Wangyiyun\\public\\music\\11.mp3",
+      "voice":5,
+      "name":"11"
+    }
   }
 }

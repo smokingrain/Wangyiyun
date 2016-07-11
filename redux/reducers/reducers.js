@@ -15,6 +15,7 @@ import { conv } from '../../common/config'
 
 //findmusic module
 let findmusicInit = conv.get()
+let audioConfig = conv.get('audio')
 //music init
 let musicInit = {
   showModule: 'localmusic',
@@ -24,9 +25,9 @@ let musicInit = {
     name:''
   },
   audio: {
-    voice:4,
-    path:'',
-    name:''
+    voice:audioConfig.last.voice,
+    path:audioConfig.last.path,
+    name:audioConfig.last.name
   }
 }
 
