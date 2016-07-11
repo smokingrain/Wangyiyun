@@ -64,6 +64,9 @@
 - [x] 1575455507@qq.com
 - [x] 张椿木
 
+# questions
+- [ ] 编码问题  本地音乐文件上传  IDv2  IDv1乱码问题  解决不了
+
 
 # mood
 - [x] 最痛苦的事情就是写样式   so terrible

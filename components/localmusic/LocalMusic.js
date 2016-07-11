@@ -69,7 +69,7 @@ export default class LocalMusic extends Component {
                     {
                         localmusic && localmusic.map((item, index) => {
                             return(
-                                <dl className="list list-item odd" key={index}>
+                                <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index}>
                                     <dd className="number"><span>{index+1}</span></dd>
                                     <dd className="title"><span>{item.fileName}</span></dd>
                                     <dd className="songer"><span>{item.fileArtist || '未知'}</span></dd>
@@ -80,57 +80,7 @@ export default class LocalMusic extends Component {
                             )
                         })
                     }
-                    <dl className="list list-item odd">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
-                    <dl className="list list-item even">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
-                    <dl className="list list-item odd">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
-                    <dl className="list list-item even">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
-                    <dl className="list list-item odd">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
-                    <dl className="list list-item even choosed">
-                        <dd className="number"><span>01</span></dd>
-                        <dd className="title"><span>天使的翅膀</span></dd>
-                        <dd className="songer"><span>周杰伦</span></dd>
-                        <dd className="zhuanji"><span>嘟嘟嘟</span></dd>
-                        <dd className="time"><span>00:00</span></dd>
-                        <dd className="size"><span>3.5MB</span></dd>
-                    </dl>
                 </div>                
-
-
                 <div className="bottom-nav">
                     <p className="tip">正在完善所有功能,敬请期待</p>
                     <div><button>localmusic</button></div>

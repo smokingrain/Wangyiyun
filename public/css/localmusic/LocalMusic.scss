@@ -215,11 +215,17 @@
             font-size:13px;
             font-family: -webkit-body;
             color:#666666;
+            display:inline-block;
+            width:100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow:hidden;
           }
         }
       }
       .list{
         dd{
+          overflow:hidden;
          color:#666666; 
         }
       }

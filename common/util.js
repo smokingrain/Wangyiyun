@@ -33,7 +33,6 @@ export function fileDetail(arr){
     item.fileName = path.basename(item.name).substring(0,dotIndex)
     item.fileSize = fileSize
     item.filePath = item.path
-    console.log(item)
   })
   return arr
 }
@@ -63,6 +62,7 @@ export function uploadFiles(fileArr){
   ep.after('got_file', fileArr.length, function (list) {
     _.each(list, function (item, index) {
       id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
+        console.log(tags)
         item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album
         item.fileArtist = tags.v1.artist ? tags.v1.artist : tags.v2.artist
         item.fileComment = tags.v1.comment ? tags.v1.comment : tags.v2.comment
@@ -144,10 +144,11 @@ export function changeTime(time){
   let min = (total -second)/60
   min_2 = min%60
   min_1 = Math.floor(min/10)
-  min_1.toString()
-  min_2.toString()
-  second_1.toString()
-  second_2.toString()
-  let timeNow = min_1+min_2+':'+second_1+second_2
+  min_1 = min_1.toString()
+  min_2 = min_2.toString()
+  second_1 = second_1.toString()
+  second_2 = second_2.toString()
+  let timeNow = min_1.concat(min_2,":",second_1,second_2)
+  console.log(timeNow)
   return timeNow
 }
