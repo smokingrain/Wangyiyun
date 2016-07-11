@@ -59,6 +59,7 @@ export function getFileSize(size){
 export function uploadFiles(fileArr){
   let audio = window.audioBack
   let ep = new eventproxy()
+  let ep2 = new eventproxy()
   ep.after('got_file', fileArr.length, function (list) {
     _.each(list, function (item, index) {
       id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
@@ -75,16 +76,20 @@ export function uploadFiles(fileArr){
         let music = getState().music
         music.localmusic.push(item)
         dispatch(newMusic(music))
+        // $('.audioBack').remove()
       })
     })
   })
+
   _.each(fileArr, function (item, index) {
+    audio = $('.audioBack').eq(index)[0]    
     audio.src = item.path
     audio.addEventListener('loadedmetadata', function () {
       let time = audio.duration.toString()
       time = time.substring(0, time.lastIndexOf('.'))
       time.replace('.','')
       item.fileTime = time
+      console.log(time)
       ep.emit('got_file', item)
     })
   })
