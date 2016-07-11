@@ -13,13 +13,17 @@ import { conv } from '../../common/config'
 
 
 
-
 //findmusic module
 let findmusicInit = conv.get()
 //music init
 let musicInit = {
   showModule: 'localmusic',
-  tempUploadFile:null
+  tempUploadFile:null,
+  playIng:{
+    path:'',
+    name:''
+  },
+  audio: null
 }
 
 let messageInit = {
