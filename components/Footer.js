@@ -18,12 +18,12 @@ export default class Footer extends Component {
           <span className="nowspan">00:00</span>
         </div>
         <div className="audio-progress">
-          <Progress></Progress>
+          <Progress owner="musicProgress"></Progress>
         </div>
         <div className="alltime"><span>00:00</span></div>
         <div className="voice">
           <div className="voiceimg"><i className="iconfont icon-sound"></i></div>
-          <div className="progress-box"><Progress></Progress></div>
+          <div className="progress-box"><Progress owner="voiceProgress"></Progress></div>
         </div>
         <div className="operatools">
           <div className="xunhuan"><i className="iconfont icon-circulation"></i></div>

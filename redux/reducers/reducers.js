@@ -23,7 +23,11 @@ let musicInit = {
     path:'',
     name:''
   },
-  audio: null
+  audio: {
+    voice:4,
+    path:'',
+    name:''
+  }
 }
 
 let messageInit = {

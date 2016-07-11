@@ -10,21 +10,26 @@ import cs from 'classnames'
 import $ from 'jquery'
 import { ipcRenderer } from 'electron'
 import { window_show } from '../communicate/communicationTypes'
+import { store, dispatch } from '../redux/store/renderStore'
+import { newMusic } from '../redux/actions/actions'
+
 
 @connect((state) => {
   return {
-    message:state.message
+    message:state.message,
+    music: state.music
   }
 })
 export default class Main extends Component {
 
   componentDidMount() {
+    const { music } = this.props
     $(document).ready(() => {
       let obj = {
         winID: 'main'
       }
       ipcRenderer.send(window_show,obj)
-    })     
+    })   
   }
   render(){
     const { tip } = this.props.message.notify

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
-
+import $ from 'jquery'
 
 
 export default class App extends Component {
