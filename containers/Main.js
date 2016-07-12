@@ -12,7 +12,7 @@ import { ipcRenderer } from 'electron'
 import { window_show } from '../communicate/communicationTypes'
 import { store, dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
-
+import PlayingGeDanBlock from '../components/Block/PlayingGeDanBlock'
 
 @connect((state) => {
   return {
@@ -46,6 +46,7 @@ export default class Main extends Component {
           <MainBox></MainBox>
         </div>
         <Footer></Footer>
+        <PlayingGeDanBlock></PlayingGeDanBlock>
       </div>
     )
   }

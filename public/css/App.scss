@@ -122,7 +122,11 @@ i.iconfont{
   left:0px;
   z-index:10;
 }
-
+.appblock{
+  position:fixed;
+  z-index:100;
+  overflow:hidden;
+}
 
 @import './Main.scss';
 @import './LeftPart.scss';
@@ -147,3 +151,4 @@ i.iconfont{
 @import './selfFM/SelfFM.scss';
 @import './yunpan/YunPan.scss';
 @import './localmusic/LocalMusic.scss';
+@import './Block/PlayingGeDanBlock.scss';

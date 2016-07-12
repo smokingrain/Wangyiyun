@@ -56,7 +56,6 @@ export async function initPlayingGedan(){
 export function getPlayingGedan(){
   return new Promise((resolve, reject) => {
     playing.find({}, (err, data) => {
-      console.log(data)
       resolve(data)
     })
   })
@@ -68,7 +67,6 @@ export async function insertPlayingGedan(gedan){
     if(err){
       return
     }
-    console.log(number)
   })
   let ep = new eventproxy()
   ep.after('insert_playing', gedan.length, function () {

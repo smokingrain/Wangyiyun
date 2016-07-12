@@ -3,6 +3,12 @@ import { render } from 'react-dom'
 import { connect } from 'react-redux'
 
 
+
+@connect((state) => {
+  return {
+    music:state.music
+  }
+})
 export default class PlayingBlock extends Component {
   render(){
     return (
