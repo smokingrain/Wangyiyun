@@ -59,6 +59,7 @@ export function getFileSize(size){
 export function uploadFiles(fileArr){
   let ep = new eventproxy()
   ep.after('got_file', fileArr.length, function (list) {
+    console.log(list)
     _.each(list, function (item, index) {
       id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
         item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album

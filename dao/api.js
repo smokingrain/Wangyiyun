@@ -10,6 +10,7 @@ const { gedan, playing, local } =db
 
 
 export function insertLocalMusicByClick(data){
+  console.log(data)
   data.fileType = 'localmusic'
   local.insert(data, function (err, newdoc) {
     if(!err){
