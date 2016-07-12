@@ -10,7 +10,6 @@ import ep from 'eventproxy'
 import { dispatch } from '../../redux/store/renderStore'
 import { newMessage } from '../../redux/actions/actions'
 import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
-import { local } from '../../dao/musicDao'
 import async from 'async'
 
 
@@ -29,6 +28,7 @@ export default class LocalMusic extends Component {
     render(){
         const module = this.props.module
         const localmusic = this.props.music.localmusic
+        console.log(this.props.music)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">

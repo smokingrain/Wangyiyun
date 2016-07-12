@@ -9,6 +9,7 @@
 - [x] 完成发现音乐->个性推荐->独家放送模块的UI  16-7-4
 - [x] 完成findmusic->个性推荐   UI   16-7-4
 - [x] 修复webpack警告  There is another module with a equal name when case is ignored.  大小写混用导致编译两次
+- [x] 前期工作ok了终于,可以share music了
 
 
 # Donfig demo babel  to use async await

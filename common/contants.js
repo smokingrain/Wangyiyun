@@ -9,6 +9,7 @@ const DBPATH = path.resolve(__dirname, '../', 'db')
 const GEDANDB = 'gedanDB.db'
 const MUSICDB = 'musicDB.db'
 const LOCALMUSICDB = 'localmusicDB.db'
+const playingDB = 'playingDB.db'
 
 export { 
 	ROOT, 
@@ -18,6 +19,7 @@ export {
   DBPATH,
 	MUSICDB,
   GEDANDB,
-  LOCALMUSICDB
+  LOCALMUSICDB,
+  playingDB
 }
 

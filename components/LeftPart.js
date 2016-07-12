@@ -5,7 +5,6 @@ import PlayingBlock from './PlayingBlock'
 import cs from 'classnames'
 import { dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
-import db from '../dao/musicDao' 
 
 
 
@@ -23,10 +22,7 @@ export default class LeftPart extends Component {
     }
   }
   componentDidMount() {
-    const self = this
-    // db.gedan.find({name:"PDD"}, function (err,data) {
-    //   self.setState({name:data[0].songer})
-    // })     
+    const self = this 
   }
   render(){
     const module = this.props.music.showModule

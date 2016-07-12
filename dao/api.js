@@ -3,10 +3,14 @@ import _ from 'lodash'
 import uuid from 'uuid'
 import { getState, dispatch } from '../redux/store/mainStore'
 import { newMusic } from '../redux/actions/actions'
+import eventproxy from 'eventproxy'
+
+
+const { gedan, playing, local } =db
+
 
 export function insertLocalMusicByClick(data){
   data.fileType = 'localmusic'
-  const { local } = db
   local.insert(data, function (err, newdoc) {
     if(!err){
       console.log('insert success')  
@@ -30,7 +34,6 @@ export async function initLocalMusic(){
 
 
 export function getLocalMusicAll(){
-  const { local } = db
   return new Promise((resolve, reject) => {
     local.find({}, (err, data) => {
       resolve(data)
@@ -38,5 +41,52 @@ export function getLocalMusicAll(){
   })
 }
 
+
+export async function initPlayingGedan(){
+  let playingGedan = await getPlayingGedan()
+  if(playingGedan.length<=0){
+    return
+  }
+  let music = getState().music
+  music.playingGedan = playingGedan
+  dispatch(newMusic(music))
+}
+
+
+export function getPlayingGedan(){
+  return new Promise((resolve, reject) => {
+    playing.find({}, (err, data) => {
+      console.log(data)
+      resolve(data)
+    })
+  })
+}
+
+
+export async function insertPlayingGedan(gedan){
+  playing.remove({}, (err, number) =>{
+    if(err){
+      return
+    }
+    console.log(number)
+  })
+  let ep = new eventproxy()
+  ep.after('insert_playing', gedan.length, function () {
+    let music = getState().music
+    music.playingGedan = gedan
+    dispatch(newMusic(music))
+  })
+  _.each(gedan, (item, index) => {
+    let obj = {
+      path: item.path,
+      name: item.name,
+      time: item.time
+    }
+    playing.insert(obj, function (err, data) {
+      ep.emit('insert_playing')
+      return
+    })
+  })
+}
 
 
