@@ -75,12 +75,7 @@ export async function insertPlayingGedan(gedan){
     dispatch(newMusic(music))
   })
   _.each(gedan, (item, index) => {
-    let obj = {
-      path: item.path,
-      name: item.name,
-      time: item.time
-    }
-    playing.insert(obj, function (err, data) {
+    playing.insert(item, function (err, data) {
       ep.emit('insert_playing')
       return
     })

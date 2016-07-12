@@ -8,7 +8,7 @@ import eventproxy from 'eventproxy'
 import { dispatch, getState } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
-
+import uuid from 'uuid'
 
 
 export function isMP3(name) {
@@ -69,6 +69,7 @@ export function uploadFiles(fileArr){
         item.fileTrack = tags.v1.track ? tags.v1.track : tags.v2.track
         item.fileYear = tags.v1.year ? tags.v1.year : tags.year
         item.fileImage = tags.v2.image ? tags.v2.image : ''
+        item.musicID = uuid()
         insertLocalMusicByClick(item)
         let music = getState().music
         music.localmusic.push(item)
