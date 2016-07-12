@@ -68,7 +68,6 @@ export default class LocalMusic extends Component {
                     </dl>
                     {
                         localmusic && localmusic.map((item, index) => {
-                            console.log(item.fileTime)
                             return(
                                 <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index}>
                                     <dd className="number"><span>{index+1}</span></dd>

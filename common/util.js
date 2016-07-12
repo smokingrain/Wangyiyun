@@ -7,7 +7,7 @@ import id3 from 'id3js'
 import eventproxy from 'eventproxy'
 import { dispatch, getState } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
-
+import $ from 'jquery'
 
 
 
@@ -57,13 +57,10 @@ export function getFileSize(size){
 
 //上传歌曲并获取详细信息  时间
 export function uploadFiles(fileArr){
-  let audio = window.audioBack
   let ep = new eventproxy()
-  let ep2 = new eventproxy()
   ep.after('got_file', fileArr.length, function (list) {
     _.each(list, function (item, index) {
       id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
-        console.log(tags)
         item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album
         item.fileArtist = tags.v1.artist ? tags.v1.artist : tags.v2.artist
         item.fileComment = tags.v1.comment ? tags.v1.comment : tags.v2.comment
@@ -76,21 +73,20 @@ export function uploadFiles(fileArr){
         let music = getState().music
         music.localmusic.push(item)
         dispatch(newMusic(music))
-        // $('.audioBack').remove()
       })
     })
   })
 
   _.each(fileArr, function (item, index) {
-    audio = $('.audioBack').eq(index)[0]    
+    let audio = document.createElement('audio')
     audio.src = item.path
     audio.addEventListener('loadedmetadata', function () {
       let time = audio.duration.toString()
       time = time.substring(0, time.lastIndexOf('.'))
       time.replace('.','')
       item.fileTime = time
-      console.log(time)
       ep.emit('got_file', item)
+      $(audio).remove()
     })
   })
 
