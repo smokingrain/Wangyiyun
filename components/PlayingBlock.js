@@ -19,7 +19,6 @@ export default class PlayingBlock extends Component {
       console.log('next state play')
       play()
     }
-
   }
   render(){
     const { music } = this.props
