@@ -10,6 +10,9 @@ import { connect } from 'react-redux'
   }
 })
 export default class PlayingBlock extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    
+  }
   render(){
     const { music } = this.props
     const playing = music.playing

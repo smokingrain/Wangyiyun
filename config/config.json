@@ -20,5 +20,7 @@
 
   ],
   "findmusic":[
-  ]
+  ],
+  "random":false,
+  "loop":false
 }

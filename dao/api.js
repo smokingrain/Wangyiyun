@@ -4,7 +4,7 @@ import uuid from 'uuid'
 import { getState, dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
 import eventproxy from 'eventproxy'
-import { conv } from '../common/db'
+import { convData } from '../common/db'
 
 const picDB = db.picture
 const musicDB = db.music
@@ -14,14 +14,14 @@ export function insertLocalMusicByClick(data, pic){
     if(!err){
       picDB.insert(pic, function (err, doc){
         if(!err){
-          let temp = conv.get('localmusic')
+          let temp = convData.get('localmusic')
           let localmusic = temp ? temp : []
           let obj = {
             uuid:data.uuid
           }
           localmusic.push(obj)
-          conv.set('localmusic', localmusic)
-          conv.save()
+          convData.set('localmusic', localmusic)
+          convData.save()
           let music = getState().music
           music.localmusic.push(data)
           dispatch(newMusic(music))
@@ -37,7 +37,7 @@ export function insertLocalMusicByClick(data, pic){
 
 
 export function initLocalMusic(){
-  let localmusic = conv.get('localmusic')
+  let localmusic = convData.get('localmusic')
   if(!localmusic){
     return
   }
@@ -62,7 +62,7 @@ export function initLocalMusic(){
 
 
 export function initPlayingMusic(){
-  let playing = conv.get('playingmusic')
+  let playing = convData.get('playingmusic')
   let tempArr = []
   let ep = new eventproxy()
   ep.after('get_playing', playing.length, function (list) {
@@ -81,7 +81,7 @@ export function initPlayingMusic(){
 }
 
 export function initPlaying(){
-  let playing = conv.get('playing')
+  let playing = convData.get('playing')
   if(!playing){
     return
   }

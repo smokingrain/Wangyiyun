@@ -54,7 +54,8 @@ let config = function(){
 }
 
 
-export const conv = new config()
+export const convData = new config()
+
 
 
 

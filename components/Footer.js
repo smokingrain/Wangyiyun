@@ -34,12 +34,12 @@ export default class Footer extends Component {
           <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
         </div>
         <div className="nowtime">
-          <span className="nowspan">00:00</span>
+          <span className="nowspan" id="musicnowtime">00:00</span>
         </div>
         <div className="audio-progress">
           <Progress owner="musicProgress"></Progress>
         </div>
-        <div className="alltime"><span>00:00</span></div>
+        <div className="alltime"><span id="musictotaltime">00:00</span></div>
         <div className="voice">
           <div className="voiceimg"><i className="iconfont icon-sound"></i></div>
           <div className="progress-box"><Progress owner="voiceProgress"></Progress></div>
@@ -67,9 +67,8 @@ export default class Footer extends Component {
   playAudio(){
     const playing = this.state.playing
     const { music } = this.props
-    const { path, name } = music.audio
     if(!playing){
-      play(path, name)
+      play()
       this.setState({playing: true})
     }else{
       pause()
