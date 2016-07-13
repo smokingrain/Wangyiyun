@@ -19,20 +19,13 @@ import {
 import { main } from './renderProcess/winOptions'
 // import { logger } from './modules/logger'
 // import { logger } from './common/logger'
-import { initLocalMusic, initPlayingGedan, insertPlayingGedan } from './dao/api'
+// import { initLocalMusic, initPlayingGedan, insertPlayingGedan } from './dao/api'
 let dataGlobal = {}
 dataGlobal.win = []
-initLocalMusic()
-initPlayingGedan()
-let arr = [
-  {
-    name: "Beyond - 光辉岁月",
-    path: "E:\\github\\Wangyiyun\\public\\music\\Beyond - 光辉岁月.mp3",
-    time:'00:00',
-    size:'3MB'
-  }
-]
-insertPlayingGedan(arr)
+// initLocalMusic()
+// initPlayingGedan()
+
+// insertPlayingGedan(arr)
 
 app.on('ready', () => {
   // logger.info('app is ready')

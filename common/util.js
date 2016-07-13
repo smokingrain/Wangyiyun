@@ -9,7 +9,7 @@ import { dispatch, getState } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
 import uuid from 'uuid'
-
+import jsmediatags from 'jsmediatags'
 
 export function isMP3(name) {
   let flag = false
@@ -53,8 +53,6 @@ export function getFileSize(size){
 }
 
 
-
-
 //上传歌曲并获取详细信息  时间
 export function uploadFiles(fileArr){
   console.log('get in')
@@ -62,21 +60,44 @@ export function uploadFiles(fileArr){
   ep.after('got_file', fileArr.length, function (list) {
     console.log(list,'list')
     _.each(list, function (item, index) {
-      id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
-        item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album
-        item.fileArtist = tags.v1.artist ? tags.v1.artist : tags.v2.artist
-        item.fileComment = tags.v1.comment ? tags.v1.comment : tags.v2.comment
-        item.fileGenre = tags.v1.genre ? tags.v1.genre : tags.v2.genre
-        item.fileTitle = tags.v1.title ? tags.v1.title : tags.v2.title
-        item.fileTrack = tags.v1.track ? tags.v1.track : tags.v2.track
-        item.fileYear = tags.v1.year ? tags.v1.year : tags.year
-        item.fileImage = tags.v2.image ? tags.v2.image : ''
-        item.musicID = uuid()
-        insertLocalMusicByClick(item)
-        let music = getState().music
-        music.localmusic.push(item)
-        dispatch(newMusic(music))
+      jsmediatags.read(item.path, {
+        onSuccess: function(tag) {
+          console.log(tag)
+          var obj = {
+            uuid: item.uuid,
+            picture: tag.tags.picture ? tag.tags.picture.data : ""
+          }
+          item.fileLocal = true
+          item.fileAlbum = tag.album ? tag.album : ""
+          item.fileArtist = tag.artist ? tag.artist: ""
+          item.fileTitle = tag.title ? tag.title : ""
+          insertLocalMusicByClick(item, obj)
+          let music = getState().music
+          // music.localmusic.push(item)
+          // dispatch(newMusic(music))
+        },
+        onError: function(error) {
+          console.log(':(', error.type, error.info);
+        }
       })
+      // id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
+      //   item.fileLocal = true
+      //   item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album
+      //   item.fileArtist = tags.v1.artist ? tags.v1.artist : tags.v2.artist
+      //   item.fileComment = tags.v1.comment ? tags.v1.comment : tags.v2.comment
+      //   item.fileGenre = tags.v1.genre ? tags.v1.genre : tags.v2.genre
+      //   item.fileTitle = tags.v1.title ? tags.v1.title : tags.v2.title
+      //   item.fileTrack = tags.v1.track ? tags.v1.track : tags.v2.track
+      //   item.fileYear = tags.v1.year ? tags.v1.year : tags.year
+      //   item.fileImage = tags.v2.image ? tags.v2.image : ''
+      //   console.log(tags.v2.image)
+      //   console.log(tags.v1.image)
+      //   item.musicID = uuid()
+      //   insertLocalMusicByClick(item)
+      //   let music = getState().music
+      //   music.localmusic.push(item)
+      //   dispatch(newMusic(music))
+      // })
     })
   })
 

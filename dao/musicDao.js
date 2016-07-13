@@ -1,8 +1,8 @@
 import { 
-  GEDANDB, 
   DBPATH, 
-  LOCALMUSICDB,
-  playingDB } from '../common/contants'
+  MUSICDB,
+  picDB
+} from '../common/contants'
 import path from 'path'
 import nedb from 'nedb'
 import fs from 'fs'
@@ -11,29 +11,26 @@ import fs from 'fs'
 
 
 //歌单数据库
-const gedanFile = DBPATH + path.sep + GEDANDB
-const localfile = DBPATH + path.sep + LOCALMUSICDB
-const playingfile = DBPATH + path.sep + playingDB
+const music = DBPATH + path.sep + MUSICDB
+const picture = DBPATH + path.sep + picDB
 if(!fs.existsSync(DBPATH)){
   fs.mkdirSync(DBPATH)
 }
 
 
 let db = {}
-db.gedan = new nedb({
-  filename: gedanFile
+db.music = new nedb({
+  filename: music
 })
-db.gedan.loadDatabase()
+db.music.loadDatabase()
 
 
-db.local = new nedb({
-  filename: localfile
+db.picture = new nedb({
+  filename:picture
 })
-db.playing = new nedb({
-  filename: playingfile
-})
-db.local.loadDatabase()
-db.playing.loadDatabase()
+
+db.picture.loadDatabase()
+
 
 
 
