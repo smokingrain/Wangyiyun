@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
-
+import { play } from '../api/audio'
 
 
 @connect((state) => {
@@ -11,7 +11,15 @@ import { connect } from 'react-redux'
 })
 export default class PlayingBlock extends Component {
   componentDidUpdate(prevProps, prevState) {
-    
+
+    const prePlaying = prevProps.music.playing.uuid
+    const nextPlaying = prevState.music.playing.uuid
+    console.log(prePlaying, nextPlaying)
+    if(prePlaying != nextPlaying){
+      console.log('next state play')
+      play()
+    }
+
   }
   render(){
     const { music } = this.props
