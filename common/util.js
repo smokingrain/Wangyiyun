@@ -57,9 +57,10 @@ export function getFileSize(size){
 
 //上传歌曲并获取详细信息  时间
 export function uploadFiles(fileArr){
+  console.log('get in')
   let ep = new eventproxy()
   ep.after('got_file', fileArr.length, function (list) {
-    console.log(list)
+    console.log(list,'list')
     _.each(list, function (item, index) {
       id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
         item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album

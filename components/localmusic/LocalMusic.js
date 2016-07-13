@@ -11,6 +11,9 @@ import { dispatch } from '../../redux/store/renderStore'
 import { newMessage } from '../../redux/actions/actions'
 import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
 import async from 'async'
+import { insertPlayingGedan } from '../../dao/api'
+
+
 
 
 
@@ -93,6 +96,7 @@ export default class LocalMusic extends Component {
         const message = this.props.message
         const notify = message.notify
         let tip = {}
+        // insertPlayingGedan()
         // let tip = {
         //     type: 'jinggao',
         //     message: "您上传的文件不是音乐文件"

@@ -44,6 +44,10 @@
           float:left;
           margin-left:10px;
           font-family: -webkit-body;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width:180px;
         }
       }
     }

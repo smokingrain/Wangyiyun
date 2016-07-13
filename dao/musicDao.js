@@ -34,13 +34,7 @@ db.playing = new nedb({
 })
 db.local.loadDatabase()
 db.playing.loadDatabase()
-let playingGedan =[
-    {
-      extName:'mp3',
-      fileName:'金莎 - 星月神话',
-      fileSize:'9MB'
-    }
-  ]
+
 
 
 

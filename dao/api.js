@@ -11,8 +11,8 @@ const { gedan, playing, local } =db
 
 export function insertLocalMusicByClick(data){
   console.log(data)
-  data.fileType = 'localmusic'
   local.insert(data, function (err, newdoc) {
+    console.log('err',err)
     if(!err){
       console.log('insert success')  
     }
@@ -63,7 +63,10 @@ export function getPlayingGedan(){
 }
 
 
-export async function insertPlayingGedan(gedan){
+export async function insertPlayingGedan(){
+  var gedan = [
+    {"extName":".mp3","fileName":"别怕我伤心-张信哲","fileSize":"4MB","filePath":"E:\\github\\Wangyiyun\\public\\music\\别怕我伤心-张信哲.mp3","fileTime":"290","fileAlbum":"\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","fileArtist":"������\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","fileComment":"37 ","fileGenre":"Sound Clip","fileTitle":"һ�Ű�������\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000","fileYear":"\u0000\u0000\u0000\u0000","fileImage":"","musicID":"60acb9ea-c01e-40c5-a0c2-19d0e6fc95bb","fileType":"localmusic","_id":"wRIW5f6154P6PTYE"}
+  ]
   playing.remove({}, (err, number) =>{
     if(err){
       return
@@ -82,5 +85,7 @@ export async function insertPlayingGedan(gedan){
     })
   })
 }
+
+
 
 
