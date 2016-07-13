@@ -1,0 +1,36 @@
+{
+  "localmusic": [
+    {
+      "uuid": "891b91af-e79f-41b6-bf69-befee3ddb3db"
+    },
+    {
+      "uuid": "21718997-0b58-43e7-a1f2-ab5a8aeba417"
+    },
+    {
+      "uuid": "9169076d-bd5c-4b1e-bb49-c6ca0738eeb0"
+    },
+    {
+      "uuid": "94722e25-7977-4ba9-bf88-ea23f727294a"
+    },
+    {
+      "uuid": "6f544571-8c79-4468-9778-08ef07ebb899"
+    }
+  ],
+  "playingmusic": [
+    {
+      "uuid": "891b91af-e79f-41b6-bf69-befee3ddb3db"
+    },
+    {
+      "uuid": "21718997-0b58-43e7-a1f2-ab5a8aeba417"
+    },
+    {
+      "uuid": "9169076d-bd5c-4b1e-bb49-c6ca0738eeb0"
+    },
+    {
+      "uuid": "94722e25-7977-4ba9-bf88-ea23f727294a"
+    }
+  ],
+  "playing": {
+    "uuid": "94722e25-7977-4ba9-bf88-ea23f727294a"
+  }
+}

@@ -3,14 +3,16 @@ import {
   music,
   findmusic,
   config,
-  message
+  message,
+  status
  } from './reducers'
 
 const rootReducer = combineReducers({
   music,
   findmusic,
   config,
-  message
+  message,
+  status
 })
 
 export default rootReducer

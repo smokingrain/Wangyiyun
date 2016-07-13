@@ -17,7 +17,6 @@ export default class Progress extends Component {
     $(document).ready(() => {
       $(content+' .progress-ball').off('mousedown').on('mousedown', function (e) {
         let slot_width = $(content+' .progress-slot').width() -7
-        console.log(slot_width)
         let initX = e.pageX
         e.preventDefault() 
         $(document).off('mousemove').on('mousemove', (ev) => {
@@ -32,8 +31,6 @@ export default class Progress extends Component {
             if(left + disX>= slot_width){
               $(content+' .progress-ball').css('left',slot_width+'px')
             }else{
-              console.log(left)
-              console.log(disX)
               $(content+' .progress-ball').css('left',left+disX+'px')
             }
           }else{

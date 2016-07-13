@@ -2,17 +2,22 @@ import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
 import cs from 'classnames'
-
+import { changeTime } from '../../common/util'
 
 @connect((state) => {
   return {
-    music:state.music
+    music:state.music,
+    status: state.status
   }
 })
 export default class PlayingGeDanBlock extends Component {
     render(){
+        const { music, status } = this.props
+        const playingMusic = music.playingMusic
+        const { showPlayingBlock } = status
+        const playing = music.playing
         return (
-          <div className={cs(['appblock','playing-block','nodrag',{"hide": false}])}>
+          <div className={cs(['appblock','playing-block','nodrag',{"hide": !showPlayingBlock}])}>
             <div className="playing-top">
                 <div className="op">
                     <div className="playing-list choosed">播放列表</div>
@@ -34,51 +39,23 @@ export default class PlayingGeDanBlock extends Component {
                 </div>
             </div>
             <div className="playing-content">
-                <dl className="item odd">
-                    <dd className="name">
-                        <span>等我一首歌的时间</span>
-                        <i className="iconfont icon-sound voice"></i>
-                    </dd>
-                    <dd className="songer"><span>呼延冰</span></dd>
-                    <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
-                    <dd className="time"><span>00:00</span></dd>
-                </dl>
-                <dl className="item even">
-                    <dd className="name">
-                        <span>等我一首歌的时间</span>
-                        <i className="iconfont icon-sound voice"></i>
-                    </dd>
-                    <dd className="songer"><span>呼延冰</span></dd>
-                    <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
-                    <dd className="time"><span>00:00</span></dd>
-                </dl>
-                <dl className="item odd">
-                    <dd className="name">
-                        <span>等我一首歌的时间</span>
-                        <i className="iconfont icon-sound voice"></i>
-                    </dd>
-                    <dd className="songer"><span>呼延冰</span></dd>
-                    <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
-                    <dd className="time"><span>00:00</span></dd>
-                </dl>
-                <dl className="item even choosed">
-                    <dd className="name">
-                        <span>等我一首歌的时间</span>
-                        <i className="iconfont icon-sound voice"></i>
-                    </dd>
-                    <dd className="songer"><span>呼延冰</span></dd>
-                    <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
-                    <dd className="time"><span>00:00</span></dd>
-                </dl>
-                <dl className="item odd">
-                    <dd className="name">
-                        <span>等我一首歌的时间</span>
-                        <i className="iconfont icon-sound voice"></i>
-                    </dd>
-                    <dd className="songer"><span>呼延冰</span></dd>
-                    <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
-                    <dd className="time"><span>00:00</span></dd>
-                </dl>
+            {
+                playingMusic.map((item, index) => {
+                    return(
+                        <dl className={cs(['item',{'odd': index%2 == 0, 'even': index%2 == 1}])} key={index}>
+                            <dd className="name">
+                                <span>{item.fileName}</span>
+                                {
+                                    playing.uuid == item.uuid && (<i className="iconfont icon-sound voice"></i>)
+                                }
+                            </dd>
+                            <dd className="songer"><span>{item.fileArtist || '未知'}</span></dd>
+                            <dd className="from"><i className="iconfont icon-lianjie lianjie"></i></dd>
+                            <dd className="time"><span>{item.fileTime}</span></dd>
+                        </dl>
+                    )
+                })
+            }
             </div>
           </div>
         )

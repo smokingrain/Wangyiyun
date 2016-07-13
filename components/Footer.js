@@ -4,11 +4,13 @@ import { connect } from 'react-redux'
 import Progress from './Progress'
 import { play, pause } from '../api/audio'
 import cs from 'classnames'
-
+import { getState, dispatch } from '../redux/store/renderStore'
+import { newStatus } from '../redux/actions/actions'
 
 @connect((state) => {
   return {
-    music: state.music
+    music: state.music,
+    status: state.status
   }
 })
 export default class Footer extends Component {
@@ -22,6 +24,8 @@ export default class Footer extends Component {
   }
   render(){
     const { playing } = this.state
+    const { status } = this.props
+    const { playingMusic } = this.props.music
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
@@ -44,11 +48,21 @@ export default class Footer extends Component {
           <div className="xunhuan"><i className="iconfont icon-circulation"></i></div>
           <div className="lypric"><i className="iconfont icon-ci"></i></div>
           <div className="songlist">
-            <i className="iconfont icon-liebiao"><span className="playnumber">100</span></i>
+            <i className="iconfont icon-liebiao" onClick={()=>{this.toShowPlayingBlock()}}><span className="playnumber">{playingMusic.length}</span></i>
           </div>
         </div>
       </div>
     )
+  }
+  toShowPlayingBlock(){
+    const { status } = this.props
+    let { showPlayingBlock } = status
+    if(showPlayingBlock){
+      status.showPlayingBlock = false
+    }else {
+      status.showPlayingBlock = true
+    }
+    dispatch(newStatus(status))
   }
   playAudio(){
     const playing = this.state.playing

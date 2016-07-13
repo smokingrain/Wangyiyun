@@ -22,7 +22,7 @@ export default class MainTip extends Component {
           <div className="top">
             <div className="message">
               <i className={cs(['iconfont',{'icon-jinggao':tip.type == 'jinggao'}])}></i>
-              <p>{tip.message}</p>
+              <p title={tip.message}>{tip.message}</p>
             </div>
           </div>
           <div className="confirm" onClick={() => {this.confirmMessage()}}>确认</div>

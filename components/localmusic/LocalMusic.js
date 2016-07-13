@@ -31,7 +31,6 @@ export default class LocalMusic extends Component {
     render(){
         const module = this.props.module
         const localmusic = this.props.music.localmusic
-        console.log(this.props.music)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">
@@ -84,10 +83,14 @@ export default class LocalMusic extends Component {
                         })
                     }
                 </div>                
-                <div className="bottom-nav">
-                    <p className="tip">正在完善所有功能,敬请期待</p>
-                    <div><button>localmusic</button></div>
-                </div>
+                {
+                    localmusic.length == 0 && (
+                        <div className="bottom-nav">
+                            <p className="tip">乐库中没有本地音乐,点击添加</p>
+                            <div><button>您可以手动添加</button></div>
+                        </div>
+                    )
+                }
             </div>
           </div>
         )
@@ -112,7 +115,6 @@ export default class LocalMusic extends Component {
                 error = true
                 return
             }else{
-                item.uuid = uuid()
                 successArr.push(item)
             }
 
@@ -130,7 +132,6 @@ export default class LocalMusic extends Component {
             dispatch(newMessage(message))
         }
         successArr = fileDetail(successArr)
-        
         //现在获取到的successARR就是成功的有效的文件数组
         //开始流水式处理异步
 

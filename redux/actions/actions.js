@@ -4,9 +4,17 @@ import {
   MUSIC,
   FINDMUSIC,
   CONFIG,
-  MESSAGE
+  MESSAGE,
+  STATUS
 } from './actionsTypes'
 
+
+export function newStatus (status) {
+  return {
+    type: STATUS,
+    music: status
+  }
+}
 
 export function newMusic (music) {
   return {

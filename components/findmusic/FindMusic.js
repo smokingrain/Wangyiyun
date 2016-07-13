@@ -73,7 +73,6 @@ export default class FindMusic extends Component {
     }
     showModule (module) {
         this.setState({showModule: module})
-        console.log('gei in')
     }
 }
 

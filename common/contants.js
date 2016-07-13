@@ -8,7 +8,7 @@ const LOGPATH = path.resolve(__dirname, '../', 'logs')
 const DBPATH = path.resolve(__dirname, '../', 'db')
 const MUSICDB = 'musicDB.db'
 const picDB = 'pictureDB.db'
-
+const dbJSON = 'db.json'
 
 export { 
 	ROOT, 
@@ -17,6 +17,7 @@ export {
 	LOGPATH,
   DBPATH,
 	MUSICDB,
-  picDB
+  picDB,
+  dbJSON
 }
 

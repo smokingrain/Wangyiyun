@@ -10,5 +10,15 @@
       "voice":5,
       "name":"11"
     }
-  }
+  },
+  "localmusic":[
+    {
+      "uuid":""
+    }
+  ],
+  "lastPlayed":[
+
+  ],
+  "findmusic":[
+  ]
 }

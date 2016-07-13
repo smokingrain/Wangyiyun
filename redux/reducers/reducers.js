@@ -2,7 +2,8 @@ import {
   MUSIC,
   FINDMUSIC,
   CONFIG,
-  MESSAGE
+  MESSAGE,
+  STATUS
 } from '../actions/actionsTypes'
 import Immutable from 'immutable'
 import { conv } from '../../common/config' 
@@ -14,7 +15,7 @@ import { conv } from '../../common/config'
 
 
 //findmusic module
-let findmusicInit = conv.get()
+let findmusicInit = conv.get('findmusic')
 let audioConfig = conv.get('audio')
 //music init
 let musicInit = {
@@ -28,6 +29,11 @@ let musicInit = {
     voice:audioConfig.last.voice,
     path:audioConfig.last.path,
     name:audioConfig.last.name
+  },
+  localmusic:[],
+  playingMusic:[],
+  playing:{
+    
   }
 }
 
@@ -40,11 +46,25 @@ let messageInit = {
 //
 let configInit = {}
 
-
+let statusInit = {
+  showPlayingBlock: false
+}
 export function music (state = musicInit, action) {
   switch (action.type) {
     case MUSIC:
       let nextState = Immutable.Map(state).merge(action.music).toJS()
+      return nextState
+    default :
+      return state
+  }
+}
+
+
+
+export function status (state = statusInit, action) {
+  switch (action.type) {
+    case STATUS:
+      let nextState = Immutable.Map(state).merge(action.status).toJS()
       return nextState
     default :
       return state

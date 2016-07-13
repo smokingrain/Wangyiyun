@@ -25,16 +25,20 @@ export function isMP3(name) {
 
 //过滤一遍获取信息
 export function fileDetail(arr){
+  let newArr = []
   _.each(arr, function (item) {
+    let obj = {}
     let size = getFileSize(item.size)
     let fileSize = size.size.toString().concat(size.ext)
     let dotIndex = item.name.indexOf('.')
-    item.extName = path.extname(item.name.substring(1))
-    item.fileName = path.basename(item.name).substring(0,dotIndex)
-    item.fileSize = fileSize
-    item.filePath = item.path
+    obj.extName = path.extname(item.name.substring(1))
+    obj.fileName = path.basename(item.name).substring(0,dotIndex)
+    obj.fileSize = fileSize
+    obj.filePath = item.path
+    obj.uuid = uuid()
+    newArr.push(obj)
   })
-  return arr
+  return newArr
 }
 
 
@@ -55,14 +59,11 @@ export function getFileSize(size){
 
 //上传歌曲并获取详细信息  时间
 export function uploadFiles(fileArr){
-  console.log('get in')
   let ep = new eventproxy()
   ep.after('got_file', fileArr.length, function (list) {
-    console.log(list,'list')
     _.each(list, function (item, index) {
-      jsmediatags.read(item.path, {
+      jsmediatags.read(item.filePath, {
         onSuccess: function(tag) {
-          console.log(tag)
           var obj = {
             uuid: item.uuid,
             picture: tag.tags.picture ? tag.tags.picture.data : ""
@@ -103,7 +104,7 @@ export function uploadFiles(fileArr){
 
   _.each(fileArr, function (item, index) {
     let audio = document.createElement('audio')
-    audio.src = item.path
+    audio.src = item.filePath
     audio.addEventListener('loadedmetadata', function () {
       let time = audio.duration.toString()
       time = time.substring(0, time.lastIndexOf('.'))
@@ -174,6 +175,5 @@ export function changeTime(time){
   second_1 = second_1.toString()
   second_2 = second_2.toString()
   let timeNow = min_1.concat(min_2,":",second_1,second_2)
-  console.log(timeNow)
   return timeNow
 }

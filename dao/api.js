@@ -1,27 +1,34 @@
 import db from './musicDao'
 import _ from 'lodash'
 import uuid from 'uuid'
-import { getState, dispatch } from '../redux/store/mainStore'
+import { getState, dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
 import eventproxy from 'eventproxy'
+import { conv } from '../common/db'
 
-
-const { music, picture } =db
-
+const picDB = db.picture
+const musicDB = db.music
 
 export function insertLocalMusicByClick(data, pic){
-  
-  music.insert(data, function (err, newdoc) {
-    console.log('err',err)
+  musicDB.insert(data, function (err, newdoc) {
     if(!err){
-      console.log('insert success')  
+      picDB.insert(pic, function (err, doc){
+        if(!err){
+          let temp = conv.get('localmusic')
+          let localmusic = temp ? temp : []
+          let obj = {
+            uuid:data.uuid
+          }
+          localmusic.push(obj)
+          conv.set('localmusic', localmusic)
+          conv.save()
+          let music = getState().music
+          music.localmusic.push(data)
+          dispatch(newMusic(music))
+        }
+      })
     }
   }) 
-  picture.insert(pic, function (err, doc){
-    if(!err){
-      console.log('pic success')
-    }
-  })
 }
 
 
@@ -29,16 +36,61 @@ export function insertLocalMusicByClick(data, pic){
 
 
 
-// export async function initLocalMusic(){
-//   let localmusic = await getLocalMusicAll()
-//   let music = getState().music
-//   music.localmusic = localmusic
-//   dispatch(newMusic(music))
-// }
+export function initLocalMusic(){
+  let localmusic = conv.get('localmusic')
+  if(!localmusic){
+    return
+  }
+  let tempArr = []
+  let ep = new eventproxy()
+  ep.after('get_local', localmusic.length, function (list) {
+    let music = getState().music
+    music.localmusic = tempArr
+    dispatch(newMusic(music))
+  })
+
+  _.each(localmusic, function (item, index) {
+    musicDB.find({uuid: item.uuid}, function (err, doc) {
+      tempArr.push(doc[0])
+      ep.emit('get_local')
+      return 
+    })
+  })
+}
 
 
 
 
+export function initPlayingMusic(){
+  let playing = conv.get('playingmusic')
+  let tempArr = []
+  let ep = new eventproxy()
+  ep.after('get_playing', playing.length, function (list) {
+    let music = getState().music
+    music.playingMusic = tempArr
+    dispatch(newMusic(music))
+  })
+
+  _.each(playing, function (item, index) {
+    musicDB.find({uuid: item.uuid}, function (err, doc) {
+      tempArr.push(doc[0])
+      ep.emit('get_playing')
+      return 
+    })
+  })
+}
+
+export function initPlaying(){
+  let playing = conv.get('playing')
+  if(!playing){
+    return
+  }
+  musicDB.find({uuid: playing.uuid}, function (err, doc) {
+    let music = getState().music
+    music.playing = doc[0]
+    dispatch(newMusic(music))
+  })
+}
 // export function getLocalMusicAll(){
 //   return new Promise((resolve, reject) => {
 //     local.find({}, (err, data) => {

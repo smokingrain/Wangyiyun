@@ -11,14 +11,16 @@ import { connect } from 'react-redux'
 })
 export default class PlayingBlock extends Component {
   render(){
+    const { music } = this.props
+    const playing = music.playing
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">
           <img src="public/img/PDD/pddtest.jpg" />
         </div>
         <div className="musicname">
-          <p className="songname" title="给我一首歌的时间sxxxx">给我一首歌的时间sxxxx</p>
-          <p className="songer" title="周杰伦">周杰伦</p>
+          <p className="songname" title={playing.fileName}>{playing.fileName}</p>
+          <p className="songer" title={playing.fileArtist || '未知'}>{playing.fileArtist || '未知'}</p>
         </div>
         <div className="musicsonger">
           <div className="heart"><i className="iconfont icon-xin"></i></div>
