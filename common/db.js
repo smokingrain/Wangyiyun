@@ -1,16 +1,16 @@
 //这个config是当成伪数据库的
 
-import { DBPATH, dbJSON } from './contants'
+import { DBPATH, dbJSON, dbJSON_TEST } from './contants'
 import fs from 'fs'
 import _ from 'lodash'
 import { sep } from 'path'
 import path from 'path'
-
+import { conv } from './config'
 
 
 const configcon = new(require('nconf').Provider)()
 
-
+let env = conv.get('env')
 
 let config = function(){
   const DEFAULT = {
@@ -18,7 +18,11 @@ let config = function(){
   }
   let file = null
   const url = DBPATH
-  file = DBPATH + path.sep + dbJSON
+  if(env == 'production'){
+    file = DBPATH + path.sep + dbJSON
+  }else{
+    file = DBPATH + path.sep + dbJSON_TEST
+  }
   let nconf = configcon
 
 

@@ -22,5 +22,6 @@
   "findmusic":[
   ],
   "random":false,
-  "loop":false
+  "loop":false,
+  "env":"production"
 }
