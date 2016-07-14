@@ -23,5 +23,5 @@
   ],
   "random":false,
   "loop":false,
-  "env":"production"
+  "env":"test"
 }

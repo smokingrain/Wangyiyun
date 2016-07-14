@@ -73,32 +73,16 @@ export function uploadFiles(fileArr){
           item.fileArtist = tag.artist ? tag.artist: ""
           item.fileTitle = tag.title ? tag.title : ""
           insertLocalMusicByClick(item, obj)
+          console.log('music before')
           let music = getState().music
+          console.log('music after')
           // music.localmusic.push(item)
           // dispatch(newMusic(music))
         },
         onError: function(error) {
-          console.log(':(', error.type, error.info);
+          console.log(':(', error.type, error.info)
         }
       })
-      // id3({file:item.path,type:id3.OPEN_LOCAL}, function (err, tags) {
-      //   item.fileLocal = true
-      //   item.fileAlbum = tags.v1.album ? tags.v1.album : tags.v2.album
-      //   item.fileArtist = tags.v1.artist ? tags.v1.artist : tags.v2.artist
-      //   item.fileComment = tags.v1.comment ? tags.v1.comment : tags.v2.comment
-      //   item.fileGenre = tags.v1.genre ? tags.v1.genre : tags.v2.genre
-      //   item.fileTitle = tags.v1.title ? tags.v1.title : tags.v2.title
-      //   item.fileTrack = tags.v1.track ? tags.v1.track : tags.v2.track
-      //   item.fileYear = tags.v1.year ? tags.v1.year : tags.year
-      //   item.fileImage = tags.v2.image ? tags.v2.image : ''
-      //   console.log(tags.v2.image)
-      //   console.log(tags.v1.image)
-      //   item.musicID = uuid()
-      //   insertLocalMusicByClick(item)
-      //   let music = getState().music
-      //   music.localmusic.push(item)
-      //   dispatch(newMusic(music))
-      // })
     })
   })
 

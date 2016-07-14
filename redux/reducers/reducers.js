@@ -21,10 +21,6 @@ let audioConfig = conv.get('audio')
 let musicInit = {
   showModule: 'localmusic',
   tempUploadFile:null,
-  playIng:{
-    path:'',
-    name:''
-  },
   audio: {
     voice:audioConfig.last.voice,
     path:audioConfig.last.path,

@@ -96,6 +96,7 @@ export default class LocalMusic extends Component {
         )
     }
     upLoadLocalMusic(e){
+        console.log(this.props.music)
         const message = this.props.message
         const notify = message.notify
         let tip = {}
@@ -131,6 +132,7 @@ export default class LocalMusic extends Component {
             message.showMask = true
             dispatch(newMessage(message))
         }
+        console.log('detail')
         successArr = fileDetail(successArr)
         //现在获取到的successARR就是成功的有效的文件数组
         //开始流水式处理异步
@@ -141,6 +143,7 @@ export default class LocalMusic extends Component {
 
 
         document.getElementById('load-local-music').value = null
+        console.log('sucesssarr')
         uploadFiles(successArr)    
         // let fileInfo = fileDetail(item)
         // $('#audioBack').on('load', function () {

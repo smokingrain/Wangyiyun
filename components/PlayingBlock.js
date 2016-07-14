@@ -12,16 +12,17 @@ import { play } from '../api/audio'
 export default class PlayingBlock extends Component {
   componentDidUpdate(prevProps, prevState) {
 
-    const prePlaying = prevProps.music.playing.uuid
-    const nextPlaying = prevState.music.playing.uuid
-    console.log(prePlaying, nextPlaying)
-    if(prePlaying != nextPlaying){
-      console.log('next state play')
-      play()
-    }
+    // const prePlaying = prevProps.music.playing.uuid
+    // const nextPlaying = prevState.music.playing.uuid
+    // console.log(prePlaying, nextPlaying)
+    // if(prePlaying != nextPlaying){
+    //   console.log('next state play')
+    //   play()
+    // }
   }
   render(){
     const { music } = this.props
+    console.log(music)
     const playing = music.playing
     return (
       <div className="playingblock nodrag">

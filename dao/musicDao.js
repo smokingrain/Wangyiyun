@@ -12,15 +12,16 @@ import { conv } from '../common/config'
 
 
 let env = conv.get('env')
-
+let music = null
+let picture = null
 if(env == 'production'){
   //歌单数据库
-  const music = DBPATH + path.sep + MUSICDB
-  const picture = DBPATH + path.sep + picDB
+  music = DBPATH + path.sep + MUSICDB
+  picture = DBPATH + path.sep + picDB
 }else{
   //歌单数据库
-  const music = DBPATH + path.sep + MUSICDB_TEST
-  const picture = DBPATH + path.sep + picDB_TEST
+  music = DBPATH + path.sep + MUSICDB_TEST
+  picture = DBPATH + path.sep + picDB_TEST
 }
 
 if(!fs.existsSync(DBPATH)){
