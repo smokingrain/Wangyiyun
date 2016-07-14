@@ -3,14 +3,32 @@ import { newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
 import { changeTime } from '../common/util'
 import { conv } from '../common/config'
-
+import uuid from 'uuid'
 
 
 export function play(){
   let music = getState().music
   let playing = music.playing
-  console.log(playing)
   if(!playing.uuid){
+    let playingmusic = music.playingmusic
+    if(playingmusic.length>0){
+      playing = {
+        uuid: playingmusic[0].uuid
+      }    
+      music.playing = playing
+      dispatch(newMusic(music))
+      return
+    }
+    
+    if(localmusic.length>0){
+      playing = {
+        uuid: localmusic[0].uuid
+      }    
+      music.playing = playing
+      dispatch(newMusic(music))
+      return
+    }
+    
     return
   }
   console.log('isplaying')

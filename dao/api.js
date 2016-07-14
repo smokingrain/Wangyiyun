@@ -2,7 +2,7 @@ import db from './musicDao'
 import _ from 'lodash'
 import uuid from 'uuid'
 import { getState, dispatch } from '../redux/store/renderStore'
-import { newMusic } from '../redux/actions/actions'
+import { newMusic, newConfig } from '../redux/actions/actions'
 import eventproxy from 'eventproxy'
 import { convData } from '../common/db'
 import { conv } from '../common/config'
@@ -14,8 +14,13 @@ const musicDB = db.music
 
 
 export function initEnvorment(){
-  let playing = null
-  let playingmusic = null
+  let playing = {}
+  let playingmusic = []
+  let localmusic = []
+  let voice = 1
+  let init = false
+  let loop = false
+  let random = false
   if(!conv.get('init')){
     convData.set('localmusic',[])
     convData.set('playingmusic',[])
@@ -23,17 +28,36 @@ export function initEnvorment(){
     convData.save()
 
 
-    conv.set('random', false)
-    conv.set('loop', false)
+    conv.set('audio:random', false)
+    conv.set('audio:loop', false)
     conv.set('init', true)
-    conv.set('voice', 1)
+    conv.set('audio:voice', 1)
+    conv.save()
     console.log('init')
+  }else{
+    playing = convData.get('playing')
+    playingmusic = convData.get('playingmusic')
+    localmusic = convData.get('localmusic')
+    init = conv.get('init')
+    loop = conv.get('audio:loop')
+    random = conv.get('audio:random')
+    voice = conv.get('audio:voice')
   }
 
   let music = getState().music
   music.playing = playing
   music.playingmusic = playingmusic
+  music.localmusic = localmusic
+
+  let config = getState().config
+  config.audio = {}
+  config.audio.voice = voice
+  config.audio.loop = loop
+  config.audio.random = random
+  config.init = init
   dispatch(newMusic(music))
+  dispatch(newConfig(config))
+  console.log('xxxxxxxxxx')
 }
 export function insertLocalMusicByClick(data, pic){
   musicDB.insert(data, function (err, newdoc) {

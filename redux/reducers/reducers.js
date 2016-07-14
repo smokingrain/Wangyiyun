@@ -20,11 +20,6 @@ let findmusicInit = {}
 let musicInit = {
   showModule: 'localmusic',
   tempUploadFile:null,
-  localmusic:[],
-  playingMusic:[],
-  playing:{
-    
-  }
 }
 
 let messageInit = {

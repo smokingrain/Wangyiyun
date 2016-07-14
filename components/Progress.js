@@ -7,7 +7,8 @@ import $ from 'jquery'
 
 @connect((state) => {
   return {
-    music: state.music
+    music: state.music,
+    config: state.config
   }
 })
 export default class Progress extends Component {
@@ -64,7 +65,8 @@ export default class Progress extends Component {
     const { owner } = this.props
     const own = 'progress '+owner
     const music = this.props.music
-    const audio = music.audio
+    const config = this.props.config
+    const audio = config.audio
     const voice = audio.voice
     const len = owner == 'voiceProgress' ? initBallPosition(voice, 78) : 0
     return (

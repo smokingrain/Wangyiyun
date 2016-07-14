@@ -25,7 +25,7 @@ export default class Footer extends Component {
   render(){
     const { playing } = this.state
     const { status } = this.props
-    const { playingMusic } = this.props.music
+    const { playingmusic } = this.props.music
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
@@ -48,7 +48,7 @@ export default class Footer extends Component {
           <div className="xunhuan"><i className="iconfont icon-circulation"></i></div>
           <div className="lypric"><i className="iconfont icon-ci"></i></div>
           <div className="songlist">
-            <i className="iconfont icon-liebiao" onClick={()=>{this.toShowPlayingBlock()}}><span className="playnumber">{playingMusic.length}</span></i>
+            <i className="iconfont icon-liebiao" onClick={()=>{this.toShowPlayingBlock()}}><span className="playnumber">{playingmusic.length}</span></i>
           </div>
         </div>
       </div>

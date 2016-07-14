@@ -13,7 +13,7 @@ import { changeTime } from '../../common/util'
 export default class PlayingGeDanBlock extends Component {
     render(){
         const { music, status } = this.props
-        const playingMusic = music.playingMusic
+        const playingmusic = music.playingmusic
         const { showPlayingBlock } = status
         const playing = music.playing
         return (
@@ -40,7 +40,7 @@ export default class PlayingGeDanBlock extends Component {
             </div>
             <div className="playing-content">
             {
-                playingMusic.map((item, index) => {
+                playingmusic.map((item, index) => {
                     return(
                         <dl className={cs(['item',{'odd': index%2 == 0, 'even': index%2 == 1}])} key={index}>
                             <dd className="name">
