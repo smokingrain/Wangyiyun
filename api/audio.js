@@ -6,13 +6,14 @@ import { conv } from '../common/config'
 
 
 
-export function play(type){
-  if(type == 'default'){
-
-    return
-  }
+export function play(){
   let music = getState().music
   let playing = music.playing
+  console.log(playing)
+  if(!playing.uuid){
+    return
+  }
+  console.log('isplaying')
   if(window.audio != null && window.audio.canPlayType){
     window.audio.src = playing.filePath
     window.audio.play()

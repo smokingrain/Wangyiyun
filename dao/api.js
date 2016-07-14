@@ -5,10 +5,36 @@ import { getState, dispatch } from '../redux/store/renderStore'
 import { newMusic } from '../redux/actions/actions'
 import eventproxy from 'eventproxy'
 import { convData } from '../common/db'
+import { conv } from '../common/config'
 
 const picDB = db.picture
 const musicDB = db.music
 
+
+
+
+export function initEnvorment(){
+  let playing = null
+  let playingmusic = null
+  if(!conv.get('init')){
+    convData.set('localmusic',[])
+    convData.set('playingmusic',[])
+    convData.set('playing',{})
+    convData.save()
+
+
+    conv.set('random', false)
+    conv.set('loop', false)
+    conv.set('init', true)
+    conv.set('voice', 1)
+    console.log('init')
+  }
+
+  let music = getState().music
+  music.playing = playing
+  music.playingmusic = playingmusic
+  dispatch(newMusic(music))
+}
 export function insertLocalMusicByClick(data, pic){
   musicDB.insert(data, function (err, newdoc) {
     if(!err){
@@ -44,8 +70,13 @@ export function initLocalMusic(){
   let tempArr = []
   let ep = new eventproxy()
   ep.after('get_local', localmusic.length, function (list) {
+    console.log(tempArr)
+    if(tempArr.length<=0){
+      return
+    }
     let music = getState().music
     music.localmusic = tempArr
+    console.log(music)
     dispatch(newMusic(music))
   })
 
@@ -66,6 +97,9 @@ export function initPlayingMusic(){
   let tempArr = []
   let ep = new eventproxy()
   ep.after('get_playing', playing.length, function (list) {
+    if(tempArr.length<=0){
+      return
+    }
     let music = getState().music
     music.playingMusic = tempArr
     dispatch(newMusic(music))

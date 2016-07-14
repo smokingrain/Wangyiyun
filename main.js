@@ -19,15 +19,18 @@ import {
 import { main } from './renderProcess/winOptions'
 // import { logger } from './modules/logger'
 // import { logger } from './common/logger'
-// import { initLocalMusic, initPlayingMusic, initPlaying } from './dao/api'
+import { initLocalMusic, initPlayingMusic, initPlaying, initEnvorment } from './dao/api'
 let dataGlobal = {}
 dataGlobal.win = []
-// initLocalMusic()
+
+
+initEnvorment()
+initLocalMusic()
 // initPlayingGedan()
 
 // insertPlayingGedan(arr)
-// initLocalMusic()
-// initPlayingMusic()
+initLocalMusic()
+initPlayingMusic()
 // initPlaying()
 app.on('ready', () => {
   // logger.info('app is ready')
