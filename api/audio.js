@@ -6,9 +6,14 @@ import { conv } from '../common/config'
 import uuid from 'uuid'
 import { insertLocalMusicByClick } from '../dao/api'
 
+
+
+
+
 export function play(){
   let music = getState().music
   let playing = music.playing
+  music.pause = false
   if(!playing.uuid){
     let playingmusic = music.playingmusic
     if(playingmusic.length>0){
@@ -65,19 +70,19 @@ $(audio).on('timeupdate', function (event){
 //监听结束   自动下一曲   如果有循环  另做处理
 $(audio).on('ended', function () {
   let music = getState().music
-  let playingMusic = music.playingMusic
+  let playingmusic = music.playingmusic
   let loop = conv.get('loop')
-  console.log('end.....')
+
   //xunhuan
-  if(loop || playingMusic.length <= 0){
+  if(loop || playingmusic.length <= 0){
     play()
     return
   }
   //随机
   let random = conv.get('random')
   if(random){
-    let randomm = Math.floor(Math.random()*playingMusic.length)
-    music.playing = playingMusic[random]
+    let randomm = Math.floor(Math.random()*playingmusic.length)
+    music.playing = playingmusic[random]
     dispatch(newMusic(music))
     return
   }
@@ -85,9 +90,9 @@ $(audio).on('ended', function () {
   //下一曲
   let playing = music.playing
   let playingIndex = null
-  _.each(playingMusic, (item, index) => {
+  _.each(playingmusic, (item, index) => {
     if(playing.uuid == item.uuid){
-      if(index+1 == playingMusic.length){
+      if(index+1 == playingmusic.length){
         playingIndex = 0
       }else{
         playingIndex = index +1
@@ -95,12 +100,24 @@ $(audio).on('ended', function () {
     }
   })
   console.log('get ind')
-  music.playing = playingMusic[playingIndex]
+  music.playing = playingmusic[playingIndex]
   dispatch(newMusic(music))
 })
 
-
+$(audio).on('pause', function () {
+  let music = getState().music
+  music.pause = true
+  dispatch(newMusic(music))
+})
 
 export function pause(){
   window.audio.pause()
+}
+
+
+export function goonPlay(){
+  window.audio.play()
+  let music = getState().music
+  music.pause = false
+  dispatch(newMusic(music))
 }

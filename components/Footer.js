@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
 import Progress from './Progress'
-import { play, pause } from '../api/audio'
+import { play, pause, goonPlay } from '../api/audio'
 import cs from 'classnames'
 import { getState, dispatch } from '../redux/store/renderStore'
 import { newStatus } from '../redux/actions/actions'
@@ -67,7 +67,10 @@ export default class Footer extends Component {
   playAudio(){
     const playing = this.state.playing
     const { music } = this.props
-    if(!playing){
+    if(!playing && music.pause){
+      goonPlay()
+      this.setState({playing: true})
+    }else if(!playing && !music.pause){
       play()
       this.setState({playing: true})
     }else{
