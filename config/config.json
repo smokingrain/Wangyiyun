@@ -1,7 +1,7 @@
 {
   "audio": {
     "random": false,
-    "loop": false,
+    "loop": true,
     "voice": 1
   },
   "init": true

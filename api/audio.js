@@ -4,7 +4,7 @@ import $ from 'jquery'
 import { changeTime } from '../common/util'
 import { conv } from '../common/config'
 import uuid from 'uuid'
-
+import { insertLocalMusicByClick } from '../dao/api'
 
 export function play(){
   let music = getState().music
@@ -20,15 +20,14 @@ export function play(){
       return
     }
     
-    if(localmusic.length>0){
+    if(music.localmusic.length>0){
       playing = {
-        uuid: localmusic[0].uuid
+        uuid: music.localmusic[0].uuid
       }    
       music.playing = playing
       dispatch(newMusic(music))
       return
     }
-    
     return
   }
   console.log('isplaying')
@@ -64,24 +63,20 @@ $(audio).on('timeupdate', function (event){
 
 
 //监听结束   自动下一曲   如果有循环  另做处理
-$(audio).on('end', function () {
+$(audio).on('ended', function () {
   let music = getState().music
   let playingMusic = music.playingMusic
   let loop = conv.get('loop')
   console.log('end.....')
   //xunhuan
-  if(loop){
+  if(loop || playingMusic.length <= 0){
     play()
-    return
-  }
-  if(playingMusic.length <= 0){
-    play('default')
     return
   }
   //随机
   let random = conv.get('random')
   if(random){
-    let randomm = parseInt(Math.random()*playingMusic.length)
+    let randomm = Math.floor(Math.random()*playingMusic.length)
     music.playing = playingMusic[random]
     dispatch(newMusic(music))
     return

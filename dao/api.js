@@ -7,6 +7,7 @@ import eventproxy from 'eventproxy'
 import { convData } from '../common/db'
 import { conv } from '../common/config'
 
+
 const picDB = db.picture
 const musicDB = db.music
 
@@ -21,11 +22,8 @@ export function initEnvorment(){
   let init = false
   let loop = false
   let random = false
+  let music = getState().music
   if(!conv.get('init')){
-    convData.set('localmusic',[])
-    convData.set('playingmusic',[])
-    convData.set('playing',{})
-    convData.save()
 
 
     conv.set('audio:random', false)
@@ -33,7 +31,20 @@ export function initEnvorment(){
     conv.set('init', true)
     conv.set('audio:voice', 1)
     conv.save()
-    console.log('init')
+
+
+    let obj = {"extName":".mp3","fileName":"胡彦斌 - 当爱已成往事","fileSize":"6MB","filePath":"E:\\github\\Wangyiyun\\public\\music\\胡彦斌 - 当爱已成往事.mp3","uuid":"a0709157-f458-466f-b830-5e543dd50492","fileTime":"269","fileLocal":true,"fileAlbum":"","fileArtist":"","fileTitle":"","_id":"M0KRvX4IZGpi8wWI"}
+    let picobj = {
+      uuid:'a0709157-f458-466f-b830-5e543dd50492',
+      picture:''
+    }
+    playing = obj
+    localmusic.push(obj)
+    convData.set('localmusic',localmusic)
+    convData.set('playingmusic',[])
+    convData.set('playing',playing)
+    convData.save()
+    insertLocalMusicByClick(obj, picobj, 'init')
   }else{
     playing = convData.get('playing')
     playingmusic = convData.get('playingmusic')
@@ -44,11 +55,10 @@ export function initEnvorment(){
     voice = conv.get('audio:voice')
   }
 
-  let music = getState().music
+  
   music.playing = playing
   music.playingmusic = playingmusic
   music.localmusic = localmusic
-
   let config = getState().config
   config.audio = {}
   config.audio.voice = voice
@@ -57,13 +67,16 @@ export function initEnvorment(){
   config.init = init
   dispatch(newMusic(music))
   dispatch(newConfig(config))
-  console.log('xxxxxxxxxx')
 }
-export function insertLocalMusicByClick(data, pic){
+
+
+
+
+export function insertLocalMusicByClick(data, pic, init){
   musicDB.insert(data, function (err, newdoc) {
     if(!err){
       picDB.insert(pic, function (err, doc){
-        if(!err){
+        if(!err && init!='init'){
           let temp = convData.get('localmusic')
           let localmusic = temp ? temp : []
           let obj = {
@@ -204,3 +217,10 @@ export function initPlaying(){
 
 
 
+export function getMusicByUuid(uuid, cb){
+  musicDB.find({uuid, uuid}, function (err, doc) {
+    if(!err){
+      cb(doc)
+    }
+  })
+}

@@ -25,12 +25,12 @@ dataGlobal.win = []
 
 
 initEnvorment()
-initLocalMusic()
+// initLocalMusic()
 // initPlayingGedan()
 
 // insertPlayingGedan(arr)
-initLocalMusic()
-initPlayingMusic()
+// initLocalMusic()
+// initPlayingMusic()
 // initPlaying()
 app.on('ready', () => {
   // logger.info('app is ready')

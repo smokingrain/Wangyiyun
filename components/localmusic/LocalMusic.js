@@ -31,6 +31,7 @@ export default class LocalMusic extends Component {
     render(){
         const module = this.props.module
         const localmusic = this.props.music.localmusic
+        console.log(localmusic)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">

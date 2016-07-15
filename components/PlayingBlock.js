@@ -10,8 +10,14 @@ import { play } from '../api/audio'
   }
 })
 export default class PlayingBlock extends Component {
+  constructor(){
+    super()
+  }
   componentDidUpdate(prevProps, prevState) {
+    console.log('start')
 
+    console.log(prevProps,'prevProps')
+    console.log(prevState,'prevState')
     // const prePlaying = prevProps.music.playing.uuid
     // const nextPlaying = prevState.music.playing.uuid
     // console.log(prePlaying, nextPlaying)
@@ -22,8 +28,8 @@ export default class PlayingBlock extends Component {
   }
   render(){
     const { music } = this.props
-    console.log(music)
     const playing = music.playing
+    console.log(music)
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">
