@@ -6,7 +6,7 @@ import { play, pause, goonPlay } from '../api/audio'
 import cs from 'classnames'
 import { getState, dispatch } from '../redux/store/renderStore'
 import { newStatus } from '../redux/actions/actions'
-
+import $ from 'jquery'
 
 
 let playingFlag = null
@@ -24,6 +24,14 @@ export default class Footer extends Component {
     this.state = {
       playing:''
     }
+  }
+  componentDidMount() {
+    const config = this.props.config
+    const { voice } = config.audio
+    let len = initBallPosition(voice, $('.voiceProgress .progress-slot').width())     
+    $('.voiceProgress .progress-bar').width(len)
+    let len_ball = len - 7
+    $('.voiceProgress .progress-ball').css("left",len_ball)
   }
   componentDidUpdate(prevProps, prevState) {
     

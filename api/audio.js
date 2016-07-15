@@ -1,5 +1,5 @@
 import { dispatch, getState } from '../redux/store/renderStore'
-import { newMusic } from '../redux/actions/actions'
+import { newMusic, newConfig } from '../redux/actions/actions'
 import $ from 'jquery'
 import { changeTime } from '../common/util'
 import { conv } from '../common/config'
@@ -102,6 +102,7 @@ $(audio).on('ended', function () {
   console.log('get ind')
   music.playing = playingmusic[playingIndex]
   dispatch(newMusic(music))
+  animatePlay()
 })
 
 $(audio).on('pause', function () {
@@ -122,4 +123,28 @@ export function goonPlay(){
   music.pause = false
   music.currTime = false
   dispatch(newMusic(music))
+}
+
+
+export function animatePlay(){
+  let voice = conv.get('audio:voice')
+  if(voice<4){
+    setTimeout(function () {
+      play()
+    },300)
+    return
+  }
+  let inter = setInterval(function () {
+    let config = getState().config
+    if(voice == 0){
+      play()
+      clearInterval(inter)
+      let vo = conv.get('audio:voice')
+      config.audio.voice = vo
+    }else{
+      voice = voice - 1
+    }
+    config.audio.voice = voice
+    dispatch(newConfie(config))
+  },50)
 }
