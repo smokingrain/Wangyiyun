@@ -14,13 +14,12 @@ export default class PlayingBlock extends Component {
     super()
   }
   componentDidUpdate(prevProps, prevState) {
-    const { music } = this.props
-    console.log(music.playing.fileName == prevProps.music.playing.fileName)
-    // play()
+    console.log(prevProps.music.playing.uuid == this.props.music.playing.uuid)
   }
   render(){
     const { music } = this.props
     const playing = music.playing
+    console.log(music)
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">

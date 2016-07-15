@@ -26,7 +26,7 @@ export default class Footer extends Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-
+    
   }
   render(){
     const { playing } = this.state
