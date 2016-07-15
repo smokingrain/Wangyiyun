@@ -14,7 +14,13 @@ export default class PlayingBlock extends Component {
     super()
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps.music.playing.uuid == this.props.music.playing.uuid)
+    // const prePlaying = prevProps.music.playing.uuid
+    // const nextPlaying = prevState.music.playing.uuid
+    // console.log(prePlaying, nextPlaying)
+    // if(prePlaying != nextPlaying){
+    //   console.log('next state play')
+    //   play()
+    // }
   }
   render(){
     const { music } = this.props
