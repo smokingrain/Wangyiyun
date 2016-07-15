@@ -20,6 +20,8 @@ let findmusicInit = {}
 let musicInit = {
   showModule: 'localmusic',
   tempUploadFile:null,
+  pause: true,
+  currTime:false
 }
 
 let messageInit = {

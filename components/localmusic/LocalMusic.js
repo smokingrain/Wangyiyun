@@ -13,6 +13,7 @@ import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
 import async from 'async'
 // import { insertPlayingGedan } from '../../dao/api'
 import uuid from 'uuid'
+import { play } from '../../api/audio'
 
 
 
@@ -157,7 +158,6 @@ export default class LocalMusic extends Component {
         music.playing = item
         music.playingmusic = music.localmusic
         dispatch(newMusic(music))
-        console.log(music, 'lololo')
     }
 }
 

@@ -14,22 +14,13 @@ export default class PlayingBlock extends Component {
     super()
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('start')
-
-    console.log(prevProps,'prevProps')
-    console.log(prevState,'prevState')
-    // const prePlaying = prevProps.music.playing.uuid
-    // const nextPlaying = prevState.music.playing.uuid
-    // console.log(prePlaying, nextPlaying)
-    // if(prePlaying != nextPlaying){
-    //   console.log('next state play')
-    //   play()
-    // }
+    const { music } = this.props
+    console.log(music.playing.fileName == prevProps.music.playing.fileName)
+    // play()
   }
   render(){
     const { music } = this.props
     const playing = music.playing
-    console.log(music)
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">

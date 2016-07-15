@@ -35,6 +35,7 @@ export function play(){
     }
     return
   }
+  dispatch(newMusic(music))
   if(window.audio != null && window.audio.canPlayType){
     window.audio.src = playing.filePath
     window.audio.play()
@@ -106,6 +107,7 @@ $(audio).on('ended', function () {
 $(audio).on('pause', function () {
   let music = getState().music
   music.pause = true
+  music.currTime = true
   dispatch(newMusic(music))
 })
 
@@ -118,5 +120,6 @@ export function goonPlay(){
   window.audio.play()
   let music = getState().music
   music.pause = false
+  music.currTime = false
   dispatch(newMusic(music))
 }

@@ -7,6 +7,11 @@ import cs from 'classnames'
 import { getState, dispatch } from '../redux/store/renderStore'
 import { newStatus } from '../redux/actions/actions'
 
+
+
+let playingFlag = null
+
+
 @connect((state) => {
   return {
     music: state.music,
@@ -17,24 +22,23 @@ export default class Footer extends Component {
   constructor(){
     super()
     this.state = {
-      playing:false
+      playing:''
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    console.log('change')     
-  }
-  componentDidMount() {
+
   }
   render(){
     const { playing } = this.state
     const { status } = this.props
     const { playingmusic } = this.props.music
     const music = this.props.music
+    const pause = music.pause
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
           <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
-          <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1':!playing && !music.pause,"icon-zanting1":playing && music.pause}])}></i></div>
+          <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1': pause,"icon-zanting1": !pause}])}></i></div>
           <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
         </div>
         <div className="nowtime">
@@ -69,17 +73,13 @@ export default class Footer extends Component {
     dispatch(newStatus(status))
   }
   playAudio(){
-    const playing = this.state.playing
     const { music } = this.props
-    if(!playing && music.pause){
+    if(music.pause && music.currTime){
       goonPlay()
-      this.setState({playing: true})
-    }else if(!playing && !music.pause){
+    }else if(music.pause && !music.currTime){
       play()
-      this.setState({playing: true})
     }else{
       pause()
-      this.setState({playing: false})
     }
   }
 }
