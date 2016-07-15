@@ -20,17 +20,21 @@ export default class Footer extends Component {
       playing:false
     }
   }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('change')     
+  }
   componentDidMount() {
   }
   render(){
     const { playing } = this.state
     const { status } = this.props
     const { playingmusic } = this.props.music
+    const music = this.props.music
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
           <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
-          <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1':!playing,"icon-zanting1":playing}])}></i></div>
+          <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1':!playing && !music.pause,"icon-zanting1":playing && music.pause}])}></i></div>
           <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
         </div>
         <div className="nowtime">

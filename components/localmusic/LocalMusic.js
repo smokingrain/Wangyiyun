@@ -8,7 +8,7 @@ import fs from 'fs'
 import $ from 'jquery'
 import ep from 'eventproxy'
 import { dispatch } from '../../redux/store/renderStore'
-import { newMessage } from '../../redux/actions/actions'
+import { newMessage, newMusic } from '../../redux/actions/actions'
 import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
 import async from 'async'
 // import { insertPlayingGedan } from '../../dao/api'
@@ -29,9 +29,9 @@ export default class LocalMusic extends Component {
         super()
     }
     render(){
+        const self = this
         const module = this.props.module
         const localmusic = this.props.music.localmusic
-        console.log(localmusic)
         return (
           <div className={cs(['content-box','localmusic','nodrag',{"hide": module!= 'localmusic'}])}>
             <div className="top-nav">
@@ -72,7 +72,7 @@ export default class LocalMusic extends Component {
                     {
                         localmusic && localmusic.map((item, index) => {
                             return(
-                                <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index}>
+                                <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index} onDoubleClick={()=>{self.chooseThisItem(item)}}>
                                     <dd className="number"><span>{index+1}</span></dd>
                                     <dd className="title"><span>{item.fileName}</span></dd>
                                     <dd className="songer"><span>{item.fileArtist || '未知'}</span></dd>
@@ -151,6 +151,13 @@ export default class LocalMusic extends Component {
         //     console.log('get in')
         // })
         // $('#audioBack').attr('src',item.path)
+    }
+    chooseThisItem(item){
+        const music = this.props.music
+        music.playing = item
+        music.playingmusic = music.localmusic
+        dispatch(newMusic(music))
+        console.log(music, 'lololo')
     }
 }
 
