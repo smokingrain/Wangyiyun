@@ -31,8 +31,6 @@ export function initEnvorment(){
     conv.set('init', true)
     conv.set('audio:voice', 1)
     conv.save()
-
-
     let obj = {"extName":".mp3","fileName":"胡彦斌 - 当爱已成往事","fileSize":"6MB","filePath":"E:\\github\\Wangyiyun\\public\\music\\胡彦斌 - 当爱已成往事.mp3","uuid":"a0709157-f458-466f-b830-5e543dd50492","fileTime":"269","fileLocal":true,"fileAlbum":"","fileArtist":"","fileTitle":"","_id":"M0KRvX4IZGpi8wWI"}
     let picobj = {
       uuid:'a0709157-f458-466f-b830-5e543dd50492',
@@ -44,7 +42,7 @@ export function initEnvorment(){
     convData.set('playingmusic',[])
     convData.set('playing',playing)
     convData.save()
-    insertLocalMusicByClick(obj, picobj, 'init')
+    insertLocalmusicInit(obj, picobj)
   }else{
     playing = convData.get('playing')
     playingmusic = convData.get('playingmusic')
@@ -76,18 +74,28 @@ export function insertLocalMusicByClick(data, pic, init){
   musicDB.insert(data, function (err, newdoc) {
     if(!err){
       picDB.insert(pic, function (err, doc){
-        if(!err && init!='init'){
+        if(!err){
           let temp = convData.get('localmusic')
           let localmusic = temp ? temp : []
-          let obj = {
-            uuid:data.uuid
-          }
-          localmusic.push(obj)
+          localmusic.push(data)
           convData.set('localmusic', localmusic)
           convData.save()
           let music = getState().music
           music.localmusic.push(data)
           dispatch(newMusic(music))
+        }
+      })
+    }
+  }) 
+}
+
+
+export function insertLocalmusicInit(data, pic){
+  musicDB.insert(data, function (err, newdoc) {
+    if(!err){
+      picDB.insert(pic, function (err, doc){
+        if(!err){
+          console.log('xx')
         }
       })
     }

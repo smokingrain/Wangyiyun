@@ -35,7 +35,6 @@ export function play(){
     }
     return
   }
-  console.log('isplaying')
   if(window.audio != null && window.audio.canPlayType){
     window.audio.src = playing.filePath
     window.audio.play()
