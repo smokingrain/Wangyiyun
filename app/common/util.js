@@ -10,6 +10,7 @@ import { newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
 import uuid from 'uuid'
 import jsmediatags from 'jsmediatags'
+import { convData } from './db'
 
 export function isMP3(name) {
   let flag = false
@@ -73,9 +74,7 @@ export function uploadFiles(fileArr){
           item.fileArtist = tag.artist ? tag.artist: ""
           item.fileTitle = tag.title ? tag.title : ""
           insertLocalMusicByClick(item, obj)
-          console.log('music before')
-          let music = getState().music
-          console.log('music after')
+          // let music = getState().music.toJS()
           // music.localmusic.push(item)
           // dispatch(newMusic(music))
         },

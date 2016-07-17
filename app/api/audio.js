@@ -11,40 +11,22 @@ import { insertLocalMusicByClick } from '../dao/api'
 
 
 export function play(){
-  let music = getState().music
-  let playing = music.playing
+  let music = getState().music.toJS()
+  console.log(music)
   music.pause = false
+  music.toplay = false
+  let playing = music.playing
+  console.log(playing,'playing')
   if(!playing.uuid){
-    console.log('get in no playing')
-    let playingmusic = music.playingmusic
-    if(playingmusic.length>0){
-      playing = {
-        uuid: playingmusic[0].uuid
-      }    
-      music.playing = playing
-      dispatch(newMusic(music))
-      return
-    }
-    
-    if(music.localmusic.length>0){
-      playing = {
-        uuid: music.localmusic[0].uuid
-      }    
-      music.playing = playing
-      dispatch(newMusic(music))
-      return
-    }
-
-    let message = getState().message
+    let message = getState().message.toJS()
     message.notify.tip = "未找到可播放的音乐资源,请自行添加"
     message.showMask = true
     return
   }
-  dispatch(newMusic(music))
   if(window.audio != null && window.audio.canPlayType){
-    console.log(music.pause)
     window.audio.src = playing.filePath
     window.audio.play()
+    dispatch(newMusic(music))
   }
 }
 
@@ -112,7 +94,7 @@ $(audio).on('ended', function () {
 })
 
 $(audio).on('pause', function () {
-  let music = getState().music
+  let music = getState().music.toJS()
   music.pause = true
   music.currTime = true
   dispatch(newMusic(music))
@@ -125,7 +107,7 @@ export function pause(){
 
 export function goonPlay(){
   window.audio.play()
-  let music = getState().music
+  let music = getState().music.toJS()
   music.pause = false
   music.currTime = false
   dispatch(newMusic(music))
@@ -140,17 +122,17 @@ export function animatePlay(){
     },300)
     return
   }
-  // let inter = setInterval(function () {
-  //   let config = getState().config
-  //   if(voice == 0){
-  //     play()
-  //     clearInterval(inter)
-  //     let vo = conv.get('audio:voice')
-  //     config.audio.voice = vo
-  //   }else{
-  //     voice = voice - 1
-  //   }
-  //   config.audio.voice = voice
-  //   dispatch(newConfie(config))
-  // },50)
+  let inter = setInterval(function () {
+    let config = getState().config
+    if(voice == 0){
+      play()
+      clearInterval(inter)
+      let vo = conv.get('audio:voice')
+      config.audio.voice = vo
+    }else{
+      voice = voice - 1
+    }
+    config.audio.voice = voice
+    dispatch(newConfie(config))
+  },50)
 }

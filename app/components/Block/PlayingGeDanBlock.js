@@ -6,7 +6,7 @@ import { changeTime } from '../../common/util'
 
 @connect((state) => {
   return {
-    music:state.music,
+    music:state.music.toJS(),
     status: state.status
   }
 })

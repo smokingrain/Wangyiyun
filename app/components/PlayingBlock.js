@@ -6,7 +6,7 @@ import { play } from '../api/audio'
 
 @connect((state) => {
   return {
-    music:state.music
+    music:state.music.toJS()
   }
 })
 export default class PlayingBlock extends Component {
@@ -14,18 +14,16 @@ export default class PlayingBlock extends Component {
     super()
   }
   componentDidUpdate(prevProps, prevState) {
-    // const prePlaying = prevProps.music.playing.uuid
-    // const nextPlaying = prevState.music.playing.uuid
-    // console.log(prePlaying, nextPlaying)
-    // if(prePlaying != nextPlaying){
-    //   console.log('next state play')
-    //   play()
-    // }
+      let prev = prevProps.music.playing.uuid
+      let now = this.props.music.playing.uuid
+      let toplay = this.props.music.toplay
+      if(toplay){
+        play()  
+      }     
   }
   render(){
     const { music } = this.props
     const playing = music.playing
-    console.log(music)
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">

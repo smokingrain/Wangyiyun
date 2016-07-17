@@ -22,7 +22,7 @@ import { play, animatePlay } from '../../api/audio'
 @connect((state) => {
   return {
     message:state.message,
-    music: state.music
+    music: state.music.toJS()
   }
 })
 export default class LocalMusic extends Component {
@@ -98,7 +98,6 @@ export default class LocalMusic extends Component {
         )
     }
     upLoadLocalMusic(e){
-        console.log(this.props.music)
         const message = this.props.message
         const notify = message.notify
         let tip = {}
@@ -145,7 +144,6 @@ export default class LocalMusic extends Component {
 
 
         document.getElementById('load-local-music').value = null
-        console.log('sucesssarr')
         uploadFiles(successArr)    
         // let fileInfo = fileDetail(item)
         // $('#audioBack').on('load', function () {
@@ -154,12 +152,15 @@ export default class LocalMusic extends Component {
         // $('#audioBack').attr('src',item.path)
     }
     chooseThisItem(item){
-        const music = this.props.music
-        music.playing = item
+        console.log(item, 'item')
+        let music = this.props.music
+        _.extend(music.playing, item)
+        // music.playing = item
         music.playingmusic = music.localmusic
         music.pause = false
+        music.toplay = true
         dispatch(newMusic(music))
-        animatePlay()
+        // animatePlay()
     }
 }
 

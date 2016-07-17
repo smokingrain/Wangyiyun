@@ -1,3 +1,4 @@
+
 import React, { Component, PropTypes } from 'react'
 import { render } from 'react-dom'
 import { connect } from 'react-redux'
@@ -5,8 +6,9 @@ import Progress from './Progress'
 import { play, pause, goonPlay } from '../api/audio'
 import cs from 'classnames'
 import { getState, dispatch } from '../redux/store/renderStore'
-import { newStatus } from '../redux/actions/actions'
+import { newStatus, newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
+import { initBallPosition } from '../api/progress'
 
 
 let playingFlag = null
@@ -14,9 +16,9 @@ let playingFlag = null
 
 @connect((state) => {
   return {
-    music: state.music,
+    music: state.music.toJS(),
     status: state.status,
-    config: state.config
+    config: state.config.toJS()
   }
 })
 export default class Footer extends Component {
@@ -28,14 +30,16 @@ export default class Footer extends Component {
   }
   componentDidMount() {
     const config = this.props.config
-    const { voice } = config.audio
-    let len = initBallPosition(voice, $('.voiceProgress .progress-slot').width())     
+    const voice = config.audio.voice
+    const width = $('.voiceProgress .progress-slot').width()
+    const len = initBallPosition(voice, width)
+    const posi = len -7
     $('.voiceProgress .progress-bar').width(len)
-    let len_ball = len - 7
-    $('.voiceProgress .progress-ball').css("left",len_ball)
+    $('.voiceProgress .progress-ball').css('left',posi+'px')
+    window.audio.volume = voice/10
   }
   componentDidUpdate(prevProps, prevState) {
-    
+
   }
   render(){
     const { playing } = this.state
@@ -43,7 +47,6 @@ export default class Footer extends Component {
     const { playingmusic } = this.props.music
     const music = this.props.music
     const pause = music.pause
-    console.log(pause)
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
@@ -87,7 +90,9 @@ export default class Footer extends Component {
     if(music.pause && music.currTime){
       goonPlay()
     }else if(music.pause && !music.currTime){
+      music.toplay = true
       play()
+      dispatch(newMusic(music))
     }else{
       pause()
     }

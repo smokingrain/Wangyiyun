@@ -11,7 +11,7 @@ import { newMusic } from '../redux/actions/actions'
 
 @connect((state) => {
   return {
-    music:state.music
+    music:state.music.toJS()
   }
 })
 export default class LeftPart extends Component {

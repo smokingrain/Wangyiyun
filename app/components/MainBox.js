@@ -15,7 +15,7 @@ import YunPan from './yunpan/YunPan'
 
 @connect((state) => {
   return {
-    music:state.music
+    music:state.music.toJS()
   }
 })
 export default class MainBox extends Component {

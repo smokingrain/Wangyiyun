@@ -2,7 +2,7 @@ import db from './musicDao'
 import _ from 'lodash'
 import uuid from 'uuid'
 import { getState, dispatch } from '../redux/store/renderStore'
-import { newMusic, newConfig } from '../redux/actions/actions'
+import { newMusic, newConfig, newMessage } from '../redux/actions/actions'
 import eventproxy from 'eventproxy'
 import { convData } from '../common/db'
 import { conv } from '../common/config'
@@ -18,20 +18,19 @@ export function initEnvorment(){
   let playing = {}
   let playingmusic = []
   let localmusic = []
-  let voice = 1
+  let voice = 10
   let init = false
   let loop = false
   let random = false
   let music = getState().music
   if(!conv.get('init')){
 
-
     conv.set('audio:random', false)
     conv.set('audio:loop', false)
     conv.set('init', true)
-    conv.set('audio:voice', 1)
+    conv.set('audio:voice', 10)
     conv.save()
-    let obj = {"extName":".mp3","fileName":"胡彦斌 - 当爱已成往事","fileSize":"6MB","filePath":"E:\\github\\Wangyiyun\\public\\music\\胡彦斌 - 当爱已成往事.mp3","uuid":"a0709157-f458-466f-b830-5e543dd50492","fileTime":"269","fileLocal":true,"fileAlbum":"","fileArtist":"","fileTitle":"","_id":"M0KRvX4IZGpi8wWI"}
+    let obj = {"extName":".mp3","fileName":"胡彦斌 - 当爱已成往事","fileSize":"6MB","filePath":"E:\\github\\Wangyiyun\\app\\public\\music\\胡彦斌 - 当爱已成往事.mp3","uuid":"a0709157-f458-466f-b830-5e543dd50492","fileTime":"269","fileLocal":true,"fileAlbum":"","fileArtist":"","fileTitle":"","_id":"M0KRvX4IZGpi8wWI"}
     let picobj = {
       uuid:'a0709157-f458-466f-b830-5e543dd50492',
       picture:''
@@ -70,18 +69,18 @@ export function initEnvorment(){
 
 
 
-export function insertLocalMusicByClick(data, pic, init){
+export function insertLocalMusicByClick(data, pic){
   musicDB.insert(data, function (err, newdoc) {
     if(!err){
       picDB.insert(pic, function (err, doc){
         if(!err){
           let temp = convData.get('localmusic')
           let localmusic = temp ? temp : []
-          localmusic.push(data)
+          localmusic.push(data) 
           convData.set('localmusic', localmusic)
           convData.save()
-          let music = getState().music
-          music.localmusic.push(data)
+          let music = getState().music.toJS()
+          music.localmusic = localmusic
           dispatch(newMusic(music))
         }
       })
@@ -232,3 +231,12 @@ export function getMusicByUuid(uuid, cb){
     }
   })
 }
+
+export function initMessage(){
+  let message = getState().message
+  message.notify.tip = null
+  message.showMask = false
+  dispatch(newMessage(message))
+}
+
+

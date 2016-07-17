@@ -2,7 +2,7 @@
   "audio": {
     "random": false,
     "loop": false,
-    "voice": 1
+    "voice": 10
   },
   "init": true
 }

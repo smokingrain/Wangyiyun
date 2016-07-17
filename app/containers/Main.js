@@ -16,7 +16,7 @@ import PlayingGeDanBlock from '../components/Block/PlayingGeDanBlock'
 
 @connect((state) => {
   return {
-    message:state.message,
+    message:state.message.toJS(),
     music: state.music
   }
 })

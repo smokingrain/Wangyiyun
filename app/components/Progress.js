@@ -4,15 +4,19 @@ import { connect } from 'react-redux'
 import cs from 'classnames'
 import { initBallPosition, ballMouseDwonU } from '../api/progress'
 import $ from 'jquery'
+import { dispatch, getState } from '../redux/store/renderStore'
+import { newConfig, newMusic } from '../redux/actions/actions'
+
 
 @connect((state) => {
   return {
-    music: state.music,
-    config: state.config
+    music: state.music.toJS(),
+    config: state.config.toJS()
   }
 })
 export default class Progress extends Component {
   componentDidMount() {
+    let self = this
     const owner = this.props.owner
     let content = '.'+owner
     $(document).ready(() => {
@@ -49,6 +53,16 @@ export default class Progress extends Component {
 
         $(document).on('mouseup', () => {
           $(document).off('mousemove').off('mouseup')
+          if(owner == 'voiceProgress'){
+            // let bar_width = $('.voiceProgress .progress-bar').width()
+            // let slot_width = $('.voiceProgress .progress-slot').width()
+            // let voice = Math.floor(bar_width/slot_width*10)
+            // let config = self.props.config
+            // console.log(config)
+            // config.audio.voice = voice
+            // dispatch(newConfig(config))
+            // window.audio.volume = voice/10
+          }
         })
       })
     })
