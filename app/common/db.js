@@ -5,7 +5,7 @@ import fs from 'fs'
 import _ from 'lodash'
 import { sep } from 'path'
 import path from 'path'
-import { config_app } from '../config'
+import { config_app } from '../../config'
 
 const configcon = new(require('nconf').Provider)()
 

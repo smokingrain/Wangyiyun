@@ -15,6 +15,7 @@ export function play(){
   let playing = music.playing
   music.pause = false
   if(!playing.uuid){
+    console.log('get in no playing')
     let playingmusic = music.playingmusic
     if(playingmusic.length>0){
       playing = {
@@ -33,10 +34,15 @@ export function play(){
       dispatch(newMusic(music))
       return
     }
+
+    let message = getState().message
+    message.notify.tip = "未找到可播放的音乐资源,请自行添加"
+    message.showMask = true
     return
   }
   dispatch(newMusic(music))
   if(window.audio != null && window.audio.canPlayType){
+    console.log(music.pause)
     window.audio.src = playing.filePath
     window.audio.play()
   }
@@ -134,17 +140,17 @@ export function animatePlay(){
     },300)
     return
   }
-  let inter = setInterval(function () {
-    let config = getState().config
-    if(voice == 0){
-      play()
-      clearInterval(inter)
-      let vo = conv.get('audio:voice')
-      config.audio.voice = vo
-    }else{
-      voice = voice - 1
-    }
-    config.audio.voice = voice
-    dispatch(newConfie(config))
-  },50)
+  // let inter = setInterval(function () {
+  //   let config = getState().config
+  //   if(voice == 0){
+  //     play()
+  //     clearInterval(inter)
+  //     let vo = conv.get('audio:voice')
+  //     config.audio.voice = vo
+  //   }else{
+  //     voice = voice - 1
+  //   }
+  //   config.audio.voice = voice
+  //   dispatch(newConfie(config))
+  // },50)
 }

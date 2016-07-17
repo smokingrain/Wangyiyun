@@ -1,7 +1,7 @@
 import path from 'path'
 
 
-const ROOT = path.resolve(__dirname, '../')
+const ROOT = path.resolve(__dirname, '../../')
 const CONFIGPATH = path.resolve(__dirname, '../', 'config')
 const CONFIG = 'config.json'
 const LOGPATH = path.resolve(__dirname, '../', 'logs')

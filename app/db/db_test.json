@@ -1,0 +1,31 @@
+{
+  "localmusic": [
+    {
+      "extName": ".mp3",
+      "fileName": "胡彦斌 - 当爱已成往事",
+      "fileSize": "6MB",
+      "filePath": "E:\\github\\Wangyiyun\\public\\music\\胡彦斌 - 当爱已成往事.mp3",
+      "uuid": "a0709157-f458-466f-b830-5e543dd50492",
+      "fileTime": "269",
+      "fileLocal": true,
+      "fileAlbum": "",
+      "fileArtist": "",
+      "fileTitle": "",
+      "_id": "M0KRvX4IZGpi8wWI"
+    }
+  ],
+  "playingmusic": [],
+  "playing": {
+    "extName": ".mp3",
+    "fileName": "胡彦斌 - 当爱已成往事",
+    "fileSize": "6MB",
+    "filePath": "E:\\github\\Wangyiyun\\public\\music\\胡彦斌 - 当爱已成往事.mp3",
+    "uuid": "a0709157-f458-466f-b830-5e543dd50492",
+    "fileTime": "269",
+    "fileLocal": true,
+    "fileAlbum": "",
+    "fileArtist": "",
+    "fileTitle": "",
+    "_id": "M0KRvX4IZGpi8wWI"
+  }
+}

@@ -15,7 +15,8 @@ let playingFlag = null
 @connect((state) => {
   return {
     music: state.music,
-    status: state.status
+    status: state.status,
+    config: state.config
   }
 })
 export default class Footer extends Component {
@@ -42,6 +43,7 @@ export default class Footer extends Component {
     const { playingmusic } = this.props.music
     const music = this.props.music
     const pause = music.pause
+    console.log(pause)
     return (
       <div className="Footer nodrag">
         <div className="song-opera">

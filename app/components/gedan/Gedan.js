@@ -13,7 +13,7 @@ export default class Gedan extends Component {
         return (
           <div className={cs(['content-box','gedan','nodrag',{"hide": module!= 'gedan'}])}>
             <div className="nav-box detail-nav">
-                <img src="public/img/gedan/gedan01.jpg"/>
+                <img src="app/public/img/gedan/gedan01.jpg"/>
                 <div className="information">
                     <div className="first-box">
                         <p className="gedanflag">歌单</p>

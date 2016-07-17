@@ -192,43 +192,43 @@ export default class Recommend extends Component {
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-1.png"/>
+                <img src="app/public/img/findmusic/recommend/play-box-img-1.png"/>
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-2.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-2.png" />
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-3.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-3.png" />
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-4.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-4.png" />
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-5.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-5.png" />
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-6.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-6.png" />
             </div>
             <div className="pic-item">
                 <div className="pic-mask"></div>
                 <div className="button pic-pre-button"><i className="iconfont icon-i-left"></i></div>
                 <div className="button pic-next-button"><i className="iconfont icon-right"></i></div>
-                <img src="public/img/findmusic/recommend/play-box-img-0.png" />
+                <img src="app/public/img/findmusic/recommend/play-box-img-0.png" />
             </div>
           </div>
           <div className="play-item-box" xx="xxx">
@@ -255,7 +255,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -266,7 +266,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -277,7 +277,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -288,7 +288,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -299,7 +299,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -312,7 +312,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -323,7 +323,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -334,7 +334,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -345,7 +345,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -356,7 +356,7 @@ export default class Recommend extends Component {
                             <span>100万</span>
                             <i className="iconfont icon-erjiheadphones38"></i>
                         </div>
-                        <img src="public/img/findmusic/recommend/recommend-list-1.png"/>
+                        <img src="app/public/img/findmusic/recommend/recommend-list-1.png"/>
                         <p>编辑推荐，赴约一场冷酷约会</p>
                     </div>
                     <p className="miaoshu">性冷淡女生集，你的声音在心中化开</p>
@@ -371,19 +371,19 @@ export default class Recommend extends Component {
             <div className="list-box">
                 <div className="list-item">
                     <div className="imgbox dujia-flag">
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
                 </div>
                 <div className="list-item">
                     <div className="imgbox dujia-flag">
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
                 </div>
                 <div className="list-item">
                     <div className="imgbox dujia-flag">
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">音乐专栏，许嵩的摄影艺术，一起来见证</p>
                 </div>
@@ -399,7 +399,7 @@ export default class Recommend extends Component {
                     <p className="number-index">01</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -410,7 +410,7 @@ export default class Recommend extends Component {
                     <p className="number-index">02</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -421,7 +421,7 @@ export default class Recommend extends Component {
                     <p className="number-index">03</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -432,7 +432,7 @@ export default class Recommend extends Component {
                     <p className="number-index">04</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -443,7 +443,7 @@ export default class Recommend extends Component {
                     <p className="number-index">05</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -454,7 +454,7 @@ export default class Recommend extends Component {
                     <p className="number-index">06</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -465,7 +465,7 @@ export default class Recommend extends Component {
                     <p className="number-index">07</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -476,7 +476,7 @@ export default class Recommend extends Component {
                     <p className="number-index">08</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -487,7 +487,7 @@ export default class Recommend extends Component {
                     <p className="number-index">09</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -498,7 +498,7 @@ export default class Recommend extends Component {
                     <p className="number-index">10</p>
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -519,7 +519,7 @@ export default class Recommend extends Component {
                             <span>34332</span>
                             <i className="iconfont icon-shipin"></i>
                         </div>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">天堂边缘</p>
                     <span className="songername">胡歌</span>
@@ -530,7 +530,7 @@ export default class Recommend extends Component {
                             <span>34332</span>
                             <i className="iconfont icon-shipin"></i>
                         </div>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">天堂边缘</p>
                     <span className="songername">胡歌</span>
@@ -541,7 +541,7 @@ export default class Recommend extends Component {
                             <span>34332</span>
                             <i className="iconfont icon-shipin"></i>
                         </div>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <p className="miaoshu">天堂边缘</p>
                     <span className="songername">胡歌</span>
@@ -559,7 +559,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -569,7 +569,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -579,7 +579,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -589,7 +589,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -599,7 +599,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>
@@ -609,7 +609,7 @@ export default class Recommend extends Component {
                 <li className="list-item">
                     <div className="pic-box">
                         <i className="iconfont icon-play"></i>
-                        <img src="public/img/findmusic/dujia/dujia-01.jpg" />
+                        <img src="app/public/img/findmusic/dujia/dujia-01.jpg" />
                     </div>
                     <div className="detail">
                         <p className="songname">Forevet (Prod by GRAY)</p>

@@ -1,12 +1,12 @@
 import React from 'react'
-import { store } from './redux/store/renderStore'
+import { store } from './app/redux/store/renderStore'
 import { render } from 'react-dom'
-import App from './containers/App'
-import Main from './containers/Main'
+import App from './app/containers/App'
+import Main from './app/containers/Main'
 import { Router, Route } from 'react-router'
 import { Provider } from 'react-redux'
-import './renderProcess/appwin'
-import './public/css/App.scss'
+import './app/renderProcess/appwin'
+import './app/public/css/App.scss'
 
 
 

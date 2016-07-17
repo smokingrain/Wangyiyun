@@ -157,6 +157,7 @@ export default class LocalMusic extends Component {
         const music = this.props.music
         music.playing = item
         music.playingmusic = music.localmusic
+        music.pause = false
         dispatch(newMusic(music))
         animatePlay()
     }

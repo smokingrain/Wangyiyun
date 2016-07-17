@@ -29,7 +29,7 @@ export default class PlayingBlock extends Component {
     return (
       <div className="playingblock nodrag">
         <div className="musicimg">
-          <img src="public/img/PDD/pddtest.jpg" />
+          <img src="app/public/img/PDD/pddtest.jpg" />
         </div>
         <div className="musicname">
           <p className="songname" title={playing.fileName}>{playing.fileName}</p>

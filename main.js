@@ -1,9 +1,9 @@
-import { store } from './redux/store/mainStore'
-import { getPosition, moveTo, openWindow } from './mainProcess/desktop'
+import { store } from './app/redux/store/mainStore'
+import { getPosition, moveTo, openWindow } from './app/mainProcess/desktop'
 import electron from 'electron'
 import { app, ipcMain, BrowserWindow } from 'electron'
-import { window_move_to, window_open } from './communicate/communicationTypes'   
-import { config } from './common/config'
+import { window_move_to, window_open } from './app/communicate/communicationTypes'   
+import { config } from './app/common/config'
 import { 
   moveWindow, 
   openDevtools, 
@@ -15,11 +15,11 @@ import {
   minWindowID,
   maxWindowID,
   quitApp
-} from './mainProcess/listenEvent'
-import { main } from './renderProcess/winOptions'
+} from './app/mainProcess/listenEvent'
+import { main } from './app/renderProcess/winOptions'
 // import { logger } from './modules/logger'
 // import { logger } from './common/logger'
-import { initLocalMusic, initPlayingMusic, initPlaying, initEnvorment } from './dao/api'
+import { initLocalMusic, initPlayingMusic, initPlaying, initEnvorment } from './app/dao/api'
 let dataGlobal = {}
 dataGlobal.win = []
 
