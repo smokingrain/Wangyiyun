@@ -156,9 +156,10 @@ export default class LocalMusic extends Component {
         let music = this.props.music
         _.extend(music.playing, item)
         // music.playing = item
-        music.playingmusic = music.localmusic
+        let obj = _.extend(music.playingmusic, music.localmusic)
         music.pause = false
         music.toplay = true
+        music.playingmusic = obj
         dispatch(newMusic(music))
         // animatePlay()
     }

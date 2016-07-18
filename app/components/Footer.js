@@ -32,13 +32,10 @@ export default class Footer extends Component {
     const config = this.props.config
     const voicelen = config.audio.voicelen
     const voice = config.audio.voice
-    console.log(voicelen, voice)
     const posi = voicelen -7
-    console.log(posi, 'posi')
     $('.voiceProgress .progress-bar').width(voicelen)
     $('.voiceProgress .progress-ball').css('left',posi+'px')
     window.audio.volume = voice/10
-    console.log(config)
   }
   componentDidUpdate(prevProps, prevState) {
 
@@ -122,8 +119,9 @@ export default class Footer extends Component {
     dispatch(newMusic(music))
   }
   nextSong(){
-    const { music } = this.props
+    const music = this.props.music
     const playingmusic = music.playingmusic
+    console.log(music)
     if(playingmusic.length<=1){
       music.toplay = true
       music.pause = true

@@ -56,10 +56,8 @@ export default class Progress extends Component {
             let slot_width = $('.voiceProgress .progress-slot').width()
             let voice = Math.floor(bar_width/slot_width*10)
             let config = self.props.config
-            console.log(config)
             config.audio.voice = voice
             dispatch(newConfig(config))
-            console.log(voice)
             window.audio.volume = voice/10
           }
         })
