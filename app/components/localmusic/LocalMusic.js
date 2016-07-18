@@ -73,7 +73,7 @@ export default class LocalMusic extends Component {
                     {
                         localmusic && localmusic.map((item, index) => {
                             return(
-                                <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index} onDoubleClick={()=>{self.chooseThisItem(item)}}>
+                                <dl className="list list-item odd" className={cs(['list','list-item',{'odd':index%2 == 0,"even":index%2 == 1}])} key={index} onDoubleClick={()=>{self.chooseThisItem(item, localmusic)}}>
                                     <dd className="number"><span>{index+1}</span></dd>
                                     <dd className="title"><span>{item.fileName}</span></dd>
                                     <dd className="songer"><span>{item.fileArtist || '未知'}</span></dd>
@@ -151,15 +151,19 @@ export default class LocalMusic extends Component {
         // })
         // $('#audioBack').attr('src',item.path)
     }
-    chooseThisItem(item){
-        console.log(item, 'item')
+    chooseThisItem(item, localmusic){
         let music = this.props.music
         _.extend(music.playing, item)
         // music.playing = item
-        let obj = _.extend(music.playingmusic, music.localmusic)
+        music.playingmusic = localmusic
+        music.playingmusic = []
+        _.each(localmusic, (i) => {
+            music.playingmusic.push(i.get())
+            console.log(music.playingmusic)
+        })
         music.pause = false
         music.toplay = true
-        music.playingmusic = obj
+        console.log(music)
         dispatch(newMusic(music))
         // animatePlay()
     }

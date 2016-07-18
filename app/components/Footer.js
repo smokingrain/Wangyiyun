@@ -120,8 +120,8 @@ export default class Footer extends Component {
   }
   nextSong(){
     const music = this.props.music
+    console.log(this.props)
     const playingmusic = music.playingmusic
-    console.log(music)
     if(playingmusic.length<=1){
       music.toplay = true
       music.pause = true

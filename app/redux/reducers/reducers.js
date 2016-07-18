@@ -37,6 +37,7 @@ let statusInit = {
   showPlayingBlock: false
 }
 export function music (state = musicInit, action) {
+  console.log(action)
   switch (action.type) {
     case MUSIC:
       let nextState = Immutable.Map(state).merge(action.music)
