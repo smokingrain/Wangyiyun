@@ -19,6 +19,7 @@ export function initEnvorment(){
   let playingmusic = []
   let localmusic = []
   let voice = 10
+  let voicelen = 78
   let init = false
   let loop = false
   let random = false
@@ -29,6 +30,7 @@ export function initEnvorment(){
     conv.set('audio:loop', false)
     conv.set('init', true)
     conv.set('audio:voice', 10)
+    conv.set('audio:voicelen', 78)
     conv.save()
     let obj = {"extName":".mp3","fileName":"胡彦斌 - 当爱已成往事","fileSize":"6MB","filePath":"E:\\github\\Wangyiyun\\app\\public\\music\\胡彦斌 - 当爱已成往事.mp3","uuid":"a0709157-f458-466f-b830-5e543dd50492","fileTime":"269","fileLocal":true,"fileAlbum":"","fileArtist":"","fileTitle":"","_id":"M0KRvX4IZGpi8wWI"}
     let picobj = {
@@ -50,6 +52,7 @@ export function initEnvorment(){
     loop = conv.get('audio:loop')
     random = conv.get('audio:random')
     voice = conv.get('audio:voice')
+    voicelen = conv.get('audio:voicelen')
   }
 
   
@@ -60,6 +63,7 @@ export function initEnvorment(){
   config.audio = {}
   config.audio.voice = voice
   config.audio.loop = loop
+  config.audio.voicelen = voicelen
   config.audio.random = random
   config.init = init
   dispatch(newMusic(music))

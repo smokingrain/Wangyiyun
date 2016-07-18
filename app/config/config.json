@@ -2,7 +2,8 @@
   "audio": {
     "random": false,
     "loop": false,
-    "voice": 10
+    "voice": 10,
+    "voicelen": 78
   },
   "init": true
 }

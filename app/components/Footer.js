@@ -9,7 +9,7 @@ import { getState, dispatch } from '../redux/store/renderStore'
 import { newStatus, newMusic } from '../redux/actions/actions'
 import $ from 'jquery'
 import { initBallPosition } from '../api/progress'
-
+import _ from 'lodash'
 
 let playingFlag = null
 
@@ -30,13 +30,15 @@ export default class Footer extends Component {
   }
   componentDidMount() {
     const config = this.props.config
+    const voicelen = config.audio.voicelen
     const voice = config.audio.voice
-    const width = $('.voiceProgress .progress-slot').width()
-    const len = initBallPosition(voice, width)
-    const posi = len -7
-    $('.voiceProgress .progress-bar').width(len)
+    console.log(voicelen, voice)
+    const posi = voicelen -7
+    console.log(posi, 'posi')
+    $('.voiceProgress .progress-bar').width(voicelen)
     $('.voiceProgress .progress-ball').css('left',posi+'px')
     window.audio.volume = voice/10
+    console.log(config)
   }
   componentDidUpdate(prevProps, prevState) {
 
@@ -50,9 +52,9 @@ export default class Footer extends Component {
     return (
       <div className="Footer nodrag">
         <div className="song-opera">
-          <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu"></i></div>
+          <div className="shangyiqu"><i className="iconfont icon-bofangqishangyiqu" onClick={()=> {this.prevSong()}}></i></div>
           <div className='bofang' onClick={() => {this.playAudio()}}><i className={cs(['iconfont',{'icon-bofang1': pause,"icon-zanting1": !pause}])}></i></div>
-          <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu"></i></div>
+          <div className="xiayiqu"><i className="iconfont icon-bofangqixiayiqu" onClick={() =>{this.nextSong()}}></i></div>
         </div>
         <div className="nowtime">
           <span className="nowspan" id="musicnowtime">00:00</span>
@@ -96,6 +98,51 @@ export default class Footer extends Component {
     }else{
       pause()
     }
+  }
+  prevSong(){
+    const { music } = this.props
+    const playingmusic = music.playingmusic
+    if(playingmusic.length<=1){
+      music.toplay = true
+      music.pause = true
+    }else{
+      const playing = music.playing
+      _.each(playingmusic, function (item, index) {
+        if(item.uuid == playing.uuid){
+          music.toplay = true
+          music.pause = true
+          if(index == 0){
+            music.playing = music.playingmusic[playingmusic.length-1]
+          }else{
+            music.playing = music.playingmusic[index-1]
+          }
+        }
+      })
+    }
+    dispatch(newMusic(music))
+  }
+  nextSong(){
+    const { music } = this.props
+    const playingmusic = music.playingmusic
+    if(playingmusic.length<=1){
+      music.toplay = true
+      music.pause = true
+    }else{
+      const playing = music.playing
+      _.each(playingmusic, function (item, index) {
+        if(item.uuid == playing.uuid){
+          music.toplay = true
+          music.pause = true
+          if(index == playingmusic.length-1){
+            music.playing = music.playingmusic[0]
+          }else{
+            music.playing = music.playingmusic[index+1]
+          }
+        }
+      })
+    }
+    console.log(playingmusic)
+    dispatch(newMusic(music))
   }
 }
 

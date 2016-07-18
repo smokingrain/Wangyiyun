@@ -23,7 +23,8 @@ export default class Progress extends Component {
       $(content+' .progress-ball').off('mousedown').on('mousedown', function (e) {
         let slot_width = $(content+' .progress-slot').width() -7
         let initX = e.pageX
-        e.preventDefault() 
+        e.preventDefault()
+        let last_date = Date.now() 
         $(document).off('mousemove').on('mousemove', (ev) => {
           ev.preventDefault() 
           let pageX = ev.pageX
@@ -49,20 +50,22 @@ export default class Progress extends Component {
           }
           left = parseInt($(content+' .progress-ball').css('left'))
           $(content+' .progress-bar').css('width',left+'px')
+          if(Date.now() - last_date >100 && owner == 'voiceProgress'){
+            last_date = Date.now()
+            let bar_width = $('.voiceProgress .progress-bar').width()
+            let slot_width = $('.voiceProgress .progress-slot').width()
+            let voice = Math.floor(bar_width/slot_width*10)
+            let config = self.props.config
+            console.log(config)
+            config.audio.voice = voice
+            dispatch(newConfig(config))
+            console.log(voice)
+            window.audio.volume = voice/10
+          }
         })
 
         $(document).on('mouseup', () => {
           $(document).off('mousemove').off('mouseup')
-          if(owner == 'voiceProgress'){
-            // let bar_width = $('.voiceProgress .progress-bar').width()
-            // let slot_width = $('.voiceProgress .progress-slot').width()
-            // let voice = Math.floor(bar_width/slot_width*10)
-            // let config = self.props.config
-            // console.log(config)
-            // config.audio.voice = voice
-            // dispatch(newConfig(config))
-            // window.audio.volume = voice/10
-          }
         })
       })
     })
@@ -83,13 +86,14 @@ export default class Progress extends Component {
     const audio = config.audio
     const voice = audio.voice
     const len = owner == 'voiceProgress' ? initBallPosition(voice, 78) : 0
+    const ball_posi = len - 7
     return (
       <div className={own} style={{"paddingLeft":"10px","paddingRight":"10px"}}>
         <div className="progress-slot">
-          <div className="progress-ball" style={{'left':len-7+'px'}}>
+          <div className="progress-ball">
             <div className="progress-dot"></div>
           </div>
-          <div className="progress-bar" style={{'width':len+'px'}}></div>
+          <div className="progress-bar"></div>
         </div>
       </div>
     )
