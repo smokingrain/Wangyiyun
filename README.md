@@ -70,7 +70,8 @@
 
 # questions
 - [ ] 编码问题  本地音乐文件上传  IDv2  IDv1乱码问题  解决不了  底层写个c++库的话就可以了 但是哥不会啊。。
-- [ ] id3js 不支持阅读带图片文件  会outside bunds    换jsmediatags试试
+- [x] id3js 不支持阅读带图片文件  会outside bunds    换jsmediatags试试
+- [x] immutable框架使用不够熟悉  导致大量根本性问题  我的锅  巨大的锅  重构store
 
 
 # mood

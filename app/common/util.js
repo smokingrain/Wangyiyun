@@ -160,3 +160,23 @@ export function changeTime(time){
   let timeNow = min_1.concat(min_2,":",second_1,second_2)
   return timeNow
 }
+
+
+
+export function getNewMusicObj(old){
+  let obj = {}
+  obj.extName = old.extName
+  obj.fileName = old.fileName
+  obj.fileArtist = old.fileArtist
+  obj.fileSize = old.fileSize
+  obj.filePath = old.filePath
+  obj.uuid = old.uuid
+  obj.fileTime = old.fileTime
+  obj.fileLocal = old.fileLocal
+  obj.fileAlbum = old.fileAlbum
+  obj.fileTitle = old.fileTitle
+  obj._id = old._id
+
+
+  return obj
+}

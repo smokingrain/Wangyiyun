@@ -9,7 +9,7 @@ import $ from 'jquery'
 import ep from 'eventproxy'
 import { dispatch } from '../../redux/store/renderStore'
 import { newMessage, newMusic } from '../../redux/actions/actions'
-import { isMP3, fileDetail, uploadFiles, changeTime } from '../../common/util'
+import { isMP3, fileDetail, uploadFiles, changeTime, getNewMusicObj } from '../../common/util'
 import async from 'async'
 // import { insertPlayingGedan } from '../../dao/api'
 import uuid from 'uuid'
@@ -155,10 +155,10 @@ export default class LocalMusic extends Component {
         let music = this.props.music
         _.extend(music.playing, item)
         // music.playing = item
-        music.playingmusic = localmusic
         music.playingmusic = []
         _.each(localmusic, (i) => {
-            music.playingmusic.push(i.get())
+            let obj = getNewMusicObj(i)
+            music.playingmusic.push(obj)
             console.log(music.playingmusic)
         })
         music.pause = false

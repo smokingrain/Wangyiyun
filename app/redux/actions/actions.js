@@ -10,9 +10,10 @@ import {
 
 
 export function newStatus (status) {
+  console.log(status,'action')
   return {
     type: STATUS,
-    music: status
+    status: status
   }
 }
 

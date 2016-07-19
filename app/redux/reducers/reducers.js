@@ -11,20 +11,21 @@ import { conv } from '../../common/config'
 
 
 
-
+//https://segmentfault.com/a/1190000002909224
 
 
 //findmusic module
 let findmusicInit = {}
 //music init
+
+
 let musicInit = {
-  showModule: 'localmusic',
-  tempUploadFile:null,
+  showModule:"localmusic",
+  tempUploadFile: null,
   pause: true,
-  currTime:false,
+  currTime: false,
   toplay:false
 }
-
 let messageInit = {
   notify:{
   },
@@ -37,7 +38,6 @@ let statusInit = {
   showPlayingBlock: false
 }
 export function music (state = musicInit, action) {
-  console.log(action)
   switch (action.type) {
     case MUSIC:
       let nextState = Immutable.Map(state).merge(action.music)
@@ -48,11 +48,12 @@ export function music (state = musicInit, action) {
 }
 
 
-
-export function status (state = statusInit, action) {
+export function status (state = Immutable.fromJS(statusInit), action) {
   switch (action.type) {
     case STATUS:
-      let nextState = Immutable.Map(state).merge(action.status)
+      console.log('jjjjjj', action.status)
+      let nextState = state.merge(Immutable.fromJS(action.status))
+      console.log(nextState,'sate')
       return nextState
     default :
       return state
@@ -93,4 +94,11 @@ export function message (state = messageInit, action) {
     default :
       return state
   }
+}
+
+
+function fromJSToMap(obj){
+  return typeof obj !== 'object' || obj ===null ? obj : Array.isArray(obj) ? 
+    Immutable.List(obj).map(fromJSToMap).toList() :
+    Immutable.Map(obj).map(fromJSToMap).toMap()
 }

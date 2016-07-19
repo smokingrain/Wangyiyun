@@ -17,7 +17,7 @@ let playingFlag = null
 @connect((state) => {
   return {
     music: state.music.toJS(),
-    status: state.status,
+    status: state.status.toJS(),
     config: state.config.toJS()
   }
 })
@@ -76,12 +76,15 @@ export default class Footer extends Component {
   }
   toShowPlayingBlock(){
     const { status } = this.props
+    console.log(status,'footer')
     let { showPlayingBlock } = status
     if(showPlayingBlock){
       status.showPlayingBlock = false
     }else {
       status.showPlayingBlock = true
     }
+      status.xxx = 'xxxxxxxxxxx'
+      console.log(status, 'status')
     dispatch(newStatus(status))
   }
   playAudio(){
@@ -139,7 +142,6 @@ export default class Footer extends Component {
         }
       })
     }
-    console.log(playingmusic)
     dispatch(newMusic(music))
   }
 }

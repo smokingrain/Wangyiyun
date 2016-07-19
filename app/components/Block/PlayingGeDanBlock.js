@@ -7,14 +7,15 @@ import { changeTime } from '../../common/util'
 @connect((state) => {
   return {
     music:state.music.toJS(),
-    status: state.status
+    status: state.status.toJS()
   }
 })
 export default class PlayingGeDanBlock extends Component {
     render(){
         const { music, status } = this.props
         const playingmusic = music.playingmusic
-        const { showPlayingBlock } = status
+        const { showPlayingBlock,xxx } = status
+        console.log(xxx)
         const playing = music.playing
         return (
           <div className={cs(['appblock','playing-block','nodrag',{"hide": !showPlayingBlock}])}>
